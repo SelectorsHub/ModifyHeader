@@ -1,4 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><rect x="0.0" y="0.0" width="512.0" height="512.0" rx="125.0" fill="#7CB9F0"/>
-<path d="M 108.0 404.0 L 108.0 108.0 L 256.0 284.0 L 404.0 108.0 L 404.0 404.0" fill="none" stroke="#FFFFFF" stroke-width="43.0" stroke-linecap="round" stroke-linejoin="round"/>
-<line x1="63.0" y1="341.0" x2="398.0" y2="341.0" stroke="#154D80" stroke-width="26.0" stroke-linecap="round"/>
-<polygon points="392.0,313.0 455.0,341.0 392.0,369.0" fill="#154D80"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="gAmber" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBBF24"></stop>
+      <stop offset="1" stop-color="#F59E0B"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="118" fill="url(#gAmber)"></rect>
+  <path d="M 168,132 C 141,132 141,171 141,204 C 141,236 126,256 108,256 C 126,256 141,276 141,308 C 141,341 141,380 168,380" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"></path>
+  <path d="M 344,132 C 371,132 371,171 371,204 C 371,236 386,256 404,256 C 386,256 371,276 371,308 C 371,341 371,380 344,380" fill="none" stroke="#FFFFFF" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"></path>
+  <line x1="204" y1="226" x2="288" y2="226" stroke="#0B6E57" stroke-width="19" stroke-linecap="butt"></line>
+  <polygon points="332,226 284,199 284,253" fill="#0B6E57"></polygon>
+  <line x1="224" y1="286" x2="308" y2="286" stroke="#FFFFFF" stroke-width="19" stroke-linecap="butt"></line>
+  <polygon points="180,286 228,259 228,313" fill="#FFFFFF"></polygon>
+</svg>

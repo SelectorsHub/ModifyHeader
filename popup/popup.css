@@ -26,7 +26,7 @@
   --border-card: rgba(108, 99, 255, 0.2);
 
   /* --gradient-header: linear-gradient(135deg, #1a1e3a 0%, #0e1024 100%); */
-  --gradient-header: linear-gradient(135deg, #1a1e3a 0%, #2b36b1 100%);
+  --gradient-header: linear-gradient(317deg, #000000 0%, #202884 100%);
   --gradient-accent: linear-gradient(135deg, #6c63ff 0%, #a78bfa 100%);
   --gradient-success: linear-gradient(135deg, #10d48e 0%, #059669 100%);
   --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.5);
@@ -68,7 +68,7 @@ body {
 }
 
 .theme-color {
-  color: #7ab8ed;
+  color: #0b6f57;
 }
 
 /* ── 2. Header ─────────────────────────────────────────────────── */
