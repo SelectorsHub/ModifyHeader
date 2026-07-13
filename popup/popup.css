@@ -1,0 +1,1024 @@
+/* ================================================================
+   ModifyHeaders Pro — popup.css
+   Premium dark-glass theme with vibrant accents
+   ================================================================ */
+
+/* ── 0. Design Tokens ─────────────────────────────────────────── */
+:root {
+  --bg-base: #0d0f18;
+  --bg-surface: #13162a;
+  --bg-card: #181c30;
+  --bg-hover: #1e2238;
+  --bg-modal: #1a1e35;
+
+  --accent-primary: #6c63ff;
+  --accent-primary-h: #8a83ff;
+  --accent-success: #10d48e;
+  --accent-danger: #ff4d6d;
+  --accent-warning: #ffb347;
+  --accent-info: #38bdf8;
+
+  --text-primary: #6a6c71;
+  --text-secondary: #9ba3c7;
+  --text-muted: #5c6485;
+
+  --border-subtle: rgba(108, 99, 255, 0.15);
+  --border-card: rgba(108, 99, 255, 0.2);
+
+  /* --gradient-header: linear-gradient(135deg, #1a1e3a 0%, #0e1024 100%); */
+  --gradient-header: linear-gradient(135deg, #1a1e3a 0%, #2b36b1 100%);
+  --gradient-accent: linear-gradient(135deg, #6c63ff 0%, #a78bfa 100%);
+  --gradient-success: linear-gradient(135deg, #10d48e 0%, #059669 100%);
+  --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 20px rgba(108, 99, 255, 0.2);
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── 1. Base Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 720px;
+  width: 720px;
+  max-width: 720px;
+  /* Chrome max popup height is 600px */
+  height: 600px;
+  max-height: 600px;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.theme-color {
+  color: #7ab8ed;
+}
+
+/* ── 2. Header ─────────────────────────────────────────────────── */
+.app-header {
+  background: var(--gradient-header);
+  border-bottom: 1px solid var(--border-card);
+  padding: 14px 20px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+  flex-shrink: 0;
+}
+
+.header-icon {
+  width: 38px;
+  height: 38px;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: var(--shadow-glow);
+  flex-shrink: 0;
+}
+
+.app-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+
+.pro-badge {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.app-subtitle {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.rule-count-badge {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(16, 212, 142, 0.12);
+  color: var(--accent-success);
+  border: 1px solid rgba(16, 212, 142, 0.25);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ── 3. Add Button ─────────────────────────────────────────────── */
+.btn-add {
+  background: var(--gradient-accent) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm) !important;
+  transition: var(--transition);
+  box-shadow: 0 2px 12px rgba(108, 99, 255, 0.35);
+}
+
+.btn-add:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.5);
+  filter: brightness(1.08);
+}
+
+.btn-add:active {
+  transform: translateY(0);
+}
+
+/* ── 4. Main Body ──────────────────────────────────────────────── */
+.app-body {
+  flex: 1 1 auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── 5. Empty State ────────────────────────────────────────────── */
+.empty-state {
+  color: var(--text-secondary);
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(108, 99, 255, 0.1);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--accent-primary);
+  margin: 0 auto;
+}
+
+.empty-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.empty-desc {
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+/* ── 6. Table Card ─────────────────────────────────────────────── */
+.table-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.table-toolbar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.toolbar-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ── 7. Search & Filter ────────────────────────────────────────── */
+.search-wrap {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.search-input {
+  background: var(--bg-base) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-sm) !important;
+  padding-left: 28px !important;
+  width: 160px;
+  font-size: 12px !important;
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2) !important;
+  outline: none !important;
+}
+
+.search-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.filter-select {
+  background: var(--bg-base) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 12px !important;
+  width: auto !important;
+  cursor: pointer;
+}
+
+.filter-select:focus {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2) !important;
+  outline: none !important;
+}
+
+/* ── 8. Rules Table ─────────────────────────────────────────────── */
+.rules-table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed;
+  /* required for column widths to be respected */
+}
+
+/* ── Column width map ──────────────────────────────────────────────
+   col 1 Status     48px
+   col 2 Domain    auto (fills remaining space)
+   col 3 Header   120px
+   col 4 Value    140px
+   col 5 Type      76px  ← narrow
+   col 6 Action    72px  ← narrow
+   col 7 Manage    72px
+   ─────────────────────────────────────────────────────────────── */
+.rules-table thead th:nth-child(1) {
+  width: 48px;
+  text-align: center;
+}
+
+.rules-table thead th:nth-child(3) {
+  width: 120px;
+}
+
+.rules-table thead th:nth-child(4) {
+  width: 140px;
+}
+
+.rules-table thead th:nth-child(5) {
+  width: 76px;
+}
+
+.rules-table thead th:nth-child(6) {
+  width: 72px;
+}
+
+.rules-table thead th:nth-child(7) {
+  width: 80px;
+}
+
+.rules-table thead tr {
+  background: var(--bg-surface);
+}
+
+.rules-table thead th {
+  /* color: var(--text-muted); */
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 9px 9px;
+  border-bottom: 1px solid var(--border-subtle);
+  white-space: nowrap;
+  border-top: none;
+  /* Sticky header — stays pinned while tbody rows scroll */
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--bg-surface);
+}
+
+.rules-table tbody tr {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: var(--transition);
+}
+
+.rules-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.rules-table tbody tr:hover {
+  background: var(--bg-hover);
+}
+
+.rules-table td {
+  color: var(--text-secondary);
+  padding: 10px 5px;
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+/* Domain cell */
+.cell-domain {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--accent-info);
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Header name cell */
+.cell-header-name {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--text-primary);
+  font-weight: 600;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Header value cell — truncate long strings with ellipsis */
+.cell-value {
+  display: block;
+  /* must be block for max-width to work in <td> */
+  font-size: 11px;
+  color: var(--text-secondary);
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: default;
+}
+
+/* ── Tooltip wrapper shared mixin ─────────────────────────────────
+   Used by Domain, Header, and Value columns.
+   The <td> carries [data-tooltip]; pseudo-elements render the tip.
+   ─────────────────────────────────────────────────────────────── */
+.cell-value-td,
+.cell-domain-td,
+.cell-header-td {
+  position: relative;
+}
+
+.cell-value-td {
+  max-width: 130px;
+}
+
+.cell-domain-td {
+  max-width: 120px;
+}
+
+.cell-header-td {
+  max-width: 120px;
+}
+
+/* Tooltip box */
+.cell-value-td[data-tooltip]::after,
+.cell-domain-td[data-tooltip]::after,
+.cell-header-td[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1e2240;
+  color: white;
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 5px 10px;
+  font-size: 11px;
+  font-family: 'Courier New', monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-width: 300px;
+  min-width: 80px;
+  width: max-content;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+  line-height: 1.5;
+}
+
+/* Arrow caret */
+.cell-value-td[data-tooltip]::before,
+.cell-domain-td[data-tooltip]::before,
+.cell-header-td[data-tooltip]::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--border-card);
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+/* Show on hover */
+.cell-value-td[data-tooltip]:hover::after,
+.cell-value-td[data-tooltip]:hover::before,
+.cell-domain-td[data-tooltip]:hover::after,
+.cell-domain-td[data-tooltip]:hover::before,
+.cell-header-td[data-tooltip]:hover::after,
+.cell-header-td[data-tooltip]:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ── 9. Type & Action Badges ─────────────────────────────────────── */
+.badge-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-request {
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--accent-info);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+.badge-response {
+  background: rgba(167, 139, 250, 0.12);
+  color: #a78bfa;
+  border: 1px solid rgba(167, 139, 250, 0.25);
+}
+
+.badge-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.badge-set {
+  background: rgba(16, 212, 142, 0.1);
+  color: var(--accent-success);
+  border: 1px solid rgba(16, 212, 142, 0.2);
+}
+
+.badge-append {
+  background: rgba(255, 179, 71, 0.1);
+  color: var(--accent-warning);
+  border: 1px solid rgba(255, 179, 71, 0.2);
+}
+
+.badge-remove {
+  background: rgba(255, 77, 109, 0.1);
+  color: var(--accent-danger);
+  border: 1px solid rgba(255, 77, 109, 0.2);
+}
+
+/* ── 10. Toggle Switch ──────────────────────────────────────────── */
+.form-check-input.toggle-switch {
+  width: 36px !important;
+  height: 20px !important;
+  background-color: #2d3048 !important;
+  border-color: #3d4060 !important;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 0;
+}
+
+.form-check-input.toggle-switch:checked {
+  background-color: var(--accent-success) !important;
+  border-color: var(--accent-success) !important;
+  box-shadow: 0 0 8px rgba(16, 212, 142, 0.4) !important;
+}
+
+.form-check-input.toggle-switch:focus {
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.25) !important;
+}
+
+/* Status text in modal */
+.status-text {
+  font-size: 12px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.status-text.active {
+  color: var(--accent-success);
+}
+
+.status-text.inactive {
+  color: var(--text-muted);
+}
+
+/* ── 11. Manage Buttons ─────────────────────────────────────────── */
+.btn-icon {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-delete {
+  background: rgba(255, 77, 109, 0.1);
+  color: var(--accent-danger);
+  border: 1px solid rgba(255, 77, 109, 0.2);
+}
+
+.btn-delete:hover {
+  background: var(--accent-danger);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.btn-edit {
+  background: rgba(255, 179, 71, 0.1);
+  color: var(--accent-warning);
+  border: 1px solid rgba(255, 179, 71, 0.2);
+  margin-right: 4px;
+}
+
+.btn-edit:hover {
+  background: var(--accent-warning);
+  color: #1a1e35;
+  transform: scale(1.1);
+}
+
+/* ── 12. Modal Styles ───────────────────────────────────────────── */
+.modal-glass {
+  background: var(--bg-modal);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-xl) !important;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7), var(--shadow-glow);
+  color: var(--text-primary);
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.modal-subtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  margin-bottom: 0;
+}
+
+.btn-close-modal {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  line-height: 1;
+  align-self: flex-start;
+}
+
+.btn-close-modal:hover {
+  color: var(--text-primary);
+  background: var(--bg-hover);
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+/* Form fields */
+.field-label {
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 6px;
+}
+
+.field-input {
+  background: var(--bg-base) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 13px !important;
+  transition: var(--transition);
+  padding: 8px 12px !important;
+}
+
+/* Domain input-group: input + "Current Tab" button side by side */
+.domain-input-group {
+  display: flex;
+  gap: 0;
+}
+
+.domain-input-group .field-input {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm) !important;
+  flex: 1;
+}
+
+/* "Current Tab" pick button */
+.btn-pick-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 12px;
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid var(--accent-primary);
+  border-left: none;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  color: var(--accent-primary-h);
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.btn-pick-tab i {
+  font-size: 13px;
+}
+
+.btn-pick-tab:hover {
+  background: var(--accent-primary);
+  color: #fff;
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.45);
+}
+
+.btn-pick-tab:active {
+  transform: scale(0.97);
+}
+
+/* Flash animation when URL is pasted in */
+@keyframes fieldFlash {
+  0% {
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.6);
+  }
+
+  100% {
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0);
+  }
+}
+
+.field-flash {
+  animation: fieldFlash 0.5s ease-out forwards;
+}
+
+.field-input:focus {
+  border-color: var(--accent-primary) !important;
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2) !important;
+  outline: none !important;
+}
+
+.field-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.field-input option {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+.hint-text {
+  color: var(--text-muted) !important;
+  font-size: 10.5px !important;
+}
+
+.hint-text code {
+  background: rgba(108, 99, 255, 0.15);
+  color: var(--accent-primary);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* Modal buttons */
+.btn-cancel {
+  background: var(--bg-hover) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-secondary) !important;
+  border-radius: var(--radius-sm) !important;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 16px;
+}
+
+.btn-cancel:hover {
+  background: #272b44 !important;
+  color: var(--text-primary) !important;
+}
+
+.btn-save {
+  background: var(--gradient-accent) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 7px 20px;
+  border-radius: var(--radius-sm) !important;
+  box-shadow: 0 2px 12px rgba(108, 99, 255, 0.4);
+  transition: var(--transition);
+}
+
+.btn-save:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.55);
+}
+
+/* ── 13. Delete Modal ───────────────────────────────────────────── */
+.delete-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 77, 109, 0.1);
+  border: 1px solid rgba(255, 77, 109, 0.25);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--accent-danger);
+  margin: 0 auto;
+}
+
+.delete-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.delete-desc {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.btn-delete-confirm {
+  background: var(--accent-danger) !important;
+  border: none !important;
+  color: #fff !important;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: var(--radius-sm) !important;
+}
+
+/* ── 14. Toast ──────────────────────────────────────────────────── */
+.toast {
+  background: var(--bg-card) !important;
+  border: 1px solid var(--border-card) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md) !important;
+  font-size: 13px;
+  box-shadow: var(--shadow-card);
+}
+
+.toast.toast-success {
+  border-color: rgba(16, 212, 142, 0.4) !important;
+}
+
+.toast.toast-error {
+  border-color: rgba(255, 77, 109, 0.4) !important;
+}
+
+/* ── 15. Bootstrap overrides ────────────────────────────────────── */
+.form-check-input {
+  cursor: pointer;
+}
+
+/* Table body scrolls; thead stays pinned */
+.table-responsive {
+  overflow-x: auto;
+  overflow-y: auto;
+  /* popup height(600) − header(~66px) − disabled-banner(0) − app-body padding(24px) − toolbar(~42px) − card border(2px) */
+  max-height: calc(600px - 66px - 24px - 42px - 2px);
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary) transparent;
+}
+
+.table-responsive::-webkit-scrollbar {
+  width: 4px;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+  min-height: 32px;
+}
+
+/* Scrollable modal body */
+.modal-body {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+/* Alert inside modal */
+.modal .alert-danger {
+  background: rgba(255, 77, 109, 0.1);
+  border: 1px solid rgba(255, 77, 109, 0.3);
+  color: #ff8fa3;
+  border-radius: var(--radius-sm);
+  font-size: 12px;
+}
+
+/* Animated row fade-in */
+@keyframes rowIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rule-row {
+  animation: rowIn 0.2s ease-out forwards;
+}
+
+/* Inactive row dimming */
+.rule-row.inactive-row {
+  opacity: 0.5;
+}
+
+/* ── 16. Global Power Toggle ────────────────────────────────────── */
+.power-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.btn-power {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-success);
+  background: rgba(16, 212, 142, 0.1);
+  color: var(--accent-success);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 0 12px rgba(16, 212, 142, 0.35);
+  position: relative;
+  outline: none;
+}
+
+/* Pulsing ring when ON */
+.btn-power::before {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid rgba(16, 212, 142, 0.3);
+  animation: powerPulse 2s ease-in-out infinite;
+}
+
+@keyframes powerPulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.btn-power:hover {
+  background: rgba(16, 212, 142, 0.22);
+  box-shadow: 0 0 22px rgba(16, 212, 142, 0.55);
+  transform: scale(1.08);
+}
+
+.btn-power:active {
+  transform: scale(0.95);
+}
+
+/* OFF state */
+.btn-power.power-off {
+  border-color: var(--accent-danger);
+  background: rgba(255, 77, 109, 0.1);
+  color: var(--accent-danger);
+  box-shadow: 0 0 12px rgba(255, 77, 109, 0.3);
+  animation: none;
+}
+
+.btn-power.power-off::before {
+  display: none;
+}
+
+.btn-power.power-off:hover {
+  background: rgba(255, 77, 109, 0.2);
+  box-shadow: 0 0 22px rgba(255, 77, 109, 0.5);
+}
+
+.power-label {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-success);
+  transition: var(--transition);
+}
+
+.power-label.off {
+  color: var(--accent-danger);
+}
+
+/* ── 17. Disabled Banner ────────────────────────────────────────── */
+.disabled-banner {
+  background: linear-gradient(90deg, rgba(255, 77, 109, 0.12) 0%, rgba(255, 77, 109, 0.06) 100%);
+  border-bottom: 1px solid rgba(255, 77, 109, 0.3);
+  color: #ff8fa3;
+  font-size: 12px;
+  padding: 8px 20px;
+  text-align: center;
+  letter-spacing: 0.2px;
+  flex-shrink: 0;
+  animation: slideDown 0.25s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ── 18. Disabled overlay on main content ───────────────────────── */
+body.ext-disabled .app-body {
+  opacity: 0.4;
+  pointer-events: none;
+  user-select: none;
+  filter: grayscale(0.6);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+body.ext-disabled .btn-add {
+  pointer-events: none;
+  opacity: 0.4;
+}

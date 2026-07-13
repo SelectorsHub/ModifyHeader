@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200"><rect width="1200" height="1200" fill="#0E3557"/>
+<rect x="0" y="0" width="1200" height="10" fill="#7CB9F0"/>
+<rect x="430.0" y="190.0" width="337.92" height="337.92" rx="82.5" fill="#7CB9F0"/>
+<path d="M 501.28 456.64 L 501.28 261.28 L 598.96 377.44 L 696.64 261.28 L 696.64 456.64" fill="none" stroke="#FFFFFF" stroke-width="28.38" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="471.58" y1="415.06" x2="692.6800000000001" y2="415.06" stroke="#154D80" stroke-width="17.16" stroke-linecap="round"/>
+<polygon points="688.72,396.58000000000004 730.3,415.06 688.72,433.53999999999996" fill="#154D80"/>
+<text x="600" y="890" font-family="Anton" font-size="96" fill="#FFFFFF" text-anchor="middle">Modify<tspan fill="#7CB9F0">Headers</tspan></text>
+<text x="600" y="960" font-family="Inter" font-size="34" fill="#9FB6C9" text-anchor="middle">Modify request headers, response headers and redirect URLs</text>
+<rect x="210" y="1035" width="170" height="60" rx="30" fill="none" stroke="#154D80" stroke-width="2"/>
+<text x="295" y="1074" font-family="Inter" font-size="26" fill="#7CB9F0" text-anchor="middle">Add</text>
+<rect x="410" y="1035" width="170" height="60" rx="30" fill="none" stroke="#154D80" stroke-width="2"/>
+<text x="495" y="1074" font-family="Inter" font-size="26" fill="#7CB9F0" text-anchor="middle">Modify</text>
+<rect x="610" y="1035" width="170" height="60" rx="30" fill="none" stroke="#154D80" stroke-width="2"/>
+<text x="695" y="1074" font-family="Inter" font-size="26" fill="#7CB9F0" text-anchor="middle">Remove</text>
+<rect x="810" y="1035" width="170" height="60" rx="30" fill="none" stroke="#154D80" stroke-width="2"/>
+<text x="895" y="1074" font-family="Inter" font-size="26" fill="#7CB9F0" text-anchor="middle">Redirect</text></svg>

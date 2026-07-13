@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="192" viewBox="0 0 660 192"><rect width="660" height="192" fill="#F2F7FC"/><rect x="48.0" y="40.0" width="112.64" height="112.64" rx="27.5" fill="#7CB9F0"/>
+<path d="M 71.76 128.88 L 71.76 63.760000000000005 L 104.32 102.47999999999999 L 136.88 63.760000000000005 L 136.88 128.88" fill="none" stroke="#FFFFFF" stroke-width="9.46" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="61.86" y1="115.02" x2="135.56" y2="115.02" stroke="#154D80" stroke-width="5.72" stroke-linecap="round"/>
+<polygon points="134.24,108.86 148.1,115.02 134.24,121.18" fill="#154D80"/><text x="190" y="128" font-family="Anton" font-size="74" fill="#0E3557" letter-spacing="0.5">Modify<tspan fill="#4A90D9">Headers</tspan></text></svg>
