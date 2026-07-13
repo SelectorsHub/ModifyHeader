@@ -68,7 +68,7 @@ body {
 }
 
 .theme-color {
-  color: #0b6f57;
+  color: #FBBF24;
 }
 
 /* ── 2. Header ─────────────────────────────────────────────────── */
@@ -842,24 +842,59 @@ body {
   overflow-y: auto;
   /* popup height(600) − header(~66px) − disabled-banner(0) − app-body padding(24px) − toolbar(~42px) − card border(2px) */
   max-height: calc(600px - 66px - 24px - 42px - 2px);
+  scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: var(--accent-primary) transparent;
+  scrollbar-color: #2a2a3a transparent;
 }
 
 .table-responsive::-webkit-scrollbar {
-  width: 4px;
+  width: 5px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 99px;
 }
 
 .table-responsive::-webkit-scrollbar-thumb {
-  background: var(--accent-primary);
-  border-radius: 4px;
+  background: linear-gradient(180deg, #3a3a5c 0%, #1a1a2e 100%);
+  border-radius: 99px;
   min-height: 32px;
+  transition: background 0.2s ease;
 }
 
-/* Scrollable modal body */
+.table-responsive::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6c63ff 0%, #2d2b55 100%);
+}
+
+/* Scrollable modal body — smooth, black-themed scrollbar */
 .modal-body {
-  max-height: 420px;
+  max-height: 360px;
   overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #2a2a3a transparent;
+}
+
+.modal-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.modal-body::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 99px;
+}
+
+.modal-body::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3a3a5c 0%, #1a1a2e 100%);
+  border-radius: 99px;
+  min-height: 28px;
+  transition: background 0.2s ease;
+}
+
+.modal-body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #6c63ff 0%, #2d2b55 100%);
 }
 
 /* Alert inside modal */
@@ -1021,4 +1056,8 @@ body.ext-disabled .app-body {
 body.ext-disabled .btn-add {
   pointer-events: none;
   opacity: 0.4;
+}
+
+#add-rule-form {
+  padding: 0 10px;
 }
