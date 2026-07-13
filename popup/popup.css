@@ -1,41 +1,51 @@
 /* ================================================================
    ModifyHeaders Pro — popup.css
-   Premium dark-glass theme with vibrant accents
+   Amber-on-espresso theme, derived from the extension logo
+   (amber #FBBF24 → #F59E0B mark, deep-teal #0B6E57 counter-arrow)
    ================================================================ */
 
 /* ── 0. Design Tokens ─────────────────────────────────────────── */
 :root {
-  --bg-base: #0d0f18;
-  --bg-surface: #13162a;
-  --bg-card: #181c30;
-  --bg-hover: #1e2238;
-  --bg-modal: #1a1e35;
+  /* Warm neutral surfaces — a dark espresso stack, not blue-black */
+  --bg-base: #100e0a;
+  --bg-surface: #17140f;
+  --bg-card: #1b1712;
+  --bg-hover: #241f17;
+  --bg-modal: #1b1712;
 
-  --accent-primary: #6c63ff;
-  --accent-primary-h: #8a83ff;
-  --accent-success: #10d48e;
-  --accent-danger: #ff4d6d;
-  --accent-warning: #ffb347;
-  --accent-info: #38bdf8;
+  /* Accents — straight from the logo */
+  --accent-primary: #FBBF24;
+  --accent-primary-d: #F59E0B;
+  --accent-primary-h: #FCD34D;
+  --accent-success: #14b88a;   /* lightened logo teal #0B6E57 */
+  --accent-teal: #2dd4bf;
+  --accent-danger: #f0616d;
+  --accent-warning: #F59E0B;
+  --accent-info: #2dd4bf;
 
-  --text-primary: #6a6c71;
-  --text-secondary: #9ba3c7;
-  --text-muted: #5c6485;
+  /* Ink on amber — never white, always the dark of the logo cutout */
+  --on-accent: #1a1405;
 
-  --border-subtle: rgba(108, 99, 255, 0.15);
-  --border-card: rgba(108, 99, 255, 0.2);
+  --text-primary: #f2ece0;
+  --text-secondary: #b3a894;
+  --text-muted: #7a7264;
 
-  /* --gradient-header: linear-gradient(135deg, #1a1e3a 0%, #0e1024 100%); */
-  --gradient-header: linear-gradient(317deg, #000000 0%, #202884 100%);
-  --gradient-accent: linear-gradient(135deg, #6c63ff 0%, #a78bfa 100%);
-  --gradient-success: linear-gradient(135deg, #10d48e 0%, #059669 100%);
-  --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 20px rgba(108, 99, 255, 0.2);
+  --border-subtle: rgba(251, 191, 36, 0.12);
+  --border-card: rgba(251, 191, 36, 0.18);
+
+  --gradient-header: linear-gradient(317deg, #0b0906 0%, #3b2708 100%);
+  --gradient-accent: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+  --gradient-success: linear-gradient(135deg, #14b88a 0%, #0B6E57 100%);
+  --shadow-card: 0 4px 32px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 0 20px rgba(251, 191, 36, 0.18);
 
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-xl: 20px;
+
+  /* One control height for every header control */
+  --control-h: 34px;
 
   --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -83,7 +93,7 @@ body {
 .header-icon {
   width: 38px;
   height: 38px;
-  background: var(--gradient-accent);
+  background: transparent;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -121,9 +131,9 @@ body {
 .rule-count-badge {
   display: inline-flex;
   align-items: center;
-  background: rgba(16, 212, 142, 0.12);
+  background: rgba(20, 184, 138, 0.12);
   color: var(--accent-success);
-  border: 1px solid rgba(16, 212, 142, 0.25);
+  border: 1px solid rgba(20, 184, 138, 0.25);
   border-radius: 20px;
   padding: 3px 10px;
   font-size: 11px;
@@ -134,18 +144,18 @@ body {
 .btn-add {
   background: var(--gradient-accent) !important;
   border: none !important;
-  color: #fff !important;
+  color: var(--on-accent) !important;
   font-weight: 600;
   font-size: 12px;
   padding: 6px 14px;
   border-radius: var(--radius-sm) !important;
   transition: var(--transition);
-  box-shadow: 0 2px 12px rgba(108, 99, 255, 0.35);
+  box-shadow: 0 2px 12px rgba(251, 191, 36, 0.35);
 }
 
 .btn-add:hover {
   transform: translateY(-1px);
-  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.5);
+  box-shadow: 0 4px 18px rgba(251, 191, 36, 0.5);
   filter: brightness(1.08);
 }
 
@@ -169,7 +179,7 @@ body {
 .empty-icon {
   width: 64px;
   height: 64px;
-  background: rgba(108, 99, 255, 0.1);
+  background: rgba(251, 191, 36, 0.1);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-xl);
   display: flex;
@@ -239,7 +249,7 @@ body {
 
 .search-input:focus {
   border-color: var(--accent-primary) !important;
-  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.2) !important;
   outline: none !important;
 }
 
@@ -259,7 +269,7 @@ body {
 
 .filter-select:focus {
   border-color: var(--accent-primary) !important;
-  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.2) !important;
   outline: none !important;
 }
 
@@ -310,8 +320,7 @@ body {
 }
 
 .rules-table thead th {
-  /* color: var(--text-muted); */
-  color: white;
+  color: var(--text-muted);
   font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
@@ -414,7 +423,7 @@ body {
   bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: #1e2240;
+  background: var(--bg-hover);
   color: white;
   border: 1px solid var(--border-card);
   border-radius: var(--radius-sm);
@@ -478,15 +487,15 @@ body {
 }
 
 .badge-request {
-  background: rgba(56, 189, 248, 0.12);
+  background: rgba(45, 212, 191, 0.12);
   color: var(--accent-info);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  border: 1px solid rgba(45, 212, 191, 0.25);
 }
 
 .badge-response {
-  background: rgba(167, 139, 250, 0.12);
-  color: #a78bfa;
-  border: 1px solid rgba(167, 139, 250, 0.25);
+  background: rgba(45, 212, 191, 0.12);
+  color: #2dd4bf;
+  border: 1px solid rgba(45, 212, 191, 0.25);
 }
 
 .badge-action {
@@ -500,29 +509,29 @@ body {
 }
 
 .badge-set {
-  background: rgba(16, 212, 142, 0.1);
+  background: rgba(20, 184, 138, 0.1);
   color: var(--accent-success);
-  border: 1px solid rgba(16, 212, 142, 0.2);
+  border: 1px solid rgba(20, 184, 138, 0.2);
 }
 
 .badge-append {
-  background: rgba(255, 179, 71, 0.1);
+  background: rgba(245, 158, 11, 0.1);
   color: var(--accent-warning);
-  border: 1px solid rgba(255, 179, 71, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .badge-remove {
-  background: rgba(255, 77, 109, 0.1);
+  background: rgba(240, 97, 109, 0.1);
   color: var(--accent-danger);
-  border: 1px solid rgba(255, 77, 109, 0.2);
+  border: 1px solid rgba(240, 97, 109, 0.2);
 }
 
 /* ── 10. Toggle Switch ──────────────────────────────────────────── */
 .form-check-input.toggle-switch {
   width: 36px !important;
   height: 20px !important;
-  background-color: #2d3048 !important;
-  border-color: #3d4060 !important;
+  background-color: #38312a !important;
+  border-color: #4a4034 !important;
   cursor: pointer;
   transition: var(--transition);
   margin-top: 0;
@@ -531,11 +540,11 @@ body {
 .form-check-input.toggle-switch:checked {
   background-color: var(--accent-success) !important;
   border-color: var(--accent-success) !important;
-  box-shadow: 0 0 8px rgba(16, 212, 142, 0.4) !important;
+  box-shadow: 0 0 8px rgba(20, 184, 138, 0.4) !important;
 }
 
 .form-check-input.toggle-switch:focus {
-  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.25) !important;
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.25) !important;
 }
 
 /* Status text in modal */
@@ -569,9 +578,9 @@ body {
 }
 
 .btn-delete {
-  background: rgba(255, 77, 109, 0.1);
+  background: rgba(240, 97, 109, 0.1);
   color: var(--accent-danger);
-  border: 1px solid rgba(255, 77, 109, 0.2);
+  border: 1px solid rgba(240, 97, 109, 0.2);
 }
 
 .btn-delete:hover {
@@ -581,15 +590,15 @@ body {
 }
 
 .btn-edit {
-  background: rgba(255, 179, 71, 0.1);
+  background: rgba(245, 158, 11, 0.1);
   color: var(--accent-warning);
-  border: 1px solid rgba(255, 179, 71, 0.2);
+  border: 1px solid rgba(245, 158, 11, 0.2);
   margin-right: 4px;
 }
 
 .btn-edit:hover {
   background: var(--accent-warning);
-  color: #1a1e35;
+  color: var(--on-accent);
   transform: scale(1.1);
 }
 
@@ -675,7 +684,7 @@ body {
   align-items: center;
   gap: 5px;
   padding: 0 12px;
-  background: rgba(108, 99, 255, 0.15);
+  background: rgba(251, 191, 36, 0.15);
   border: 1px solid var(--accent-primary);
   border-left: none;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
@@ -694,8 +703,8 @@ body {
 
 .btn-pick-tab:hover {
   background: var(--accent-primary);
-  color: #fff;
-  box-shadow: 0 0 12px rgba(108, 99, 255, 0.45);
+  color: var(--on-accent);
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.45);
 }
 
 .btn-pick-tab:active {
@@ -705,11 +714,11 @@ body {
 /* Flash animation when URL is pasted in */
 @keyframes fieldFlash {
   0% {
-    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.6);
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.6);
   }
 
   100% {
-    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0);
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0);
   }
 }
 
@@ -719,7 +728,7 @@ body {
 
 .field-input:focus {
   border-color: var(--accent-primary) !important;
-  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2) !important;
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2) !important;
   outline: none !important;
 }
 
@@ -738,7 +747,7 @@ body {
 }
 
 .hint-text code {
-  background: rgba(108, 99, 255, 0.15);
+  background: rgba(251, 191, 36, 0.15);
   color: var(--accent-primary);
   padding: 1px 5px;
   border-radius: 3px;
@@ -756,33 +765,33 @@ body {
 }
 
 .btn-cancel:hover {
-  background: #272b44 !important;
+  background: #2c2519 !important;
   color: var(--text-primary) !important;
 }
 
 .btn-save {
   background: var(--gradient-accent) !important;
   border: none !important;
-  color: #fff !important;
+  color: var(--on-accent) !important;
   font-weight: 600;
   font-size: 13px;
   padding: 7px 20px;
   border-radius: var(--radius-sm) !important;
-  box-shadow: 0 2px 12px rgba(108, 99, 255, 0.4);
+  box-shadow: 0 2px 12px rgba(251, 191, 36, 0.4);
   transition: var(--transition);
 }
 
 .btn-save:hover {
   filter: brightness(1.1);
-  box-shadow: 0 4px 18px rgba(108, 99, 255, 0.55);
+  box-shadow: 0 4px 18px rgba(251, 191, 36, 0.55);
 }
 
 /* ── 13. Delete Modal ───────────────────────────────────────────── */
 .delete-icon {
   width: 56px;
   height: 56px;
-  background: rgba(255, 77, 109, 0.1);
-  border: 1px solid rgba(255, 77, 109, 0.25);
+  background: rgba(240, 97, 109, 0.1);
+  border: 1px solid rgba(240, 97, 109, 0.25);
   border-radius: var(--radius-xl);
   display: flex;
   align-items: center;
@@ -824,11 +833,11 @@ body {
 }
 
 .toast.toast-success {
-  border-color: rgba(16, 212, 142, 0.4) !important;
+  border-color: rgba(20, 184, 138, 0.4) !important;
 }
 
 .toast.toast-error {
-  border-color: rgba(255, 77, 109, 0.4) !important;
+  border-color: rgba(240, 97, 109, 0.4) !important;
 }
 
 /* ── 15. Bootstrap overrides ────────────────────────────────────── */
@@ -844,7 +853,7 @@ body {
   max-height: calc(600px - 66px - 24px - 42px - 2px);
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #2a2a3a transparent;
+  scrollbar-color: #3a332a transparent;
 }
 
 .table-responsive::-webkit-scrollbar {
@@ -857,14 +866,14 @@ body {
 }
 
 .table-responsive::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #3a3a5c 0%, #1a1a2e 100%);
+  background: linear-gradient(180deg, #4a4034 0%, #1b1712 100%);
   border-radius: 99px;
   min-height: 32px;
   transition: background 0.2s ease;
 }
 
 .table-responsive::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #6c63ff 0%, #2d2b55 100%);
+  background: linear-gradient(180deg, #FBBF24 0%, #5c4a1c 100%);
 }
 
 /* Scrollable modal body — smooth, black-themed scrollbar */
@@ -874,7 +883,7 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #2a2a3a transparent;
+  scrollbar-color: #3a332a transparent;
 }
 
 .modal-body::-webkit-scrollbar {
@@ -887,21 +896,21 @@ body {
 }
 
 .modal-body::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #3a3a5c 0%, #1a1a2e 100%);
+  background: linear-gradient(180deg, #4a4034 0%, #1b1712 100%);
   border-radius: 99px;
   min-height: 28px;
   transition: background 0.2s ease;
 }
 
 .modal-body::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #6c63ff 0%, #2d2b55 100%);
+  background: linear-gradient(180deg, #FBBF24 0%, #5c4a1c 100%);
 }
 
 /* Alert inside modal */
 .modal .alert-danger {
-  background: rgba(255, 77, 109, 0.1);
-  border: 1px solid rgba(255, 77, 109, 0.3);
-  color: #ff8fa3;
+  background: rgba(240, 97, 109, 0.1);
+  border: 1px solid rgba(240, 97, 109, 0.3);
+  color: #f6949c;
   border-radius: var(--radius-sm);
   font-size: 12px;
 }
@@ -941,7 +950,7 @@ body {
   height: 38px;
   border-radius: 50%;
   border: 2px solid var(--accent-success);
-  background: rgba(16, 212, 142, 0.1);
+  background: rgba(20, 184, 138, 0.1);
   color: var(--accent-success);
   font-size: 18px;
   display: flex;
@@ -949,7 +958,7 @@ body {
   justify-content: center;
   cursor: pointer;
   transition: var(--transition);
-  box-shadow: 0 0 12px rgba(16, 212, 142, 0.35);
+  box-shadow: 0 0 12px rgba(20, 184, 138, 0.35);
   position: relative;
   outline: none;
 }
@@ -960,7 +969,7 @@ body {
   position: absolute;
   inset: -5px;
   border-radius: 50%;
-  border: 2px solid rgba(16, 212, 142, 0.3);
+  border: 2px solid rgba(20, 184, 138, 0.3);
   animation: powerPulse 2s ease-in-out infinite;
 }
 
@@ -979,8 +988,8 @@ body {
 }
 
 .btn-power:hover {
-  background: rgba(16, 212, 142, 0.22);
-  box-shadow: 0 0 22px rgba(16, 212, 142, 0.55);
+  background: rgba(20, 184, 138, 0.22);
+  box-shadow: 0 0 22px rgba(20, 184, 138, 0.55);
   transform: scale(1.08);
 }
 
@@ -991,9 +1000,9 @@ body {
 /* OFF state */
 .btn-power.power-off {
   border-color: var(--accent-danger);
-  background: rgba(255, 77, 109, 0.1);
+  background: rgba(240, 97, 109, 0.1);
   color: var(--accent-danger);
-  box-shadow: 0 0 12px rgba(255, 77, 109, 0.3);
+  box-shadow: 0 0 12px rgba(240, 97, 109, 0.3);
   animation: none;
 }
 
@@ -1002,8 +1011,8 @@ body {
 }
 
 .btn-power.power-off:hover {
-  background: rgba(255, 77, 109, 0.2);
-  box-shadow: 0 0 22px rgba(255, 77, 109, 0.5);
+  background: rgba(240, 97, 109, 0.2);
+  box-shadow: 0 0 22px rgba(240, 97, 109, 0.5);
 }
 
 .power-label {
@@ -1021,9 +1030,9 @@ body {
 
 /* ── 17. Disabled Banner ────────────────────────────────────────── */
 .disabled-banner {
-  background: linear-gradient(90deg, rgba(255, 77, 109, 0.12) 0%, rgba(255, 77, 109, 0.06) 100%);
-  border-bottom: 1px solid rgba(255, 77, 109, 0.3);
-  color: #ff8fa3;
+  background: linear-gradient(90deg, rgba(240, 97, 109, 0.12) 0%, rgba(240, 97, 109, 0.06) 100%);
+  border-bottom: 1px solid rgba(240, 97, 109, 0.3);
+  color: #f6949c;
   font-size: 12px;
   padding: 8px 20px;
   text-align: center;
@@ -1060,4 +1069,225 @@ body.ext-disabled .btn-add {
 
 #add-rule-form {
   padding: 0 10px;
+}
+/* ================================================================
+   19. Header control bar — one height, one rhythm
+   Add Rule · Active count · Power all sit on a 34px baseline so the
+   right side of the header reads as a single row of controls.
+   ================================================================ */
+.app-header .d-flex.align-items-center.gap-2 {
+  align-items: center !important;
+}
+
+.btn-add,
+.rule-count-badge,
+.btn-power {
+  height: var(--control-h);
+  min-height: var(--control-h);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm) !important;
+  font-size: 12px;
+  line-height: 1;
+  padding: 0 14px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.btn-add {
+  font-weight: 700;
+  letter-spacing: 0.1px;
+  box-shadow: 0 2px 12px rgba(251, 191, 36, 0.28);
+}
+
+.btn-add:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(251, 191, 36, 0.42);
+  filter: brightness(1.06);
+}
+
+/* Active count — same box as the button, quieter fill */
+.rule-count-badge {
+  gap: 4px;
+  font-weight: 600;
+  background: rgba(20, 184, 138, 0.12);
+  color: var(--accent-success);
+  border: 1px solid rgba(20, 184, 138, 0.28);
+}
+
+/* Power — an inline pill (icon + label), not a stacked circle */
+.power-wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+}
+
+.btn-power {
+  gap: 6px;
+  width: auto;
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid rgba(20, 184, 138, 0.35);
+  background: rgba(20, 184, 138, 0.12);
+  color: var(--accent-success);
+  font-size: 14px;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Kill the stacked pulsing ring — it broke the header baseline */
+.btn-power::before {
+  display: none;
+}
+
+.btn-power:hover {
+  background: rgba(20, 184, 138, 0.2);
+  box-shadow: 0 0 14px rgba(20, 184, 138, 0.3);
+  transform: none;
+}
+
+.btn-power:active {
+  transform: scale(0.97);
+}
+
+.btn-power.power-off {
+  border-color: rgba(240, 97, 109, 0.4);
+  background: rgba(240, 97, 109, 0.12);
+  color: var(--accent-danger);
+  box-shadow: none;
+}
+
+.btn-power.power-off:hover {
+  background: rgba(240, 97, 109, 0.2);
+  box-shadow: 0 0 14px rgba(240, 97, 109, 0.3);
+}
+
+/* Label now lives inside the pill */
+.power-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: inherit;
+}
+
+.power-label.off {
+  color: inherit;
+}
+
+/* Header type: title white, "Headers" in logo amber */
+.app-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.2px;
+}
+
+.theme-color {
+  color: var(--accent-primary);
+}
+
+/* Paused banner reads amber (a warning), not red (an error) */
+.disabled-banner {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.14) 0%, rgba(245, 158, 11, 0.05) 100%);
+  border-bottom: 1px solid rgba(245, 158, 11, 0.32);
+  color: var(--accent-primary);
+}
+
+/* Badges: request = teal, response = amber — the two arrows of the mark */
+.badge-request {
+  background: rgba(45, 212, 191, 0.12);
+  color: var(--accent-teal);
+  border: 1px solid rgba(45, 212, 191, 0.28);
+}
+
+.badge-response {
+  background: rgba(251, 191, 36, 0.12);
+  color: var(--accent-primary);
+  border: 1px solid rgba(251, 191, 36, 0.28);
+}
+
+.cell-domain {
+  color: var(--text-secondary);
+}
+
+.cell-header-name {
+  color: var(--accent-primary-h);
+}
+
+/* ── 20. Bootstrap utility colours, re-pointed at the theme ────── */
+.text-primary { color: var(--accent-primary) !important; }
+.text-warning { color: var(--accent-warning) !important; }
+.text-success { color: var(--accent-success) !important; }
+.text-danger  { color: var(--accent-danger) !important; }
+
+.empty-icon {
+  background: rgba(251, 191, 36, 0.08);
+  color: var(--accent-primary);
+}
+
+.delete-icon {
+  background: rgba(240, 97, 109, 0.1);
+  border-color: rgba(240, 97, 109, 0.25);
+  color: var(--accent-danger);
+}
+
+.btn-delete-confirm {
+  background: var(--accent-danger) !important;
+  color: #ffffff !important;
+}
+
+/* Rule toggle: on = logo teal */
+.form-check-input.toggle-switch:checked {
+  background-color: var(--accent-success) !important;
+  border-color: var(--accent-success) !important;
+  box-shadow: 0 0 8px rgba(20, 184, 138, 0.35) !important;
+}
+
+.form-check-input.toggle-switch:focus {
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.25) !important;
+}
+
+/* ── 21. Bootstrap table defaults ──────────────────────────────────
+   Bootstrap 5.3 paints every cell with --bs-table-bg (white by default),
+   which punched a white slab through the dark card. Re-point the table
+   variables at the theme so the cells inherit the card surface.
+   ================================================================ */
+.rules-table {
+  --bs-table-bg: transparent;
+  --bs-table-color: var(--text-secondary);
+  --bs-table-border-color: var(--border-subtle);
+  --bs-table-accent-bg: transparent;
+  --bs-table-striped-bg: transparent;
+  --bs-table-striped-color: var(--text-secondary);
+  --bs-table-hover-bg: var(--bg-hover);
+  --bs-table-hover-color: var(--text-primary);
+  background-color: transparent;
+  color: var(--text-secondary);
+}
+
+.rules-table>:not(caption)>*>* {
+  background-color: transparent;
+  box-shadow: none;
+  color: inherit;
+  border-bottom-color: var(--border-subtle);
+}
+
+.rules-table thead th {
+  background: var(--bg-surface);
+  color: var(--text-muted);
+}
+
+.rules-table tbody tr:nth-child(even)>* {
+  background-color: rgba(255, 255, 255, 0.018);
+}
+
+.rules-table tbody tr:hover>* {
+  background-color: var(--bg-hover);
+}
+
+/* Status column was clipping its own label ("STATU…") — give it room */
+.rules-table thead th:nth-child(1),
+.rules-table tbody td:nth-child(1) {
+  width: 58px;
+  text-align: center;
 }
