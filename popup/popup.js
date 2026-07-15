@@ -456,37 +456,43 @@ document.getElementById('addRuleModal').addEventListener('hidden.bs.modal', rese
    Event: "Current Tab" button → fill domain from active tab URL
    ================================================================ */
 
-$('#btn-pick-tab').on('click', async function () {
+/**
+ * Build a regex URL pattern from the active tab's URL.
+ * e.g. https://www.example.com/page → .*www\.example\.com.*
+ * Internal chrome:// pages fall back to the raw URL.
+ * @returns {Promise<string|null>} pattern, or null if no active tab URL.
+ */
+async function buildPatternFromActiveTab() {
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (!tab || !tab.url) return null;
+
   try {
-    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-    if (!tab || !tab.url) return;
-
-    // Build a regex pattern from the tab's origin (scheme + hostname)
-    // e.g. https://www.example.com/page → .*\.example\.com.*
-    let pattern = '';
-    try {
-      const url = new URL(tab.url);
-      if (url.protocol === 'chrome:' || url.protocol === 'chrome-extension:') {
-        // Internal Chrome pages — just use the full URL as-is
-        pattern = tab.url;
-      } else {
-        // Escape the hostname for use as a regex and wrap it
-        const escapedHost = url.hostname.replace(/\./g, '\\.');
-        pattern = `.*${escapedHost}.*`;
-      }
-    } catch {
-      pattern = tab.url;
+    const url = new URL(tab.url);
+    if (url.protocol === 'chrome:' || url.protocol === 'chrome-extension:') {
+      return tab.url;
     }
+    const escapedHost = url.hostname.replace(/\./g, '\\.');
+    return `.*${escapedHost}.*`;
+  } catch {
+    return tab.url;
+  }
+}
 
-    const $input = $('#input-domain');
+/** Fill a domain input with the active tab's pattern + flash confirm. */
+async function fillDomainFromTab($input) {
+  try {
+    const pattern = await buildPatternFromActiveTab();
+    if (pattern === null) return;
     $input.val(pattern).removeClass('is-invalid');
-
-    // Trigger a quick visual flash to confirm
     $input.addClass('field-flash');
     setTimeout(() => $input.removeClass('field-flash'), 600);
   } catch (err) {
     console.warn('[ModifyHeaders] Could not read active tab:', err.message);
   }
+}
+
+$('#btn-pick-tab').on('click', function () {
+  fillDomainFromTab($('#input-domain'));
 });
 
 /* ================================================================
@@ -523,6 +529,173 @@ $('#btn-power').on('click', async function () {
     newState ? 'Extension enabled — rules are active.' : 'Extension paused — all rules suspended.',
     newState ? 'success' : 'error'
   );
+});
+
+/* ================================================================
+   Import: request-level header import
+   ================================================================ */
+
+// RFC 7230 header-name token: no spaces or separators allowed.
+const HEADER_NAME_RE = /^[!#$%&'*+\-.^_`|~0-9A-Za-z]+$/;
+
+/**
+ * Parse a block of raw request headers into {name, value} pairs.
+ *
+ * Tolerant of the formats developers actually paste — DevTools "raw"
+ * blocks, .http files, curl -H lines. It skips:
+ *   • blank lines
+ *   • comment lines (# or //)
+ *   • HTTP/2 pseudo-headers (:authority, :method, …)
+ *   • the request/status line (no colon, or an invalid header name)
+ *
+ * Duplicate names within the block are collapsed (last one wins,
+ * case-insensitive) so the preview count matches what gets created.
+ *
+ * @param {string} raw
+ * @returns {Array<{name: string, value: string}>}
+ */
+function parseRequestHeaders(raw) {
+  const seen = new Map(); // lowercased name → {name, value}
+
+  (raw || '').split(/\r?\n/).forEach((line) => {
+    const trimmed = line.trim();
+    if (!trimmed) return;
+    if (trimmed.startsWith('#') || trimmed.startsWith('//')) return;
+    if (trimmed.startsWith(':')) return; // pseudo-header
+
+    // Drop an optional leading "-H " / "--header " from copied curl lines.
+    const cleaned = trimmed.replace(/^(-H|--header)\s+/i, '').replace(/^['"]|['"]$/g, '');
+
+    const idx = cleaned.indexOf(':');
+    if (idx === -1) return; // request line / garbage
+
+    const name = cleaned.slice(0, idx).trim();
+    const value = cleaned.slice(idx + 1).trim();
+
+    if (!name || !HEADER_NAME_RE.test(name)) return;
+
+    seen.set(name.toLowerCase(), { name, value });
+  });
+
+  return [...seen.values()];
+}
+
+/** Live-update the header count chip as the user types/pastes. */
+function updateImportCount() {
+  const headers = parseRequestHeaders($('#import-textarea').val());
+  const $chip = $('#import-count-chip');
+  const n = headers.length;
+
+  $chip
+    .text(`${n} header${n === 1 ? '' : 's'}`)
+    .removeClass('d-none')
+    .toggleClass('chip-empty', n === 0);
+}
+
+$('#import-textarea').on('input', updateImportCount);
+
+$('#btn-import-pick-tab').on('click', function () {
+  fillDomainFromTab($('#import-domain'));
+});
+
+$('#import-active').on('change', function () {
+  const isActive = $(this).is(':checked');
+  $('#import-status-label')
+    .text(isActive ? 'Active' : 'Inactive')
+    .removeClass('active inactive')
+    .addClass(isActive ? 'active' : 'inactive');
+});
+
+function showImportError(msg) {
+  $('#import-error-msg').text(msg);
+  $('#import-error').removeClass('d-none');
+}
+
+function resetImportForm() {
+  $('#import-form')[0].reset();
+  $('#import-error').addClass('d-none');
+  $('#import-domain').removeClass('is-invalid');
+  $('#import-count-chip').addClass('d-none');
+  $('#import-active').prop('checked', true);
+  $('#import-status-label').text('Active').removeClass('inactive').addClass('active');
+}
+
+document.getElementById('importModal').addEventListener('hidden.bs.modal', resetImportForm);
+
+$('#btn-run-import').on('click', async function () {
+  $('#import-error').addClass('d-none');
+  $('#import-domain').removeClass('is-invalid');
+
+  const headers = parseRequestHeaders($('#import-textarea').val());
+  const domain  = $('#import-domain').val().trim();
+  const action  = $('#import-action').val();
+  const active  = $('#import-active').is(':checked');
+
+  if (headers.length === 0) {
+    showImportError('No valid headers found. Use one “Header-Name: value” per line.');
+    return;
+  }
+
+  // Validate the domain regex (same rule as the Add form).
+  if (domain) {
+    try {
+      new RegExp(domain);
+    } catch {
+      $('#import-domain').addClass('is-invalid');
+      showImportError('Invalid regex pattern in Domain field.');
+      return;
+    }
+  }
+
+  const rules = await loadRules();
+  let added = 0;
+  let updated = 0;
+
+  headers.forEach(({ name, value }) => {
+    // Merge, don't duplicate: same request header + same domain updates in place.
+    const idx = rules.findIndex(
+      (r) =>
+        r.type === 'request' &&
+        (r.domain || '') === domain &&
+        r.headerName.toLowerCase() === name.toLowerCase()
+    );
+
+    if (idx !== -1) {
+      rules[idx] = {
+        ...rules[idx],
+        headerValue: value,
+        action,
+        active,
+        updatedAt: Date.now(),
+      };
+      updated++;
+    } else {
+      rules.push({
+        id: generateId(),
+        domain,
+        headerName: name,
+        headerValue: value,
+        type: 'request',
+        action,
+        active,
+        createdAt: Date.now(),
+      });
+      added++;
+    }
+  });
+
+  await saveRules(rules);
+  await syncWithBackground();
+
+  const modal = bootstrap.Modal.getInstance(document.getElementById('importModal'));
+  modal.hide();
+
+  renderRules(rules, $('#search-input').val(), $('#filter-type').val());
+
+  const parts = [];
+  if (added) parts.push(`${added} new`);
+  if (updated) parts.push(`${updated} updated`);
+  showToast(`Imported ${headers.length} request header${headers.length === 1 ? '' : 's'} (${parts.join(', ')}).`);
 });
 
 /* ================================================================

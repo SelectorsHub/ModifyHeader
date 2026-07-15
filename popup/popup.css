@@ -1291,3 +1291,58 @@ body.ext-disabled .btn-add {
   width: 58px;
   text-align: center;
 }
+
+/* ── Import feature ───────────────────────────────────────────── */
+.btn-import {
+  background: transparent !important;
+  border: 1px solid var(--accent-primary) !important;
+  color: var(--accent-primary) !important;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm) !important;
+  transition: var(--transition);
+}
+
+.btn-import:hover {
+  background: rgba(251, 191, 36, 0.12) !important;
+  transform: translateY(-1px);
+}
+
+.btn-import:active {
+  transform: translateY(0);
+}
+
+body.ext-disabled .btn-import {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.import-textarea {
+  font-family: 'Courier New', monospace !important;
+  font-size: 12.5px !important;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 120px;
+  white-space: pre;
+  overflow-x: auto;
+}
+
+.import-count-chip {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 9px;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  color: var(--on-accent);
+  background: var(--gradient-accent);
+  border-radius: var(--radius-xl);
+  vertical-align: middle;
+}
+
+.import-count-chip.chip-empty {
+  color: var(--text-muted);
+  background: var(--bg-base);
+  border: 1px solid var(--border-subtle);
+}
