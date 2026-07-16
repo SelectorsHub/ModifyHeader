@@ -133,6 +133,29 @@
     </div>
   </main>
 
+  <!-- ─── Footer ───────────────────────────────────────────────── -->
+  <footer class="app-footer d-flex align-items-center justify-content-between px-3">
+    <span class="footer-credit">
+      Offered by
+      <a href="https://selectorshub.com" target="_blank" rel="noopener" class="footer-link">SelectorsHub</a>
+    </span>
+    <div class="footer-actions d-flex align-items-center gap-2">
+      <button id="btn-rate" class="footer-btn footer-rate" aria-label="Rate us"
+        data-tooltip="Pls Rate us &amp; this button disappears forever after you review.">
+        <i class="bi bi-star-fill me-1"></i>Rate us
+      </button>
+      <button id="btn-share" class="footer-btn" aria-label="Share Modify Header"
+        data-tooltip="Share Modify Header"
+        data-bs-toggle="modal" data-bs-target="#shareModal">
+        <i class="bi bi-share-fill me-1"></i>Share
+      </button>
+      <button id="btn-theme" class="footer-btn footer-theme" aria-label="Toggle color theme"
+        data-tooltip="Switch to dark theme">
+        <i class="bi bi-sun-fill"></i>
+      </button>
+    </div>
+  </footer>
+
   <!-- ─── Add Rule Modal ───────────────────────────────────────── -->
   <div class="modal fade" id="addRuleModal" tabindex="-1" aria-labelledby="addRuleModalLabel" aria-modal="true"
     role="dialog">
@@ -371,6 +394,37 @@
             <button type="button" id="btn-confirm-delete" class="btn btn-danger btn-delete-confirm">
               <i class="bi bi-trash3 me-1"></i>Delete
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── Share Modal ──────────────────────────────────────────── -->
+  <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-modal="true"
+    role="dialog">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content modal-glass">
+        <div class="modal-body py-4">
+          <div class="d-flex justify-content-between align-items-start mb-2">
+            <h3 class="modal-title" id="shareModalLabel">Share Modify Header</h3>
+            <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Close">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <p class="modal-subtitle mb-3">Help other developers find it.</p>
+          <div class="share-grid">
+            <button class="share-btn" data-share="twitter"><i class="bi bi-twitter-x"></i><span>X</span></button>
+            <button class="share-btn" data-share="linkedin"><i class="bi bi-linkedin"></i><span>LinkedIn</span></button>
+            <button class="share-btn" data-share="facebook"><i class="bi bi-facebook"></i><span>Facebook</span></button>
+            <button class="share-btn" data-share="whatsapp"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></button>
+            <button class="share-btn" data-share="reddit"><i class="bi bi-reddit"></i><span>Reddit</span></button>
+            <button class="share-btn" data-share="telegram"><i class="bi bi-telegram"></i><span>Telegram</span></button>
+          </div>
+          <div class="share-copy mt-3">
+            <input type="text" id="share-link" class="form-control form-control-sm" readonly
+              value="https://chromewebstore.google.com/detail/modify-header/odpbebncejmlkaamjaoojkcfffbinlko" />
+            <button id="btn-copy-link" class="btn btn-add btn-copy-link"><i class="bi bi-clipboard me-1"></i>Copy</button>
           </div>
         </div>
       </div>

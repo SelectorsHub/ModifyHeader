@@ -63,6 +63,20 @@ function applyPowerState(enabled) {
   }
 }
 
+/**
+ * Apply the color theme to the popup.
+ * @param {'light'|'dark'} theme
+ */
+function applyTheme(theme) {
+  const isLight = theme === 'light';
+  $('body').toggleClass('theme-light', isLight);
+
+  const $icon = $('#btn-theme i');
+  $icon.removeClass('bi-moon-stars-fill bi-sun-fill')
+       .addClass(isLight ? 'bi-sun-fill' : 'bi-moon-stars-fill');
+  $('#btn-theme').attr('data-tooltip', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+}
+
 /* ================================================================
    Storage helpers
    ================================================================ */
@@ -514,6 +528,77 @@ $('#filter-type').on('change', async function () {
 });
 
 /* ================================================================
+   Event: Theme toggle
+   ================================================================ */
+
+$('#btn-theme').on('click', async function () {
+  const { theme = 'light' } = await chrome.storage.local.get('theme');
+  const newTheme = theme === 'light' ? 'dark' : 'light';
+
+  await chrome.storage.local.set({ theme: newTheme });
+  applyTheme(newTheme);
+});
+
+/* ================================================================
+   Footer: Rate us & Share
+   ================================================================ */
+
+const STORE_URL  = 'https://chromewebstore.google.com/detail/modify-header/odpbebncejmlkaamjaoojkcfffbinlko';
+const REVIEW_URL = STORE_URL + '/reviews';
+const SHARE_TEXT = 'Modify Header — a clean browser extension to manage HTTP request & response header rules. Check it out:';
+
+/** Open a URL in a new browser tab. */
+function openTab(url) {
+  if (chrome.tabs && chrome.tabs.create) {
+    chrome.tabs.create({ url });
+  } else {
+    window.open(url, '_blank', 'noopener');
+  }
+}
+
+/** Hide the Rate-us button permanently. */
+function hideRateButton() {
+  $('#btn-rate').addClass('d-none');
+}
+
+// Rate us — open reviews page, then disable the button forever.
+$('#btn-rate').on('click', async function () {
+  await chrome.storage.local.set({ rated: true });
+  hideRateButton();
+  openTab(REVIEW_URL);
+});
+
+// Social share links.
+const SHARE_URLS = {
+  twitter:  () => `https://twitter.com/intent/tweet?text=${encodeURIComponent(SHARE_TEXT)}&url=${encodeURIComponent(STORE_URL)}`,
+  linkedin: () => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(STORE_URL)}`,
+  facebook: () => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(STORE_URL)}`,
+  whatsapp: () => `https://wa.me/?text=${encodeURIComponent(SHARE_TEXT + ' ' + STORE_URL)}`,
+  reddit:   () => `https://www.reddit.com/submit?url=${encodeURIComponent(STORE_URL)}&title=${encodeURIComponent('Modify Header browser extension')}`,
+  telegram: () => `https://t.me/share/url?url=${encodeURIComponent(STORE_URL)}&text=${encodeURIComponent(SHARE_TEXT)}`
+};
+
+$('.share-btn').on('click', function () {
+  const platform = $(this).data('share');
+  const build = SHARE_URLS[platform];
+  if (build) openTab(build());
+});
+
+// Copy the store link to the clipboard.
+$('#btn-copy-link').on('click', async function () {
+  const $btn = $(this);
+  try {
+    await navigator.clipboard.writeText(STORE_URL);
+  } catch (e) {
+    const el = document.getElementById('share-link');
+    el.select();
+    document.execCommand('copy');
+  }
+  $btn.html('<i class="bi bi-clipboard-check me-1"></i>Copied');
+  setTimeout(() => $btn.html('<i class="bi bi-clipboard me-1"></i>Copy'), 1600);
+});
+
+/* ================================================================
    Event: Global power toggle
    ================================================================ */
 
@@ -703,6 +788,14 @@ $('#btn-run-import').on('click', async function () {
    ================================================================ */
 
 $(async function () {
+  // Restore color theme
+  const { theme = 'light' } = await chrome.storage.local.get('theme');
+  applyTheme(theme);
+
+  // Hide Rate-us permanently if the user has already reviewed.
+  const { rated = false } = await chrome.storage.local.get('rated');
+  if (rated) hideRateButton();
+
   // Restore power state
   const { extensionEnabled = true } = await chrome.storage.local.get('extensionEnabled');
   applyPowerState(extensionEnabled);
