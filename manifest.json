@@ -10,12 +10,15 @@
   },
   "action": {
     "default_popup": "popup/popup.html",
-    "default_title": "ModifyHeaders Pro",
+    "default_title": "Modify Header",
     "default_icon": {
       "16": "icons/icon-16.png",
       "48": "icons/icon-48.png",
       "128": "icons/icon-128.png"
     }
+  },
+  "side_panel": {
+    "default_path": "popup/popup.html?ctx=panel"
   },
   "background": {
     "service_worker": "background.js"
@@ -24,6 +27,7 @@
     "declarativeNetRequest",
     "declarativeNetRequestWithHostAccess",
     "storage",
+    "sidePanel",
     "tabs"
   ],
   "host_permissions": [

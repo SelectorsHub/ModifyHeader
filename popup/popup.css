@@ -353,6 +353,12 @@ body {
 
 .rules-table tbody tr:hover {
   background: var(--bg-hover);
+  /* Lift the hovered row above its neighbours so a first-row tooltip
+     that drops downward isn't overlapped by the next row's text.
+     Needed because inactive rows use opacity, which makes each row its
+     own stacking context — raising only the cell wouldn't win. */
+  position: relative;
+  z-index: 20;
 }
 
 .rules-table td {
@@ -420,7 +426,11 @@ body {
   max-width: 120px;
 }
 
-/* Tooltip box */
+/* Tooltip box — fixed dark, fully opaque appearance in BOTH themes.
+   Previously it used var(--bg-hover) + white text, which in light
+   theme became pale-on-pale (unreadable and looked transparent over
+   the row below). Locking it to the dark style keeps values legible
+   everywhere, in the popup and the side panel. */
 .cell-value-td[data-tooltip]::after,
 .cell-domain-td[data-tooltip]::after,
 .cell-header-td[data-tooltip]::after {
@@ -429,9 +439,9 @@ body {
   bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: var(--bg-hover);
-  color: white;
-  border: 1px solid var(--border-card);
+  background: #241f17;
+  color: #f5f0e6;
+  border: 1px solid rgba(233, 226, 213, 0.18);
   border-radius: var(--radius-sm);
   padding: 5px 10px;
   font-size: 11px;
@@ -441,7 +451,7 @@ body {
   max-width: 300px;
   min-width: 80px;
   width: max-content;
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.55);
   z-index: 9999;
   pointer-events: none;
   opacity: 0;
@@ -460,7 +470,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   border: 5px solid transparent;
-  border-top-color: var(--border-card);
+  border-top-color: #241f17;
   z-index: 10000;
   pointer-events: none;
   opacity: 0;
@@ -477,6 +487,26 @@ body {
 .cell-header-td[data-tooltip]:hover::before {
   opacity: 1;
   visibility: visible;
+}
+
+/* First data row sits directly under the sticky, opaque column-header
+   band (inside an overflow:auto scroll container). An upward tooltip
+   there gets painted behind / clipped by that band, so for the first
+   row we drop the tooltip DOWNWARD instead and flip the caret. */
+.rules-table tbody tr:first-child .cell-value-td[data-tooltip]::after,
+.rules-table tbody tr:first-child .cell-domain-td[data-tooltip]::after,
+.rules-table tbody tr:first-child .cell-header-td[data-tooltip]::after {
+  bottom: auto;
+  top: calc(100% + 8px);
+}
+
+.rules-table tbody tr:first-child .cell-value-td[data-tooltip]::before,
+.rules-table tbody tr:first-child .cell-domain-td[data-tooltip]::before,
+.rules-table tbody tr:first-child .cell-header-td[data-tooltip]::before {
+  bottom: auto;
+  top: calc(100% + 2px);
+  border-top-color: transparent;
+  border-bottom-color: #241f17;
 }
 
 /* ── 9. Type & Action Badges ─────────────────────────────────────── */
@@ -541,15 +571,42 @@ body {
   cursor: pointer;
   transition: var(--transition);
   margin-top: 0;
+  /* OFF knob: warm gray. Overrides Bootstrap's near-black default so
+     the knob is visible on the dark track — and never Bootstrap's
+     focus-blue (see :focus rule below). */
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23cabfa9'/%3e%3c/svg%3e");
+}
+
+/* Deactivated + focused (the state right after you click a rule off):
+   Bootstrap paints the knob and border blue. Keep the knob gray and
+   the border neutral instead. */
+.form-check-input.toggle-switch:focus:not(:checked) {
+  border-color: #4a4034 !important;
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23cabfa9'/%3e%3c/svg%3e") !important;
 }
 
 .form-check-input.toggle-switch:checked {
-  background-color: var(--accent-success) !important;
-  border-color: var(--accent-success) !important;
+  background-color: var(--accent-fill) !important;
+  border-color: var(--accent-fill) !important;
+  /* ON knob: crisp white on the coloured track. */
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e") !important;
+}
+
+/* Rule-row status toggle: amber when ON so "active" is unmistakable.
+   The muted teal read as "off"; amber matches the theme identity and
+   pops clearly against the espresso surface. Inactive stays dull. */
+.form-check-input.toggle-switch.toggle-active:checked {
+  background-color: var(--accent-fill) !important;
+  border-color: var(--accent-fill) !important;
+  box-shadow: 0 0 0 2px rgba(224, 164, 40, 0.20) !important;
 }
 
 .form-check-input.toggle-switch:focus {
   box-shadow: 0 0 0 2px rgba(224, 164, 40, 0.22) !important;
+}
+
+.form-check-input.toggle-switch.toggle-active:checked:focus {
+  box-shadow: 0 0 0 2px rgba(224, 164, 40, 0.40) !important;
 }
 
 /* Status text in modal */
@@ -560,7 +617,7 @@ body {
 }
 
 .status-text.active {
-  color: var(--accent-success);
+  color: var(--accent-fill);
 }
 
 .status-text.inactive {
@@ -826,6 +883,13 @@ body {
 }
 
 /* ── 14. Toast ──────────────────────────────────────────────────── */
+/* Toasts are pinned top-right, exactly where the on/off button lives.
+   Drop the container below the header so the button stays visible and
+   it's clear what just happened. */
+.toast-container.position-fixed.top-0 {
+  top: 56px !important;
+}
+
 .toast {
   background: var(--bg-card) !important;
   border: 1px solid var(--border-card) !important;
@@ -841,6 +905,76 @@ body {
 
 .toast.toast-error {
   border-color: rgba(205, 107, 107, 0.4) !important;
+}
+
+/* ── Row toast ───────────────────────────────────────────────────
+   A small confirmation bubble anchored directly above the rule-row
+   toggle that was just clicked (positioned via JS with position:fixed
+   so it escapes the table's scroll-clip and sits above the header).
+   ──────────────────────────────────────────────────────────────── */
+.row-toast {
+  position: fixed;
+  z-index: 11000;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 240px;
+  padding: 6px 11px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.14s ease, transform 0.14s ease;
+  pointer-events: none;
+}
+
+.row-toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.row-toast.is-on {
+  border-color: rgba(224, 164, 40, 0.55);
+}
+
+.row-toast.is-off {
+  border-color: rgba(205, 107, 107, 0.45);
+}
+
+.row-toast .row-toast-ico {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.row-toast.is-on .row-toast-ico {
+  color: var(--accent-fill);
+}
+
+.row-toast.is-off .row-toast-ico {
+  color: var(--accent-danger);
+}
+
+/* Caret — points down at the toggle by default, flips up when the
+   bubble is placed below (no room above). Positioned by JS. */
+.row-toast .row-toast-caret {
+  position: absolute;
+  top: 100%;
+  border: 6px solid transparent;
+  border-top-color: var(--bg-card);
+}
+
+.row-toast.below .row-toast-caret {
+  top: auto;
+  bottom: 100%;
+  border-top-color: transparent;
+  border-bottom-color: var(--bg-card);
 }
 
 /* ── 15. Bootstrap overrides ────────────────────────────────────── */
@@ -1343,6 +1477,210 @@ body.ext-disabled .btn-add {
   color: inherit;
 }
 
+/* ================================================================
+   Global power control — rebuilt as a real sliding toggle so the
+   ON / OFF state reads at a glance (a knob that slides, not just a
+   colour swap). These rules are authoritative and override the
+   earlier .btn-power definitions above.
+   ================================================================ */
+.btn-power {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: auto;
+  height: var(--control-h);
+  padding: 0 11px 0 8px;
+  border-radius: var(--radius-sm) !important;
+  border: 1px solid rgba(224, 164, 40, 0.45);
+  background: rgba(224, 164, 40, 0.12);
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: none;
+  transform: none;
+}
+
+.btn-power::before { display: none; }
+
+.btn-power:hover {
+  background: rgba(224, 164, 40, 0.18);
+  border-color: rgba(224, 164, 40, 0.6);
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-power:active { transform: scale(0.97); }
+
+/* The track + knob */
+.power-track {
+  position: relative;
+  width: 34px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--accent-fill);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.power-knob {
+  position: absolute;
+  top: 1px;
+  left: calc(100% - 17px);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--accent-fill);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: var(--transition);
+}
+
+.btn-power .power-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  color: var(--accent-fill);
+}
+
+/* OFF state — knob slides left, everything reads red/muted */
+.btn-power.power-off {
+  border-color: rgba(205, 107, 107, 0.45);
+  background: rgba(205, 107, 107, 0.10);
+}
+
+.btn-power.power-off:hover {
+  background: rgba(205, 107, 107, 0.18);
+  border-color: rgba(205, 107, 107, 0.6);
+}
+
+.btn-power.power-off .power-track { background: #4a4034; }
+
+.btn-power.power-off .power-knob {
+  left: 1px;
+  color: var(--accent-danger);
+}
+
+.btn-power.power-off .power-label { color: var(--accent-danger); }
+
+/* ================================================================
+   Header-button tooltips — same instant custom style as the footer,
+   dropped BELOW the control (header sits at the top of the popup).
+   Replaces native title= tooltips on Import / Add Rule / Power.
+   ================================================================ */
+.btn-import[data-tooltip],
+.btn-add[data-tooltip],
+.btn-power[data-tooltip] { position: relative; }
+
+.btn-import[data-tooltip]::after,
+.btn-add[data-tooltip]::after,
+.btn-power[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-3px);
+  width: max-content;
+  max-width: 210px;
+  white-space: normal;
+  text-align: center;
+  background: var(--bg-card);
+  color: var(--text-primary);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-sm);
+  padding: 6px 9px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.1px;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease, transform 0.1s ease;
+  z-index: 10050;
+  pointer-events: none;
+}
+
+.btn-import[data-tooltip]::before,
+.btn-add[data-tooltip]::before,
+.btn-power[data-tooltip]::before {
+  content: "";
+  position: absolute;
+  inset: auto;
+  animation: none;
+  top: calc(100% + 3px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-bottom-color: var(--bg-card);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.1s ease;
+  z-index: 10051;
+  pointer-events: none;
+}
+
+.btn-import[data-tooltip]:hover::after,
+.btn-add[data-tooltip]:hover::after,
+.btn-power[data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.btn-import[data-tooltip]:hover::before,
+.btn-add[data-tooltip]:hover::before,
+.btn-power[data-tooltip]:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Power sits at the far-right edge — anchor its tip to the right so
+   it never spills past the popup border. */
+.btn-power[data-tooltip]::after {
+  left: auto;
+  right: 0;
+  transform: translateX(0) translateY(-3px);
+}
+
+.btn-power[data-tooltip]::before {
+  left: auto;
+  right: 14px;
+  transform: translateX(0);
+}
+
+.btn-power[data-tooltip]:hover::after {
+  transform: translateX(0) translateY(0);
+}
+
+/* In the narrow side panel the header buttons sit near the edges, so a
+   centred tooltip spills off-screen. Cap every header tooltip's width
+   to the panel (so text wraps), left-anchor Import (leftmost) and keep
+   Power right-anchored; Add stays centred between them. */
+html.side-panel .btn-import[data-tooltip]::after,
+html.side-panel .btn-add[data-tooltip]::after,
+html.side-panel .btn-power[data-tooltip]::after {
+  max-width: 190px;
+}
+
+html.side-panel .btn-import[data-tooltip]::after {
+  left: 0;
+  right: auto;
+  transform: translateY(-3px);
+}
+
+html.side-panel .btn-import[data-tooltip]:hover::after {
+  transform: translateY(0);
+}
+
+html.side-panel .btn-import[data-tooltip]::before {
+  left: 14px;
+  right: auto;
+  transform: translateX(0);
+}
+
 /* Header type: title white, "Headers" in logo amber */
 .app-title {
   font-size: 16px;
@@ -1406,10 +1744,10 @@ body.ext-disabled .btn-add {
   color: #ffffff !important;
 }
 
-/* Rule toggle: on = logo teal */
+/* Rule toggle: on = logo amber (matches the row + power toggles) */
 .form-check-input.toggle-switch:checked {
-  background-color: var(--accent-success) !important;
-  border-color: var(--accent-success) !important;
+  background-color: var(--accent-fill) !important;
+  border-color: var(--accent-fill) !important;
 }
 
 .form-check-input.toggle-switch:focus {
@@ -1575,10 +1913,19 @@ body.theme-light .badge-response {
   color: var(--accent-success);
 }
 
-/* Toggle "off" track was a dark espresso pair — use a warm light track. */
-body.theme-light .form-check-input.toggle-switch {
+/* Toggle "off" track was a dark espresso pair — use a warm light track.
+   Scope to :not(:checked) so it doesn't override the amber ON state
+   (this rule outranks the base :checked rule on specificity). */
+body.theme-light .form-check-input.toggle-switch:not(:checked) {
   background-color: #e2d8c6 !important;
   border-color: #cabfa9 !important;
+}
+
+/* On the light track the gray OFF knob would blend in — use a darker
+   warm gray there instead. */
+body.theme-light .form-check-input.toggle-switch:not(:checked),
+body.theme-light .form-check-input.toggle-switch:focus:not(:checked) {
+  --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23948a77'/%3e%3c/svg%3e") !important;
 }
 
 /* Ghost-button hovers used a dark fill literal; follow the hover token. */
@@ -1604,4 +1951,91 @@ body.theme-light .modal-body::-webkit-scrollbar-thumb:hover {
 /* Danger alert text was a light rose meant for a dark panel. */
 body.theme-light .modal .alert-danger {
   color: var(--accent-danger);
+}
+
+/* ================================================================
+   23. Side-panel context  ·  html.side-panel
+   The same document is used for the toolbar popup (fixed 720×600)
+   and the Chrome side panel. The <html> element is tagged with
+   .side-panel by an inline script in <head> (runs before render and
+   independent of popup.js), so these rules apply reliably.
+   ================================================================ */
+html.side-panel,
+html.side-panel body {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  height: 100vh;
+  max-height: none;
+}
+
+/* The side-panel button only makes sense from the popup. */
+html.side-panel #btn-sidepanel {
+  display: none;
+}
+
+/* Table area fills the panel height and scrolls internally, adapting
+   to however tall the (wrapping) header is — no fixed 600px math.
+   min-width:0 is essential: without it, the flex items refuse to
+   shrink below the 680px table (min-width:auto), expanding the whole
+   column to 680px where app-body's overflow:hidden clips it and no
+   horizontal scrollbar appears. */
+html.side-panel #rules-wrapper,
+html.side-panel .table-card {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+html.side-panel .table-responsive {
+  flex: 1 1 auto;
+  min-height: 0;
+  min-width: 0;
+  max-height: none;
+  overflow-x: auto;
+}
+
+/* Narrow width: let the header controls wrap instead of overflowing. */
+html.side-panel .app-header {
+  flex-wrap: wrap;
+  height: auto;
+  row-gap: 8px;
+  padding: 12px 14px;
+}
+
+html.side-panel .app-header > .d-flex {
+  flex-wrap: wrap;
+}
+
+/* Chrome doesn't let an extension set the side-panel width, so at the
+   default (narrow) width the fixed-layout table would squish. Instead,
+   keep the table at its natural width and let the panel scroll
+   horizontally — the full UI stays intact and the user can widen the
+   panel by dragging whenever they want. */
+html.side-panel .rules-table {
+  min-width: 680px;
+}
+
+/* The toolbar (search + filter) sits above the scroll area, so it must
+   fit the panel width — let it wrap rather than overflow. */
+html.side-panel .table-toolbar {
+  flex-wrap: wrap;
+  row-gap: 8px;
+}
+
+html.side-panel .search-input {
+  width: 130px;
+}
+
+html.side-panel .app-body {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+}
+
+/* Distinct icon tint for the side-panel button so it reads as a
+   surface switch, not another action. */
+.footer-btn.footer-sidepanel {
+  color: var(--accent-primary);
 }

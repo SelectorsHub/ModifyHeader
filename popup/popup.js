@@ -32,6 +32,195 @@ function showToast(msg, type = 'success') {
   toast.show();
 }
 
+/**
+ * Show a small confirmation bubble anchored just above a given element
+ * (used for rule-row toggles, so feedback appears right at the row
+ * instead of the top-right corner).
+ * @param {HTMLElement} anchorEl - Element to anchor to (the toggle).
+ * @param {string} msg - Message text.
+ * @param {'on'|'off'} state - Colour/icon variant.
+ */
+let rowToastTimer = null;
+function showRowToast(anchorEl, msg, state = 'on') {
+  let $rt = $('#row-toast');
+  if (!$rt.length) {
+    $rt = $(
+      '<div id="row-toast" class="row-toast" role="status" aria-live="polite">' +
+        '<i class="row-toast-ico bi"></i>' +
+        '<span class="row-toast-msg"></span>' +
+        '<span class="row-toast-caret"></span>' +
+      '</div>'
+    ).appendTo('body');
+  }
+
+  $rt.removeClass('is-on is-off below')
+     .addClass(state === 'on' ? 'is-on' : 'is-off');
+  $rt.find('.row-toast-ico')
+     .attr('class', 'row-toast-ico bi ' + (state === 'on' ? 'bi-check-circle-fill' : 'bi-pause-circle-fill'));
+  $rt.find('.row-toast-msg').text(msg);
+
+  // Measure while hidden (opacity 0, not yet shown), then position
+  // with fixed coords and only then fade in at the correct spot.
+  $rt.removeClass('show').css({ visibility: 'hidden', left: '0px', top: '0px' });
+  const rect = anchorEl.getBoundingClientRect();
+  const tw = $rt.outerWidth();
+  const th = $rt.outerHeight();
+  const gap = 8;
+  const margin = 8;
+
+  const anchorCx = rect.left + rect.width / 2;
+  let left = anchorCx - tw / 2;
+  left = Math.max(margin, Math.min(left, window.innerWidth - tw - margin));
+
+  let top = rect.top - th - gap;
+  let below = false;
+  if (top < margin) {            // no room above → drop below the toggle
+    top = rect.bottom + gap;
+    below = true;
+  }
+  $rt.toggleClass('below', below);
+
+  // Point the caret at the toggle centre.
+  const caretLeft = Math.max(10, Math.min(anchorCx - left, tw - 10));
+  $rt.find('.row-toast-caret').css({ left: (caretLeft - 6) + 'px' });
+
+  $rt.css({ left: left + 'px', top: top + 'px', visibility: 'visible' });
+  // Force reflow so the fade-in transition runs from the new position.
+  void $rt[0].offsetWidth;
+  $rt.addClass('show');
+
+  clearTimeout(rowToastTimer);
+  rowToastTimer = setTimeout(() => $rt.removeClass('show'), 1900);
+}
+
+/* ================================================================
+   Surface: popup vs side panel
+   The same document powers the toolbar popup and the Chrome side
+   panel (loaded with ?ctx=panel). The side panel stays open while
+   the user copies/pastes values, so the Add/Import form survives.
+   ================================================================ */
+/* Detect the side panel (kept in sync with the inline <head> script).
+   Signals: the ?ctx=panel flag, a tall viewport (the popup is capped
+   at 600px), or a viewport narrower than the 720px popup. The class
+   lives on <html> so it applies even if this script is delayed. */
+function detectSidePanel() {
+  if (new URLSearchParams(location.search).get('ctx') === 'panel') return true;
+  if ((window.innerHeight || 0) > 620) return true;
+  if ((window.innerWidth || 9999) < 640) return true;
+  return false;
+}
+function applySurface() {
+  document.documentElement.classList.toggle('side-panel', detectSidePanel());
+}
+const IS_SIDE_PANEL = detectSidePanel();
+applySurface();
+window.addEventListener('resize', applySurface);
+
+let currentWindowId = null;
+if (chrome.windows && chrome.windows.getCurrent) {
+  chrome.windows.getCurrent().then((w) => { currentWindowId = w.id; }).catch(() => {});
+}
+
+/* Open the side panel from the popup. Called synchronously inside the
+   click gesture so Chrome accepts the request. */
+function openSidePanel() {
+  try {
+    const opts = currentWindowId != null ? { windowId: currentWindowId } : {};
+    chrome.sidePanel.open(opts);
+  } catch (err) {
+    console.warn('[ModifyHeader] Could not open side panel:', err && err.message);
+  }
+}
+
+/* ================================================================
+   Draft autosave — an in-progress Add / Import form is written to
+   storage as the user types, so if the popup closes (focus lost
+   while copying a value) nothing is erased. Restored on next open.
+   ================================================================ */
+const DRAFT_ADD = 'draftAddRule';
+const DRAFT_IMPORT = 'draftImport';
+let suppressDraft = false;      // true while we programmatically fill/reset forms
+let draftTimer = null;
+
+function readAddForm() {
+  return {
+    open: true,
+    ts: Date.now(),
+    mode: pendingEditId ? 'edit' : 'add',
+    editId: pendingEditId || null,
+    domain: $('#input-domain').val(),
+    headerName: $('#input-header-name').val(),
+    headerValue: $('#input-header-value').val(),
+    type: $('#input-type').val(),
+    action: $('#input-action').val(),
+    active: $('#input-active').is(':checked'),
+  };
+}
+
+function readImportForm() {
+  return {
+    open: true,
+    ts: Date.now(),
+    text: $('#import-textarea').val(),
+    domain: $('#import-domain').val(),
+    action: $('#import-action').val(),
+    active: $('#import-active').is(':checked'),
+  };
+}
+
+function saveAddDraft() {
+  if (suppressDraft) return;
+  const d = readAddForm();
+  const hasContent = d.domain || d.headerName || d.headerValue || d.mode === 'edit';
+  if (hasContent) chrome.storage.local.set({ [DRAFT_ADD]: d });
+  else chrome.storage.local.remove(DRAFT_ADD);
+}
+
+function saveImportDraft() {
+  if (suppressDraft) return;
+  const d = readImportForm();
+  if (d.text && d.text.trim()) chrome.storage.local.set({ [DRAFT_IMPORT]: d });
+  else chrome.storage.local.remove(DRAFT_IMPORT);
+}
+
+function clearAddDraft() { chrome.storage.local.remove(DRAFT_ADD); }
+function clearImportDraft() { chrome.storage.local.remove(DRAFT_IMPORT); }
+
+function restoreAddDraft(d) {
+  suppressDraft = true;
+  pendingEditId = d.editId || null;
+  $('#input-domain').val(d.domain || '');
+  $('#input-header-name').val(d.headerName || '');
+  $('#input-header-value').val(d.headerValue || '');
+  $('#input-type').val(d.type || 'request');
+  $('#input-action').val(d.action || 'set');
+  const active = d.active !== false;
+  $('#input-active').prop('checked', active);
+  $('#status-label')
+    .text(active ? 'Active' : 'Inactive')
+    .removeClass('active inactive')
+    .addClass(active ? 'active' : 'inactive');
+  setModalMode(pendingEditId ? 'edit' : 'add');
+  suppressDraft = false;
+  bootstrap.Modal.getOrCreateInstance(document.getElementById('addRuleModal')).show();
+}
+
+function restoreImportDraft(d) {
+  suppressDraft = true;
+  $('#import-textarea').val(d.text || '');
+  $('#import-domain').val(d.domain || '');
+  $('#import-action').val(d.action || 'set');
+  const active = d.active !== false;
+  $('#import-active').prop('checked', active);
+  $('#import-status-label')
+    .text(active ? 'Active' : 'Inactive')
+    .removeClass('active inactive')
+    .addClass(active ? 'active' : 'inactive');
+  suppressDraft = false;
+  if (typeof updateImportCount === 'function') updateImportCount();
+  bootstrap.Modal.getOrCreateInstance(document.getElementById('importModal')).show();
+}
+
 /** Generate a unique ID for a rule. */
 function generateId() {
   return `rule_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`;
@@ -51,12 +240,12 @@ function applyPowerState(enabled) {
   const $banner = $('#disabled-banner');
 
   if (enabled) {
-    $btn.removeClass('power-off');
+    $btn.removeClass('power-off').attr('aria-checked', 'true');
     $label.text('ON').removeClass('off');
     $banner.addClass('d-none');
     $('body').removeClass('ext-disabled');
   } else {
-    $btn.addClass('power-off');
+    $btn.addClass('power-off').attr('aria-checked', 'false');
     $label.text('OFF').addClass('off');
     $banner.removeClass('d-none');
     $('body').addClass('ext-disabled');
@@ -114,13 +303,16 @@ function typeBadge(type) {
 
 function actionBadge(action) {
   const map = {
-    set:    { icon: 'bi-pencil-fill',  label: 'Modify' },
-    append: { icon: 'bi-plus-circle',  label: 'Add' },
-    remove: { icon: 'bi-dash-circle',  label: 'Remove' },
+    set:    { icon: '',               label: 'Modify' },
+    append: { icon: 'bi-plus-circle', label: 'Add' },
+    remove: { icon: 'bi-dash-circle', label: 'Remove' },
   };
   const { icon, label } = map[action] || { icon: 'bi-question', label: action };
+  // 'Modify' intentionally has no icon — a pencil there looked like an
+  // editable/clickable control rather than a status label.
+  const iconHtml = icon ? `<i class="bi ${icon}"></i>` : '';
   return `<span class="badge-action badge-${action}">
-            <i class="bi ${icon}"></i>${label}
+            ${iconHtml}${label}
           </span>`;
 }
 
@@ -305,7 +497,12 @@ $(document).on('change', '.toggle-active', async function () {
   const activeCount = rules.filter((r) => r.active).length;
   $('#active-count').text(activeCount);
 
-  showToast(`Rule ${isActive ? 'activated' : 'deactivated'} and synced.`);
+  // Confirmation right at the row, anchored above the toggle.
+  showRowToast(
+    this,
+    isActive ? 'Rule activated' : 'Rule deactivated',
+    isActive ? 'on' : 'off'
+  );
 });
 
 /* ================================================================
@@ -416,6 +613,7 @@ $('#btn-save-rule').on('click', async function () {
     modal.hide();
     resetForm();
 
+    clearAddDraft();
     renderRules(rules, $('#search-input').val(), $('#filter-type').val());
     showToast('Rule updated and engine synced!');
   } else {
@@ -439,6 +637,7 @@ $('#btn-save-rule').on('click', async function () {
     modal.hide();
     resetForm();
 
+    clearAddDraft();
     renderRules(rules, $('#search-input').val(), $('#filter-type').val());
     showToast('Rule saved and engine synced!');
   }
@@ -464,7 +663,20 @@ function resetForm() {
    Event: Reset form when modal is closed
    ================================================================ */
 
-document.getElementById('addRuleModal').addEventListener('hidden.bs.modal', resetForm);
+document.getElementById('addRuleModal').addEventListener('hidden.bs.modal', function () {
+  suppressDraft = true;
+  resetForm();
+  clearAddDraft();
+  suppressDraft = false;
+});
+
+// Autosave the add/edit form as the user types, and mark it "open"
+// once shown so it can be restored if the popup is dismissed.
+$('#add-rule-form').on('input change', function () {
+  clearTimeout(draftTimer);
+  draftTimer = setTimeout(saveAddDraft, 250);
+});
+document.getElementById('addRuleModal').addEventListener('shown.bs.modal', saveAddDraft);
 
 /* ================================================================
    Event: "Current Tab" button → fill domain from active tab URL
@@ -705,7 +917,18 @@ function resetImportForm() {
   $('#import-status-label').text('Active').removeClass('inactive').addClass('active');
 }
 
-document.getElementById('importModal').addEventListener('hidden.bs.modal', resetImportForm);
+document.getElementById('importModal').addEventListener('hidden.bs.modal', function () {
+  suppressDraft = true;
+  resetImportForm();
+  clearImportDraft();
+  suppressDraft = false;
+});
+
+$('#import-form').on('input change', function () {
+  clearTimeout(draftTimer);
+  draftTimer = setTimeout(saveImportDraft, 250);
+});
+document.getElementById('importModal').addEventListener('shown.bs.modal', saveImportDraft);
 
 $('#btn-run-import').on('click', async function () {
   $('#import-error').addClass('d-none');
@@ -774,6 +997,7 @@ $('#btn-run-import').on('click', async function () {
 
   const modal = bootstrap.Modal.getInstance(document.getElementById('importModal'));
   modal.hide();
+  clearImportDraft();
 
   renderRules(rules, $('#search-input').val(), $('#filter-type').val());
 
@@ -784,10 +1008,28 @@ $('#btn-run-import').on('click', async function () {
 });
 
 /* ================================================================
+   Event: Open in side panel (popup only)
+   ================================================================ */
+
+$('#btn-sidepanel').on('click', function () {
+  // Flush any in-progress form synchronously so the panel restores it.
+  if (document.getElementById('addRuleModal').classList.contains('show')) {
+    chrome.storage.local.set({ [DRAFT_ADD]: readAddForm() });
+  }
+  if (document.getElementById('importModal').classList.contains('show')) {
+    chrome.storage.local.set({ [DRAFT_IMPORT]: readImportForm() });
+  }
+  openSidePanel();   // called inside the click gesture
+});
+
+/* ================================================================
    Init: load and render on popup open
    ================================================================ */
 
 $(async function () {
+  // The side panel is Chrome 114+. Hide the button where unsupported.
+  if (!chrome.sidePanel) $('#btn-sidepanel').addClass('d-none');
+
   // Restore color theme
   const { theme = 'light' } = await chrome.storage.local.get('theme');
   applyTheme(theme);
@@ -803,4 +1045,15 @@ $(async function () {
   // Render rules table
   const rules = await loadRules();
   renderRules(rules);
+
+  // Restore an in-progress Add / Import form (e.g. after the popup was
+  // dismissed while copying a value, or when handing off to the panel).
+  const drafts = await chrome.storage.local.get([DRAFT_ADD, DRAFT_IMPORT]);
+  const addDraft = drafts[DRAFT_ADD];
+  const importDraft = drafts[DRAFT_IMPORT];
+  if (addDraft && addDraft.open) {
+    restoreAddDraft(addDraft);
+  } else if (importDraft && importDraft.open) {
+    restoreImportDraft(importDraft);
+  }
 });

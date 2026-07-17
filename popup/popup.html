@@ -4,7 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ModifyHeaders Pro</title>
+  <title>Modify Header</title>
+
+  <!-- Detect the side panel as early as possible (before styles/render)
+       and independently of popup.js. Signals: the ?ctx=panel flag, a
+       tall viewport (the popup is capped at 600px), or a viewport
+       narrower than the 720px popup. Tags <html> so CSS can react. -->
+  <script>
+    (function () {
+      try {
+        var isPanel =
+          new URLSearchParams(location.search).get('ctx') === 'panel' ||
+          (window.innerHeight || 0) > 620 ||
+          (window.innerWidth || 9999) < 640;
+        if (isPanel) document.documentElement.classList.add('side-panel');
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- Bootstrap 5 CSS (local) -->
   <link rel="stylesheet" href="../lib/bootstrap.min.css" />
@@ -29,11 +45,13 @@
       </div>
     </div>
     <div class="d-flex align-items-center gap-2">
-      <button id="btn-import" class="btn btn-import" data-bs-toggle="modal" data-bs-target="#importModal">
+      <button id="btn-import" class="btn btn-import" data-tooltip="Import raw request headers in bulk"
+        data-bs-toggle="modal" data-bs-target="#importModal">
         <i class="bi bi-box-arrow-in-down me-1"></i>Import
       </button>
 
-        <button id="btn-add-rule" class="btn btn-primary btn-add" data-bs-toggle="modal" data-bs-target="#addRuleModal">
+        <button id="btn-add-rule" class="btn btn-primary btn-add" data-tooltip="Create a new header rule"
+        data-bs-toggle="modal" data-bs-target="#addRuleModal">
         <i class="bi bi-plus-lg me-1"></i>Add Rule
       </button>
 
@@ -43,9 +61,12 @@
       </span>
 
       <!-- ── Global Power Toggle ── -->
-      <div class="power-wrap" title="Toggle extension on/off">
-        <button id="btn-power" class="btn-power" aria-label="Toggle extension">
-          <i class="bi bi-power"></i>
+      <div class="power-wrap">
+        <button id="btn-power" class="btn-power" role="switch" aria-checked="true"
+          aria-label="Toggle extension" data-tooltip="Toggle extension on/off">
+          <span class="power-track">
+            <span class="power-knob"><i class="bi bi-power"></i></span>
+          </span>
           <span id="power-label" class="power-label">ON</span>
         </button>
       </div>
@@ -140,6 +161,10 @@
       <a href="https://selectorshub.com" target="_blank" rel="noopener" class="footer-link">SelectorsHub</a>
     </span>
     <div class="footer-actions d-flex align-items-center gap-2">
+      <button id="btn-sidepanel" class="footer-btn footer-sidepanel" aria-label="Open in side panel"
+        data-tooltip="Open in side panel — stays open while you copy &amp; paste values">
+        <i class="bi bi-layout-sidebar-inset-reverse me-1"></i>Side panel
+      </button>
       <button id="btn-rate" class="footer-btn footer-rate" aria-label="Rate us"
         data-tooltip="Pls Rate us &amp; this button disappears forever after you review.">
         <i class="bi bi-star-fill me-1"></i>Rate us
