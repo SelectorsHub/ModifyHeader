@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "通过简洁的仪表盘界面管理 HTTP 请求头和响应头的修改。"
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "导入"
+  },
+  "tipImport": {
+    "message": "批量导入原始请求头"
+  },
+  "btnAddRule": {
+    "message": "添加规则"
+  },
+  "tipAddRule": {
+    "message": "创建新的请求头规则"
+  },
+  "activeBadge": {
+    "message": "已启用"
+  },
+  "ariaTogglePower": {
+    "message": "开关扩展"
+  },
+  "tipTogglePower": {
+    "message": "开启/关闭扩展"
+  },
+  "powerOn": {
+    "message": "开"
+  },
+  "powerOff": {
+    "message": "关"
+  },
+  "pausedBanner": {
+    "message": "<strong>扩展已暂停</strong> — 所有请求头规则均已停用。切换为“开”即可恢复。"
+  },
+  "ariaClose": {
+    "message": "关闭"
+  },
+  "emptyTitle": {
+    "message": "暂无规则"
+  },
+  "emptyDesc": {
+    "message": "点击 <strong>+ 添加规则</strong> 创建你的第一条请求头规则。"
+  },
+  "btnAddFirstRule": {
+    "message": "添加第一条规则"
+  },
+  "allRules": {
+    "message": "全部规则"
+  },
+  "searchPlaceholder": {
+    "message": "搜索规则…"
+  },
+  "allTypes": {
+    "message": "全部类型"
+  },
+  "colStatus": {
+    "message": "状态"
+  },
+  "colDomain": {
+    "message": "域名 / 匹配模式"
+  },
+  "colHeader": {
+    "message": "请求头"
+  },
+  "colValue": {
+    "message": "值"
+  },
+  "colType": {
+    "message": "类型"
+  },
+  "colAction": {
+    "message": "操作"
+  },
+  "colManage": {
+    "message": "管理"
+  },
+  "offeredBy": {
+    "message": "提供方"
+  },
+  "btnSidePanel": {
+    "message": "侧边栏"
+  },
+  "tipSidePanel": {
+    "message": "在侧边栏中打开 — 复制粘贴值时保持打开"
+  },
+  "btnRate": {
+    "message": "给我们评分"
+  },
+  "tipRate": {
+    "message": "请为我们评分，评价后此按钮将永久消失。"
+  },
+  "shareTitle": {
+    "message": "分享 Modify Header"
+  },
+  "btnShare": {
+    "message": "分享"
+  },
+  "ariaToggleTheme": {
+    "message": "切换颜色主题"
+  },
+  "tipThemeDark": {
+    "message": "切换到深色主题"
+  },
+  "tipThemeLight": {
+    "message": "切换到浅色主题"
+  },
+  "addRuleTitle": {
+    "message": "添加新规则"
+  },
+  "addRuleSubtitle": {
+    "message": "在下方定义请求头修改规则。"
+  },
+  "editRuleTitle": {
+    "message": "编辑规则"
+  },
+  "editRuleSubtitle": {
+    "message": "更新以下字段并保存更改。"
+  },
+  "labelDomain": {
+    "message": "域名 / URL 匹配模式"
+  },
+  "phDomain": {
+    "message": "例如 .*\\.example\\.com.* 或 https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "使用当前标签页的 URL"
+  },
+  "btnCurrentTab": {
+    "message": "当前标签页"
+  },
+  "hintDomain": {
+    "message": "支持完整正则表达式。留空则匹配所有 URL。"
+  },
+  "errDomainRequired": {
+    "message": "请输入域名或 URL 匹配模式。"
+  },
+  "labelHeaderName": {
+    "message": "请求头名称"
+  },
+  "phHeaderName": {
+    "message": "例如 X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "请求头名称为必填项。"
+  },
+  "labelHeaderValue": {
+    "message": "请求头值"
+  },
+  "phHeaderValue": {
+    "message": "例如 my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "<code>remove</code> 操作可留空。"
+  },
+  "labelType": {
+    "message": "类型"
+  },
+  "labelAction": {
+    "message": "操作"
+  },
+  "labelStatus": {
+    "message": "状态"
+  },
+  "typeRequest": {
+    "message": "请求"
+  },
+  "typeResponse": {
+    "message": "响应"
+  },
+  "optSet": {
+    "message": "修改 (set)"
+  },
+  "optAppend": {
+    "message": "添加 (append)"
+  },
+  "optRemove": {
+    "message": "移除"
+  },
+  "statusActive": {
+    "message": "已启用"
+  },
+  "statusInactive": {
+    "message": "未启用"
+  },
+  "btnCancel": {
+    "message": "取消"
+  },
+  "btnSaveRule": {
+    "message": "保存规则"
+  },
+  "btnUpdateRule": {
+    "message": "更新规则"
+  },
+  "importTitle": {
+    "message": "导入请求头"
+  },
+  "importSubtitle": {
+    "message": "粘贴原始请求头（每行一个 <code>Header-Name: value</code>），批量创建请求类型规则。"
+  },
+  "labelRequestHeaders": {
+    "message": "请求头"
+  },
+  "hintImport": {
+    "message": "伪请求头（<code>:authority</code>）、请求行以及空行或 <code>#</code> 注释行会被自动忽略。"
+  },
+  "phImportDomain": {
+    "message": "例如 .*\\.example\\.com.*  — 留空则匹配所有 URL"
+  },
+  "hintImportDomain": {
+    "message": "应用于每个导入的请求头。支持完整正则表达式。"
+  },
+  "btnImportHeaders": {
+    "message": "导入请求头"
+  },
+  "deleteTitle": {
+    "message": "删除规则？"
+  },
+  "deleteDesc": {
+    "message": "此操作将永久删除该规则并重新同步引擎。"
+  },
+  "btnDelete": {
+    "message": "删除"
+  },
+  "shareSubtitle": {
+    "message": "帮助更多开发者发现它。"
+  },
+  "btnCopy": {
+    "message": "复制"
+  },
+  "btnCopied": {
+    "message": "已复制"
+  },
+  "shareText": {
+    "message": "Modify Header — 一款简洁的浏览器扩展，用于管理 HTTP 请求头和响应头规则。快来看看："
+  },
+  "shareRedditTitle": {
+    "message": "Modify Header 浏览器扩展"
+  },
+  "badgeModify": {
+    "message": "修改"
+  },
+  "badgeAdd": {
+    "message": "添加"
+  },
+  "badgeRemove": {
+    "message": "移除"
+  },
+  "noMatch": {
+    "message": "没有符合搜索条件的规则。"
+  },
+  "allUrls": {
+    "message": "所有 URL"
+  },
+  "ariaToggleRule": {
+    "message": "切换规则启用状态"
+  },
+  "tipEditRule": {
+    "message": "编辑规则"
+  },
+  "tipDeleteRule": {
+    "message": "删除规则"
+  },
+  "rowActivated": {
+    "message": "规则已启用"
+  },
+  "rowDeactivated": {
+    "message": "规则已停用"
+  },
+  "toastDeleted": {
+    "message": "规则已删除，引擎已同步。"
+  },
+  "errHeaderValueRequired": {
+    "message": "添加/修改操作必须填写请求头值。"
+  },
+  "errInvalidRegex": {
+    "message": "域名字段中的正则表达式无效。"
+  },
+  "toastUpdated": {
+    "message": "规则已更新，引擎已同步！"
+  },
+  "toastSaved": {
+    "message": "规则已保存，引擎已同步！"
+  },
+  "toastEnabled": {
+    "message": "扩展已启用 — 规则生效中。"
+  },
+  "toastPaused": {
+    "message": "扩展已暂停 — 所有规则已停用。"
+  },
+  "headerCountOne": {
+    "message": "1 个请求头"
+  },
+  "headerCountMany": {
+    "message": "$1 个请求头"
+  },
+  "errNoHeaders": {
+    "message": "未找到有效的请求头。请每行输入一个“Header-Name: value”。"
+  },
+  "importPartNew": {
+    "message": "新增 $1 个"
+  },
+  "importPartUpdated": {
+    "message": "更新 $1 个"
+  },
+  "toastImported": {
+    "message": "已导入 $1 个请求头（$2）。"
+  },
+  "listSeparator": {
+    "message": "，"
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "Gérez les modifications des en-têtes HTTP de requête et de réponse via un tableau de bord épuré."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "Importer"
+  },
+  "tipImport": {
+    "message": "Importer des en-têtes de requête en masse"
+  },
+  "btnAddRule": {
+    "message": "Ajouter"
+  },
+  "tipAddRule": {
+    "message": "Créer une nouvelle règle d'en-tête"
+  },
+  "activeBadge": {
+    "message": "actives"
+  },
+  "ariaTogglePower": {
+    "message": "Activer/désactiver l'extension"
+  },
+  "tipTogglePower": {
+    "message": "Activer/désactiver l'extension"
+  },
+  "powerOn": {
+    "message": "ON"
+  },
+  "powerOff": {
+    "message": "OFF"
+  },
+  "pausedBanner": {
+    "message": "<strong>Extension en pause</strong> — Toutes les règles sont suspendues. Passez sur ON pour reprendre."
+  },
+  "ariaClose": {
+    "message": "Fermer"
+  },
+  "emptyTitle": {
+    "message": "Aucune règle pour l'instant"
+  },
+  "emptyDesc": {
+    "message": "Cliquez sur <strong>+ Ajouter</strong> pour créer votre première règle d'en-tête."
+  },
+  "btnAddFirstRule": {
+    "message": "Ajouter votre première règle"
+  },
+  "allRules": {
+    "message": "Toutes les règles"
+  },
+  "searchPlaceholder": {
+    "message": "Rechercher…"
+  },
+  "allTypes": {
+    "message": "Tous les types"
+  },
+  "colStatus": {
+    "message": "Statut"
+  },
+  "colDomain": {
+    "message": "Domaine / Motif"
+  },
+  "colHeader": {
+    "message": "En-tête"
+  },
+  "colValue": {
+    "message": "Valeur"
+  },
+  "colType": {
+    "message": "Type"
+  },
+  "colAction": {
+    "message": "Action"
+  },
+  "colManage": {
+    "message": "Gérer"
+  },
+  "offeredBy": {
+    "message": "Proposé par"
+  },
+  "btnSidePanel": {
+    "message": "Panneau latéral"
+  },
+  "tipSidePanel": {
+    "message": "Ouvrir dans le panneau latéral — reste ouvert pendant vos copier-coller"
+  },
+  "btnRate": {
+    "message": "Notez-nous"
+  },
+  "tipRate": {
+    "message": "Notez-nous : ce bouton disparaîtra définitivement après votre avis."
+  },
+  "shareTitle": {
+    "message": "Partager Modify Header"
+  },
+  "btnShare": {
+    "message": "Partager"
+  },
+  "ariaToggleTheme": {
+    "message": "Changer le thème"
+  },
+  "tipThemeDark": {
+    "message": "Passer au thème sombre"
+  },
+  "tipThemeLight": {
+    "message": "Passer au thème clair"
+  },
+  "addRuleTitle": {
+    "message": "Nouvelle règle"
+  },
+  "addRuleSubtitle": {
+    "message": "Définissez ci-dessous une règle de modification d'en-tête."
+  },
+  "editRuleTitle": {
+    "message": "Modifier la règle"
+  },
+  "editRuleSubtitle": {
+    "message": "Mettez à jour les champs puis enregistrez."
+  },
+  "labelDomain": {
+    "message": "Domaine / Motif d'URL"
+  },
+  "phDomain": {
+    "message": "ex. .*\\.example\\.com.* ou https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "Utiliser l'URL de l'onglet actuel"
+  },
+  "btnCurrentTab": {
+    "message": "Onglet actuel"
+  },
+  "hintDomain": {
+    "message": "Regex complètes prises en charge. Laissez vide pour toutes les URL."
+  },
+  "errDomainRequired": {
+    "message": "Veuillez saisir un domaine ou un motif d'URL."
+  },
+  "labelHeaderName": {
+    "message": "Nom de l'en-tête"
+  },
+  "phHeaderName": {
+    "message": "ex. X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "Le nom de l'en-tête est obligatoire."
+  },
+  "labelHeaderValue": {
+    "message": "Valeur de l'en-tête"
+  },
+  "phHeaderValue": {
+    "message": "ex. my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "Laissez vide pour l'action <code>remove</code>."
+  },
+  "labelType": {
+    "message": "Type"
+  },
+  "labelAction": {
+    "message": "Action"
+  },
+  "labelStatus": {
+    "message": "Statut"
+  },
+  "typeRequest": {
+    "message": "Requête"
+  },
+  "typeResponse": {
+    "message": "Réponse"
+  },
+  "optSet": {
+    "message": "Modifier (set)"
+  },
+  "optAppend": {
+    "message": "Ajouter (append)"
+  },
+  "optRemove": {
+    "message": "Supprimer"
+  },
+  "statusActive": {
+    "message": "Active"
+  },
+  "statusInactive": {
+    "message": "Inactive"
+  },
+  "btnCancel": {
+    "message": "Annuler"
+  },
+  "btnSaveRule": {
+    "message": "Enregistrer"
+  },
+  "btnUpdateRule": {
+    "message": "Mettre à jour"
+  },
+  "importTitle": {
+    "message": "Importer des en-têtes de requête"
+  },
+  "importSubtitle": {
+    "message": "Collez des en-têtes bruts — un <code>Header-Name: value</code> par ligne — pour créer des règles de requête en masse."
+  },
+  "labelRequestHeaders": {
+    "message": "En-têtes de requête"
+  },
+  "hintImport": {
+    "message": "Les pseudo-en-têtes (<code>:authority</code>), la ligne de requête et les lignes vides ou de commentaire <code>#</code> sont ignorés automatiquement."
+  },
+  "phImportDomain": {
+    "message": "ex. .*\\.example\\.com.*  — vide pour toutes les URL"
+  },
+  "hintImportDomain": {
+    "message": "S'applique à chaque en-tête importé. Regex complètes prises en charge."
+  },
+  "btnImportHeaders": {
+    "message": "Importer les en-têtes"
+  },
+  "deleteTitle": {
+    "message": "Supprimer la règle ?"
+  },
+  "deleteDesc": {
+    "message": "La règle sera supprimée définitivement et le moteur resynchronisé."
+  },
+  "btnDelete": {
+    "message": "Supprimer"
+  },
+  "shareSubtitle": {
+    "message": "Aidez d'autres développeurs à la découvrir."
+  },
+  "btnCopy": {
+    "message": "Copier"
+  },
+  "btnCopied": {
+    "message": "Copié"
+  },
+  "shareText": {
+    "message": "Modify Header — une extension épurée pour gérer les règles d'en-têtes HTTP de requête et de réponse. À découvrir :"
+  },
+  "shareRedditTitle": {
+    "message": "Extension de navigateur Modify Header"
+  },
+  "badgeModify": {
+    "message": "Modifier"
+  },
+  "badgeAdd": {
+    "message": "Ajouter"
+  },
+  "badgeRemove": {
+    "message": "Retirer"
+  },
+  "noMatch": {
+    "message": "Aucune règle ne correspond à votre recherche."
+  },
+  "allUrls": {
+    "message": "Toutes les URL"
+  },
+  "ariaToggleRule": {
+    "message": "Activer/désactiver la règle"
+  },
+  "tipEditRule": {
+    "message": "Modifier la règle"
+  },
+  "tipDeleteRule": {
+    "message": "Supprimer la règle"
+  },
+  "rowActivated": {
+    "message": "Règle activée"
+  },
+  "rowDeactivated": {
+    "message": "Règle désactivée"
+  },
+  "toastDeleted": {
+    "message": "Règle supprimée et moteur synchronisé."
+  },
+  "errHeaderValueRequired": {
+    "message": "La valeur de l'en-tête est obligatoire pour Ajouter/Modifier."
+  },
+  "errInvalidRegex": {
+    "message": "Motif regex invalide dans le champ Domaine."
+  },
+  "toastUpdated": {
+    "message": "Règle mise à jour et moteur synchronisé !"
+  },
+  "toastSaved": {
+    "message": "Règle enregistrée et moteur synchronisé !"
+  },
+  "toastEnabled": {
+    "message": "Extension activée — les règles sont actives."
+  },
+  "toastPaused": {
+    "message": "Extension en pause — toutes les règles sont suspendues."
+  },
+  "headerCountOne": {
+    "message": "1 en-tête"
+  },
+  "headerCountMany": {
+    "message": "$1 en-têtes"
+  },
+  "errNoHeaders": {
+    "message": "Aucun en-tête valide trouvé. Utilisez un « Header-Name: value » par ligne."
+  },
+  "importPartNew": {
+    "message": "$1 nouveaux"
+  },
+  "importPartUpdated": {
+    "message": "$1 mis à jour"
+  },
+  "toastImported": {
+    "message": "$1 en-tête(s) de requête importé(s) ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

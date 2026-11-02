@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "साफ़-सुथरे डैशबोर्ड से HTTP रिक्वेस्ट और रिस्पॉन्स हेडर में बदलाव मैनेज करें।"
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "इम्पोर्ट"
+  },
+  "tipImport": {
+    "message": "रॉ रिक्वेस्ट हेडर एक साथ इम्पोर्ट करें"
+  },
+  "btnAddRule": {
+    "message": "नियम जोड़ें"
+  },
+  "tipAddRule": {
+    "message": "नया हेडर नियम बनाएँ"
+  },
+  "activeBadge": {
+    "message": "सक्रिय"
+  },
+  "ariaTogglePower": {
+    "message": "एक्सटेंशन टॉगल करें"
+  },
+  "tipTogglePower": {
+    "message": "एक्सटेंशन चालू/बंद करें"
+  },
+  "powerOn": {
+    "message": "ON"
+  },
+  "powerOff": {
+    "message": "OFF"
+  },
+  "pausedBanner": {
+    "message": "<strong>एक्सटेंशन रुका हुआ है</strong> — सभी हेडर नियम निलंबित हैं। फिर से शुरू करने के लिए ON करें।"
+  },
+  "ariaClose": {
+    "message": "बंद करें"
+  },
+  "emptyTitle": {
+    "message": "अभी कोई नियम नहीं"
+  },
+  "emptyDesc": {
+    "message": "अपना पहला हेडर नियम बनाने के लिए <strong>+ नियम जोड़ें</strong> पर क्लिक करें।"
+  },
+  "btnAddFirstRule": {
+    "message": "अपना पहला नियम जोड़ें"
+  },
+  "allRules": {
+    "message": "सभी नियम"
+  },
+  "searchPlaceholder": {
+    "message": "नियम खोजें…"
+  },
+  "allTypes": {
+    "message": "सभी प्रकार"
+  },
+  "colStatus": {
+    "message": "स्थिति"
+  },
+  "colDomain": {
+    "message": "डोमेन / पैटर्न"
+  },
+  "colHeader": {
+    "message": "हेडर"
+  },
+  "colValue": {
+    "message": "मान"
+  },
+  "colType": {
+    "message": "प्रकार"
+  },
+  "colAction": {
+    "message": "क्रिया"
+  },
+  "colManage": {
+    "message": "प्रबंधन"
+  },
+  "offeredBy": {
+    "message": "प्रस्तुतकर्ता"
+  },
+  "btnSidePanel": {
+    "message": "साइड पैनल"
+  },
+  "tipSidePanel": {
+    "message": "साइड पैनल में खोलें — वैल्यू कॉपी-पेस्ट करते समय खुला रहता है"
+  },
+  "btnRate": {
+    "message": "रेटिंग दें"
+  },
+  "tipRate": {
+    "message": "कृपया रेटिंग दें, रिव्यू के बाद यह बटन हमेशा के लिए गायब हो जाएगा।"
+  },
+  "shareTitle": {
+    "message": "Modify Header शेयर करें"
+  },
+  "btnShare": {
+    "message": "शेयर"
+  },
+  "ariaToggleTheme": {
+    "message": "कलर थीम बदलें"
+  },
+  "tipThemeDark": {
+    "message": "डार्क थीम पर जाएँ"
+  },
+  "tipThemeLight": {
+    "message": "लाइट थीम पर जाएँ"
+  },
+  "addRuleTitle": {
+    "message": "नया नियम जोड़ें"
+  },
+  "addRuleSubtitle": {
+    "message": "नीचे हेडर बदलने का नियम तय करें।"
+  },
+  "editRuleTitle": {
+    "message": "नियम संपादित करें"
+  },
+  "editRuleSubtitle": {
+    "message": "नीचे दिए फ़ील्ड अपडेट करें और बदलाव सेव करें।"
+  },
+  "labelDomain": {
+    "message": "डोमेन / URL पैटर्न"
+  },
+  "phDomain": {
+    "message": "जैसे .*\\.example\\.com.* या https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "मौजूदा टैब का URL इस्तेमाल करें"
+  },
+  "btnCurrentTab": {
+    "message": "मौजूदा टैब"
+  },
+  "hintDomain": {
+    "message": "पूरा regex सपोर्ट करता है। सभी URL के लिए खाली छोड़ें।"
+  },
+  "errDomainRequired": {
+    "message": "कृपया डोमेन या URL पैटर्न दर्ज करें।"
+  },
+  "labelHeaderName": {
+    "message": "हेडर नाम"
+  },
+  "phHeaderName": {
+    "message": "जैसे X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "हेडर नाम ज़रूरी है।"
+  },
+  "labelHeaderValue": {
+    "message": "हेडर मान"
+  },
+  "phHeaderValue": {
+    "message": "जैसे my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "<code>remove</code> क्रिया के लिए खाली छोड़ें।"
+  },
+  "labelType": {
+    "message": "प्रकार"
+  },
+  "labelAction": {
+    "message": "क्रिया"
+  },
+  "labelStatus": {
+    "message": "स्थिति"
+  },
+  "typeRequest": {
+    "message": "रिक्वेस्ट"
+  },
+  "typeResponse": {
+    "message": "रिस्पॉन्स"
+  },
+  "optSet": {
+    "message": "बदलें (set)"
+  },
+  "optAppend": {
+    "message": "जोड़ें (append)"
+  },
+  "optRemove": {
+    "message": "हटाएँ"
+  },
+  "statusActive": {
+    "message": "सक्रिय"
+  },
+  "statusInactive": {
+    "message": "निष्क्रिय"
+  },
+  "btnCancel": {
+    "message": "रद्द करें"
+  },
+  "btnSaveRule": {
+    "message": "नियम सेव करें"
+  },
+  "btnUpdateRule": {
+    "message": "नियम अपडेट करें"
+  },
+  "importTitle": {
+    "message": "रिक्वेस्ट हेडर इम्पोर्ट करें"
+  },
+  "importSubtitle": {
+    "message": "रॉ रिक्वेस्ट हेडर पेस्ट करें — हर लाइन में एक <code>Header-Name: value</code> — ताकि रिक्वेस्ट-प्रकार के नियम एक साथ बन सकें।"
+  },
+  "labelRequestHeaders": {
+    "message": "रिक्वेस्ट हेडर"
+  },
+  "hintImport": {
+    "message": "स्यूडो-हेडर (<code>:authority</code>), रिक्वेस्ट लाइन, और खाली या <code>#</code> कमेंट लाइनें अपने-आप छोड़ दी जाती हैं।"
+  },
+  "phImportDomain": {
+    "message": "जैसे .*\\.example\\.com.*  — सभी URL के लिए खाली छोड़ें"
+  },
+  "hintImportDomain": {
+    "message": "हर इम्पोर्ट किए गए हेडर पर लागू होता है। पूरा regex सपोर्ट करता है।"
+  },
+  "btnImportHeaders": {
+    "message": "हेडर इम्पोर्ट करें"
+  },
+  "deleteTitle": {
+    "message": "नियम हटाएँ?"
+  },
+  "deleteDesc": {
+    "message": "यह नियम को स्थायी रूप से हटा देगा और इंजन को फिर से सिंक करेगा।"
+  },
+  "btnDelete": {
+    "message": "हटाएँ"
+  },
+  "shareSubtitle": {
+    "message": "दूसरे डेवलपर्स तक पहुँचाने में मदद करें।"
+  },
+  "btnCopy": {
+    "message": "कॉपी"
+  },
+  "btnCopied": {
+    "message": "कॉपी हो गया"
+  },
+  "shareText": {
+    "message": "Modify Header — HTTP रिक्वेस्ट और रिस्पॉन्स हेडर नियम मैनेज करने के लिए एक साफ़-सुथरा ब्राउज़र एक्सटेंशन। देखें:"
+  },
+  "shareRedditTitle": {
+    "message": "Modify Header ब्राउज़र एक्सटेंशन"
+  },
+  "badgeModify": {
+    "message": "बदलें"
+  },
+  "badgeAdd": {
+    "message": "जोड़ें"
+  },
+  "badgeRemove": {
+    "message": "हटाएँ"
+  },
+  "noMatch": {
+    "message": "आपकी खोज से कोई नियम मेल नहीं खाता।"
+  },
+  "allUrls": {
+    "message": "सभी URL"
+  },
+  "ariaToggleRule": {
+    "message": "नियम की सक्रिय स्थिति बदलें"
+  },
+  "tipEditRule": {
+    "message": "नियम संपादित करें"
+  },
+  "tipDeleteRule": {
+    "message": "नियम हटाएँ"
+  },
+  "rowActivated": {
+    "message": "नियम सक्रिय हुआ"
+  },
+  "rowDeactivated": {
+    "message": "नियम निष्क्रिय हुआ"
+  },
+  "toastDeleted": {
+    "message": "नियम हटाया गया और इंजन सिंक हुआ।"
+  },
+  "errHeaderValueRequired": {
+    "message": "जोड़ें/बदलें क्रिया के लिए हेडर मान ज़रूरी है।"
+  },
+  "errInvalidRegex": {
+    "message": "डोमेन फ़ील्ड में regex पैटर्न अमान्य है।"
+  },
+  "toastUpdated": {
+    "message": "नियम अपडेट हुआ और इंजन सिंक हुआ!"
+  },
+  "toastSaved": {
+    "message": "नियम सेव हुआ और इंजन सिंक हुआ!"
+  },
+  "toastEnabled": {
+    "message": "एक्सटेंशन चालू — नियम सक्रिय हैं।"
+  },
+  "toastPaused": {
+    "message": "एक्सटेंशन रुका — सभी नियम निलंबित।"
+  },
+  "headerCountOne": {
+    "message": "1 हेडर"
+  },
+  "headerCountMany": {
+    "message": "$1 हेडर"
+  },
+  "errNoHeaders": {
+    "message": "कोई मान्य हेडर नहीं मिला। हर लाइन में एक “Header-Name: value” लिखें।"
+  },
+  "importPartNew": {
+    "message": "$1 नए"
+  },
+  "importPartUpdated": {
+    "message": "$1 अपडेट"
+  },
+  "toastImported": {
+    "message": "$1 रिक्वेस्ट हेडर इम्पोर्ट हुए ($2)।"
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "깔끔한 대시보드 UI로 HTTP 요청 및 응답 헤더 수정을 관리하세요."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "가져오기"
+  },
+  "tipImport": {
+    "message": "원본 요청 헤더를 한 번에 가져오기"
+  },
+  "btnAddRule": {
+    "message": "규칙 추가"
+  },
+  "tipAddRule": {
+    "message": "새 헤더 규칙 만들기"
+  },
+  "activeBadge": {
+    "message": "활성"
+  },
+  "ariaTogglePower": {
+    "message": "확장 프로그램 전환"
+  },
+  "tipTogglePower": {
+    "message": "확장 프로그램 켜기/끄기"
+  },
+  "powerOn": {
+    "message": "ON"
+  },
+  "powerOff": {
+    "message": "OFF"
+  },
+  "pausedBanner": {
+    "message": "<strong>확장 프로그램 일시 중지됨</strong> — 모든 헤더 규칙이 중지되었습니다. ON으로 전환하면 다시 시작됩니다."
+  },
+  "ariaClose": {
+    "message": "닫기"
+  },
+  "emptyTitle": {
+    "message": "아직 규칙이 없습니다"
+  },
+  "emptyDesc": {
+    "message": "<strong>+ 규칙 추가</strong>를 클릭해 첫 번째 헤더 규칙을 만드세요."
+  },
+  "btnAddFirstRule": {
+    "message": "첫 번째 규칙 추가"
+  },
+  "allRules": {
+    "message": "전체 규칙"
+  },
+  "searchPlaceholder": {
+    "message": "규칙 검색…"
+  },
+  "allTypes": {
+    "message": "모든 유형"
+  },
+  "colStatus": {
+    "message": "상태"
+  },
+  "colDomain": {
+    "message": "도메인 / 패턴"
+  },
+  "colHeader": {
+    "message": "헤더"
+  },
+  "colValue": {
+    "message": "값"
+  },
+  "colType": {
+    "message": "유형"
+  },
+  "colAction": {
+    "message": "동작"
+  },
+  "colManage": {
+    "message": "관리"
+  },
+  "offeredBy": {
+    "message": "제공"
+  },
+  "btnSidePanel": {
+    "message": "사이드 패널"
+  },
+  "tipSidePanel": {
+    "message": "사이드 패널에서 열기 — 값을 복사·붙여넣는 동안 열린 상태 유지"
+  },
+  "btnRate": {
+    "message": "평가하기"
+  },
+  "tipRate": {
+    "message": "평가해 주세요. 리뷰를 남기면 이 버튼은 영구히 사라집니다."
+  },
+  "shareTitle": {
+    "message": "Modify Header 공유"
+  },
+  "btnShare": {
+    "message": "공유"
+  },
+  "ariaToggleTheme": {
+    "message": "색상 테마 전환"
+  },
+  "tipThemeDark": {
+    "message": "다크 테마로 전환"
+  },
+  "tipThemeLight": {
+    "message": "라이트 테마로 전환"
+  },
+  "addRuleTitle": {
+    "message": "새 규칙 추가"
+  },
+  "addRuleSubtitle": {
+    "message": "아래에서 헤더 수정 규칙을 정의하세요."
+  },
+  "editRuleTitle": {
+    "message": "규칙 편집"
+  },
+  "editRuleSubtitle": {
+    "message": "아래 항목을 수정하고 변경 사항을 저장하세요."
+  },
+  "labelDomain": {
+    "message": "도메인 / URL 패턴"
+  },
+  "phDomain": {
+    "message": "예: .*\\.example\\.com.* 또는 https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "현재 탭의 URL 사용"
+  },
+  "btnCurrentTab": {
+    "message": "현재 탭"
+  },
+  "hintDomain": {
+    "message": "정규식을 완전히 지원합니다. 비워 두면 모든 URL과 일치합니다."
+  },
+  "errDomainRequired": {
+    "message": "도메인 또는 URL 패턴을 입력하세요."
+  },
+  "labelHeaderName": {
+    "message": "헤더 이름"
+  },
+  "phHeaderName": {
+    "message": "예: X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "헤더 이름은 필수입니다."
+  },
+  "labelHeaderValue": {
+    "message": "헤더 값"
+  },
+  "phHeaderValue": {
+    "message": "예: my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "<code>remove</code> 동작은 비워 두세요."
+  },
+  "labelType": {
+    "message": "유형"
+  },
+  "labelAction": {
+    "message": "동작"
+  },
+  "labelStatus": {
+    "message": "상태"
+  },
+  "typeRequest": {
+    "message": "요청"
+  },
+  "typeResponse": {
+    "message": "응답"
+  },
+  "optSet": {
+    "message": "수정 (set)"
+  },
+  "optAppend": {
+    "message": "추가 (append)"
+  },
+  "optRemove": {
+    "message": "제거"
+  },
+  "statusActive": {
+    "message": "활성"
+  },
+  "statusInactive": {
+    "message": "비활성"
+  },
+  "btnCancel": {
+    "message": "취소"
+  },
+  "btnSaveRule": {
+    "message": "규칙 저장"
+  },
+  "btnUpdateRule": {
+    "message": "규칙 업데이트"
+  },
+  "importTitle": {
+    "message": "요청 헤더 가져오기"
+  },
+  "importSubtitle": {
+    "message": "원본 요청 헤더를 한 줄에 하나씩(<code>Header-Name: value</code>) 붙여넣어 요청 유형 규칙을 한 번에 만드세요."
+  },
+  "labelRequestHeaders": {
+    "message": "요청 헤더"
+  },
+  "hintImport": {
+    "message": "의사 헤더(<code>:authority</code>), 요청 줄, 빈 줄 또는 <code>#</code> 주석 줄은 자동으로 무시됩니다."
+  },
+  "phImportDomain": {
+    "message": "예: .*\\.example\\.com.*  — 비워 두면 모든 URL과 일치"
+  },
+  "hintImportDomain": {
+    "message": "가져온 모든 헤더에 적용됩니다. 정규식을 완전히 지원합니다."
+  },
+  "btnImportHeaders": {
+    "message": "헤더 가져오기"
+  },
+  "deleteTitle": {
+    "message": "규칙을 삭제할까요?"
+  },
+  "deleteDesc": {
+    "message": "규칙이 영구적으로 삭제되고 엔진이 다시 동기화됩니다."
+  },
+  "btnDelete": {
+    "message": "삭제"
+  },
+  "shareSubtitle": {
+    "message": "다른 개발자들도 찾을 수 있게 도와주세요."
+  },
+  "btnCopy": {
+    "message": "복사"
+  },
+  "btnCopied": {
+    "message": "복사됨"
+  },
+  "shareText": {
+    "message": "Modify Header — HTTP 요청 및 응답 헤더 규칙을 관리하는 깔끔한 브라우저 확장 프로그램. 확인해 보세요:"
+  },
+  "shareRedditTitle": {
+    "message": "Modify Header 브라우저 확장 프로그램"
+  },
+  "badgeModify": {
+    "message": "수정"
+  },
+  "badgeAdd": {
+    "message": "추가"
+  },
+  "badgeRemove": {
+    "message": "제거"
+  },
+  "noMatch": {
+    "message": "검색과 일치하는 규칙이 없습니다."
+  },
+  "allUrls": {
+    "message": "모든 URL"
+  },
+  "ariaToggleRule": {
+    "message": "규칙 활성 상태 전환"
+  },
+  "tipEditRule": {
+    "message": "규칙 편집"
+  },
+  "tipDeleteRule": {
+    "message": "규칙 삭제"
+  },
+  "rowActivated": {
+    "message": "규칙 활성화됨"
+  },
+  "rowDeactivated": {
+    "message": "규칙 비활성화됨"
+  },
+  "toastDeleted": {
+    "message": "규칙이 삭제되고 엔진이 동기화되었습니다."
+  },
+  "errHeaderValueRequired": {
+    "message": "추가/수정 동작에는 헤더 값이 필요합니다."
+  },
+  "errInvalidRegex": {
+    "message": "도메인 필드의 정규식이 올바르지 않습니다."
+  },
+  "toastUpdated": {
+    "message": "규칙이 업데이트되고 엔진이 동기화되었습니다!"
+  },
+  "toastSaved": {
+    "message": "규칙이 저장되고 엔진이 동기화되었습니다!"
+  },
+  "toastEnabled": {
+    "message": "확장 프로그램 사용 — 규칙이 적용 중입니다."
+  },
+  "toastPaused": {
+    "message": "확장 프로그램 일시 중지 — 모든 규칙이 중지되었습니다."
+  },
+  "headerCountOne": {
+    "message": "헤더 1개"
+  },
+  "headerCountMany": {
+    "message": "헤더 $1개"
+  },
+  "errNoHeaders": {
+    "message": "유효한 헤더가 없습니다. 한 줄에 하나씩 “Header-Name: value” 형식으로 입력하세요."
+  },
+  "importPartNew": {
+    "message": "신규 $1개"
+  },
+  "importPartUpdated": {
+    "message": "업데이트 $1개"
+  },
+  "toastImported": {
+    "message": "요청 헤더 $1개를 가져왔습니다($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

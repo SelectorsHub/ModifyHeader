@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "透過簡潔的儀表板介面管理 HTTP 請求標頭與回應標頭的修改。"
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "匯入"
+  },
+  "tipImport": {
+    "message": "批次匯入原始請求標頭"
+  },
+  "btnAddRule": {
+    "message": "新增規則"
+  },
+  "tipAddRule": {
+    "message": "建立新的標頭規則"
+  },
+  "activeBadge": {
+    "message": "已啟用"
+  },
+  "ariaTogglePower": {
+    "message": "切換擴充功能"
+  },
+  "tipTogglePower": {
+    "message": "開啟/關閉擴充功能"
+  },
+  "powerOn": {
+    "message": "開"
+  },
+  "powerOff": {
+    "message": "關"
+  },
+  "pausedBanner": {
+    "message": "<strong>擴充功能已暫停</strong> — 所有標頭規則皆已停用。切換為「開」即可恢復。"
+  },
+  "ariaClose": {
+    "message": "關閉"
+  },
+  "emptyTitle": {
+    "message": "尚無規則"
+  },
+  "emptyDesc": {
+    "message": "點選 <strong>+ 新增規則</strong> 建立你的第一條標頭規則。"
+  },
+  "btnAddFirstRule": {
+    "message": "新增第一條規則"
+  },
+  "allRules": {
+    "message": "所有規則"
+  },
+  "searchPlaceholder": {
+    "message": "搜尋規則…"
+  },
+  "allTypes": {
+    "message": "所有類型"
+  },
+  "colStatus": {
+    "message": "狀態"
+  },
+  "colDomain": {
+    "message": "網域 / 比對模式"
+  },
+  "colHeader": {
+    "message": "標頭"
+  },
+  "colValue": {
+    "message": "值"
+  },
+  "colType": {
+    "message": "類型"
+  },
+  "colAction": {
+    "message": "動作"
+  },
+  "colManage": {
+    "message": "管理"
+  },
+  "offeredBy": {
+    "message": "提供者"
+  },
+  "btnSidePanel": {
+    "message": "側邊面板"
+  },
+  "tipSidePanel": {
+    "message": "在側邊面板中開啟 — 複製貼上值時保持開啟"
+  },
+  "btnRate": {
+    "message": "為我們評分"
+  },
+  "tipRate": {
+    "message": "請為我們評分，評論後此按鈕將永久消失。"
+  },
+  "shareTitle": {
+    "message": "分享 Modify Header"
+  },
+  "btnShare": {
+    "message": "分享"
+  },
+  "ariaToggleTheme": {
+    "message": "切換色彩主題"
+  },
+  "tipThemeDark": {
+    "message": "切換為深色主題"
+  },
+  "tipThemeLight": {
+    "message": "切換為淺色主題"
+  },
+  "addRuleTitle": {
+    "message": "新增規則"
+  },
+  "addRuleSubtitle": {
+    "message": "在下方定義標頭修改規則。"
+  },
+  "editRuleTitle": {
+    "message": "編輯規則"
+  },
+  "editRuleSubtitle": {
+    "message": "更新以下欄位並儲存變更。"
+  },
+  "labelDomain": {
+    "message": "網域 / URL 比對模式"
+  },
+  "phDomain": {
+    "message": "例如 .*\\.example\\.com.* 或 https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "使用目前分頁的 URL"
+  },
+  "btnCurrentTab": {
+    "message": "目前分頁"
+  },
+  "hintDomain": {
+    "message": "支援完整正規表示式。留空則比對所有 URL。"
+  },
+  "errDomainRequired": {
+    "message": "請輸入網域或 URL 比對模式。"
+  },
+  "labelHeaderName": {
+    "message": "標頭名稱"
+  },
+  "phHeaderName": {
+    "message": "例如 X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "標頭名稱為必填。"
+  },
+  "labelHeaderValue": {
+    "message": "標頭值"
+  },
+  "phHeaderValue": {
+    "message": "例如 my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "<code>remove</code> 動作可留空。"
+  },
+  "labelType": {
+    "message": "類型"
+  },
+  "labelAction": {
+    "message": "動作"
+  },
+  "labelStatus": {
+    "message": "狀態"
+  },
+  "typeRequest": {
+    "message": "請求"
+  },
+  "typeResponse": {
+    "message": "回應"
+  },
+  "optSet": {
+    "message": "修改 (set)"
+  },
+  "optAppend": {
+    "message": "新增 (append)"
+  },
+  "optRemove": {
+    "message": "移除"
+  },
+  "statusActive": {
+    "message": "已啟用"
+  },
+  "statusInactive": {
+    "message": "未啟用"
+  },
+  "btnCancel": {
+    "message": "取消"
+  },
+  "btnSaveRule": {
+    "message": "儲存規則"
+  },
+  "btnUpdateRule": {
+    "message": "更新規則"
+  },
+  "importTitle": {
+    "message": "匯入請求標頭"
+  },
+  "importSubtitle": {
+    "message": "貼上原始請求標頭（每行一個 <code>Header-Name: value</code>），批次建立請求類型規則。"
+  },
+  "labelRequestHeaders": {
+    "message": "請求標頭"
+  },
+  "hintImport": {
+    "message": "虛擬標頭（<code>:authority</code>）、請求行以及空白或 <code>#</code> 註解行會自動忽略。"
+  },
+  "phImportDomain": {
+    "message": "例如 .*\\.example\\.com.*  — 留空則比對所有 URL"
+  },
+  "hintImportDomain": {
+    "message": "套用至每個匯入的標頭。支援完整正規表示式。"
+  },
+  "btnImportHeaders": {
+    "message": "匯入標頭"
+  },
+  "deleteTitle": {
+    "message": "刪除規則？"
+  },
+  "deleteDesc": {
+    "message": "此操作將永久移除該規則並重新同步引擎。"
+  },
+  "btnDelete": {
+    "message": "刪除"
+  },
+  "shareSubtitle": {
+    "message": "幫助更多開發者找到它。"
+  },
+  "btnCopy": {
+    "message": "複製"
+  },
+  "btnCopied": {
+    "message": "已複製"
+  },
+  "shareText": {
+    "message": "Modify Header — 一款簡潔的瀏覽器擴充功能，用來管理 HTTP 請求與回應標頭規則。快來看看："
+  },
+  "shareRedditTitle": {
+    "message": "Modify Header 瀏覽器擴充功能"
+  },
+  "badgeModify": {
+    "message": "修改"
+  },
+  "badgeAdd": {
+    "message": "新增"
+  },
+  "badgeRemove": {
+    "message": "移除"
+  },
+  "noMatch": {
+    "message": "沒有符合搜尋條件的規則。"
+  },
+  "allUrls": {
+    "message": "所有 URL"
+  },
+  "ariaToggleRule": {
+    "message": "切換規則啟用狀態"
+  },
+  "tipEditRule": {
+    "message": "編輯規則"
+  },
+  "tipDeleteRule": {
+    "message": "刪除規則"
+  },
+  "rowActivated": {
+    "message": "規則已啟用"
+  },
+  "rowDeactivated": {
+    "message": "規則已停用"
+  },
+  "toastDeleted": {
+    "message": "規則已刪除，引擎已同步。"
+  },
+  "errHeaderValueRequired": {
+    "message": "新增/修改動作必須填寫標頭值。"
+  },
+  "errInvalidRegex": {
+    "message": "網域欄位中的正規表示式無效。"
+  },
+  "toastUpdated": {
+    "message": "規則已更新，引擎已同步！"
+  },
+  "toastSaved": {
+    "message": "規則已儲存，引擎已同步！"
+  },
+  "toastEnabled": {
+    "message": "擴充功能已啟用 — 規則生效中。"
+  },
+  "toastPaused": {
+    "message": "擴充功能已暫停 — 所有規則已停用。"
+  },
+  "headerCountOne": {
+    "message": "1 個標頭"
+  },
+  "headerCountMany": {
+    "message": "$1 個標頭"
+  },
+  "errNoHeaders": {
+    "message": "找不到有效的標頭。請每行輸入一個「Header-Name: value」。"
+  },
+  "importPartNew": {
+    "message": "新增 $1 個"
+  },
+  "importPartUpdated": {
+    "message": "更新 $1 個"
+  },
+  "toastImported": {
+    "message": "已匯入 $1 個請求標頭（$2）。"
+  },
+  "listSeparator": {
+    "message": "，"
+  }
+}

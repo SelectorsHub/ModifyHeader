@@ -136,6 +136,18 @@ chrome.runtime.onStartup.addListener(async () => {
   await syncRulesWithDNR();
 });
 
-chrome.runtime.onInstalled.addListener(async () => {
+const INSTALLED_PAGE_URL = 'https://www.selectorshub.com/modify-header-installed/';
+
+chrome.runtime.onInstalled.addListener(async (details) => {
   await syncRulesWithDNR();
+
+  // Show the welcome page on a fresh install only — not on updates,
+  // browser updates, or when the extension is reloaded in dev mode.
+  if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    try {
+      await chrome.tabs.create({ url: INSTALLED_PAGE_URL });
+    } catch (err) {
+      console.warn('[ModifyHeaders] Could not open installed page:', err && err.message);
+    }
+  }
 });

@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "Gerencie modificações de cabeçalhos HTTP de requisição e resposta com um painel limpo."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "Importar"
+  },
+  "tipImport": {
+    "message": "Importar cabeçalhos de requisição em lote"
+  },
+  "btnAddRule": {
+    "message": "Adicionar regra"
+  },
+  "tipAddRule": {
+    "message": "Criar uma nova regra de cabeçalho"
+  },
+  "activeBadge": {
+    "message": "ativas"
+  },
+  "ariaTogglePower": {
+    "message": "Ligar/desligar extensão"
+  },
+  "tipTogglePower": {
+    "message": "Ligar/desligar a extensão"
+  },
+  "powerOn": {
+    "message": "ON"
+  },
+  "powerOff": {
+    "message": "OFF"
+  },
+  "pausedBanner": {
+    "message": "<strong>Extensão pausada</strong> — Todas as regras estão suspensas. Mude para ON para retomar."
+  },
+  "ariaClose": {
+    "message": "Fechar"
+  },
+  "emptyTitle": {
+    "message": "Nenhuma regra ainda"
+  },
+  "emptyDesc": {
+    "message": "Clique em <strong>+ Adicionar regra</strong> para criar sua primeira regra de cabeçalho."
+  },
+  "btnAddFirstRule": {
+    "message": "Adicione sua primeira regra"
+  },
+  "allRules": {
+    "message": "Todas as regras"
+  },
+  "searchPlaceholder": {
+    "message": "Buscar regras…"
+  },
+  "allTypes": {
+    "message": "Todos os tipos"
+  },
+  "colStatus": {
+    "message": "Status"
+  },
+  "colDomain": {
+    "message": "Domínio / Padrão"
+  },
+  "colHeader": {
+    "message": "Cabeçalho"
+  },
+  "colValue": {
+    "message": "Valor"
+  },
+  "colType": {
+    "message": "Tipo"
+  },
+  "colAction": {
+    "message": "Ação"
+  },
+  "colManage": {
+    "message": "Gerenciar"
+  },
+  "offeredBy": {
+    "message": "Oferecido por"
+  },
+  "btnSidePanel": {
+    "message": "Painel lateral"
+  },
+  "tipSidePanel": {
+    "message": "Abrir no painel lateral — fica aberto enquanto você copia e cola valores"
+  },
+  "btnRate": {
+    "message": "Avalie-nos"
+  },
+  "tipRate": {
+    "message": "Avalie-nos e este botão some para sempre depois da sua avaliação."
+  },
+  "shareTitle": {
+    "message": "Compartilhar Modify Header"
+  },
+  "btnShare": {
+    "message": "Compartilhar"
+  },
+  "ariaToggleTheme": {
+    "message": "Alternar tema de cores"
+  },
+  "tipThemeDark": {
+    "message": "Mudar para tema escuro"
+  },
+  "tipThemeLight": {
+    "message": "Mudar para tema claro"
+  },
+  "addRuleTitle": {
+    "message": "Adicionar nova regra"
+  },
+  "addRuleSubtitle": {
+    "message": "Defina abaixo uma regra de modificação de cabeçalho."
+  },
+  "editRuleTitle": {
+    "message": "Editar regra"
+  },
+  "editRuleSubtitle": {
+    "message": "Atualize os campos e salve as alterações."
+  },
+  "labelDomain": {
+    "message": "Domínio / Padrão de URL"
+  },
+  "phDomain": {
+    "message": "ex.: .*\\.example\\.com.* ou https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "Usar a URL da aba atual"
+  },
+  "btnCurrentTab": {
+    "message": "Aba atual"
+  },
+  "hintDomain": {
+    "message": "Suporta regex completa. Deixe vazio para todas as URLs."
+  },
+  "errDomainRequired": {
+    "message": "Informe um domínio ou padrão de URL."
+  },
+  "labelHeaderName": {
+    "message": "Nome do cabeçalho"
+  },
+  "phHeaderName": {
+    "message": "ex.: X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "O nome do cabeçalho é obrigatório."
+  },
+  "labelHeaderValue": {
+    "message": "Valor do cabeçalho"
+  },
+  "phHeaderValue": {
+    "message": "ex.: my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "Deixe vazio para a ação <code>remove</code>."
+  },
+  "labelType": {
+    "message": "Tipo"
+  },
+  "labelAction": {
+    "message": "Ação"
+  },
+  "labelStatus": {
+    "message": "Status"
+  },
+  "typeRequest": {
+    "message": "Requisição"
+  },
+  "typeResponse": {
+    "message": "Resposta"
+  },
+  "optSet": {
+    "message": "Modificar (set)"
+  },
+  "optAppend": {
+    "message": "Adicionar (append)"
+  },
+  "optRemove": {
+    "message": "Remover"
+  },
+  "statusActive": {
+    "message": "Ativa"
+  },
+  "statusInactive": {
+    "message": "Inativa"
+  },
+  "btnCancel": {
+    "message": "Cancelar"
+  },
+  "btnSaveRule": {
+    "message": "Salvar regra"
+  },
+  "btnUpdateRule": {
+    "message": "Atualizar regra"
+  },
+  "importTitle": {
+    "message": "Importar cabeçalhos de requisição"
+  },
+  "importSubtitle": {
+    "message": "Cole cabeçalhos de requisição — um <code>Header-Name: value</code> por linha — para criar regras de requisição em lote."
+  },
+  "labelRequestHeaders": {
+    "message": "Cabeçalhos de requisição"
+  },
+  "hintImport": {
+    "message": "Pseudocabeçalhos (<code>:authority</code>), a linha de requisição e linhas vazias ou de comentário <code>#</code> são ignorados automaticamente."
+  },
+  "phImportDomain": {
+    "message": "ex.: .*\\.example\\.com.*  — vazio para todas as URLs"
+  },
+  "hintImportDomain": {
+    "message": "Aplicado a cada cabeçalho importado. Suporta regex completa."
+  },
+  "btnImportHeaders": {
+    "message": "Importar cabeçalhos"
+  },
+  "deleteTitle": {
+    "message": "Excluir regra?"
+  },
+  "deleteDesc": {
+    "message": "A regra será removida permanentemente e o mecanismo ressincronizado."
+  },
+  "btnDelete": {
+    "message": "Excluir"
+  },
+  "shareSubtitle": {
+    "message": "Ajude outros desenvolvedores a encontrá-la."
+  },
+  "btnCopy": {
+    "message": "Copiar"
+  },
+  "btnCopied": {
+    "message": "Copiado"
+  },
+  "shareText": {
+    "message": "Modify Header — uma extensão simples para gerenciar regras de cabeçalhos HTTP de requisição e resposta. Confira:"
+  },
+  "shareRedditTitle": {
+    "message": "Extensão de navegador Modify Header"
+  },
+  "badgeModify": {
+    "message": "Modificar"
+  },
+  "badgeAdd": {
+    "message": "Adicionar"
+  },
+  "badgeRemove": {
+    "message": "Remover"
+  },
+  "noMatch": {
+    "message": "Nenhuma regra corresponde à sua busca."
+  },
+  "allUrls": {
+    "message": "Todas as URLs"
+  },
+  "ariaToggleRule": {
+    "message": "Ativar/desativar regra"
+  },
+  "tipEditRule": {
+    "message": "Editar regra"
+  },
+  "tipDeleteRule": {
+    "message": "Excluir regra"
+  },
+  "rowActivated": {
+    "message": "Regra ativada"
+  },
+  "rowDeactivated": {
+    "message": "Regra desativada"
+  },
+  "toastDeleted": {
+    "message": "Regra excluída e mecanismo sincronizado."
+  },
+  "errHeaderValueRequired": {
+    "message": "O valor do cabeçalho é obrigatório para Adicionar/Modificar."
+  },
+  "errInvalidRegex": {
+    "message": "Padrão regex inválido no campo Domínio."
+  },
+  "toastUpdated": {
+    "message": "Regra atualizada e mecanismo sincronizado!"
+  },
+  "toastSaved": {
+    "message": "Regra salva e mecanismo sincronizado!"
+  },
+  "toastEnabled": {
+    "message": "Extensão ativada — as regras estão ativas."
+  },
+  "toastPaused": {
+    "message": "Extensão pausada — todas as regras suspensas."
+  },
+  "headerCountOne": {
+    "message": "1 cabeçalho"
+  },
+  "headerCountMany": {
+    "message": "$1 cabeçalhos"
+  },
+  "errNoHeaders": {
+    "message": "Nenhum cabeçalho válido encontrado. Use um “Header-Name: value” por linha."
+  },
+  "importPartNew": {
+    "message": "$1 novos"
+  },
+  "importPartUpdated": {
+    "message": "$1 atualizados"
+  },
+  "toastImported": {
+    "message": "$1 cabeçalho(s) de requisição importado(s) ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

@@ -1,6 +1,8 @@
 /**
  * popup.js — ModifyHeaders Pro
  *
+ * UI strings come from t() in i18n.js (chrome.i18n, browser language).
+ *
  * Manages rule CRUD via chrome.storage.local and syncs to the
  * background service worker which interfaces with declarativeNetRequest.
  *
@@ -197,7 +199,7 @@ function restoreAddDraft(d) {
   const active = d.active !== false;
   $('#input-active').prop('checked', active);
   $('#status-label')
-    .text(active ? 'Active' : 'Inactive')
+    .text(active ? t('statusActive') : t('statusInactive'))
     .removeClass('active inactive')
     .addClass(active ? 'active' : 'inactive');
   setModalMode(pendingEditId ? 'edit' : 'add');
@@ -213,7 +215,7 @@ function restoreImportDraft(d) {
   const active = d.active !== false;
   $('#import-active').prop('checked', active);
   $('#import-status-label')
-    .text(active ? 'Active' : 'Inactive')
+    .text(active ? t('statusActive') : t('statusInactive'))
     .removeClass('active inactive')
     .addClass(active ? 'active' : 'inactive');
   suppressDraft = false;
@@ -241,12 +243,12 @@ function applyPowerState(enabled) {
 
   if (enabled) {
     $btn.removeClass('power-off').attr('aria-checked', 'true');
-    $label.text('ON').removeClass('off');
+    $label.text(t('powerOn')).removeClass('off');
     $banner.addClass('d-none');
     $('body').removeClass('ext-disabled');
   } else {
     $btn.addClass('power-off').attr('aria-checked', 'false');
-    $label.text('OFF').addClass('off');
+    $label.text(t('powerOff')).addClass('off');
     $banner.removeClass('d-none');
     $('body').addClass('ext-disabled');
   }
@@ -263,7 +265,7 @@ function applyTheme(theme) {
   const $icon = $('#btn-theme i');
   $icon.removeClass('bi-moon-stars-fill bi-sun-fill')
        .addClass(isLight ? 'bi-sun-fill' : 'bi-moon-stars-fill');
-  $('#btn-theme').attr('data-tooltip', isLight ? 'Switch to dark theme' : 'Switch to light theme');
+  $('#btn-theme').attr('data-tooltip', isLight ? t('tipThemeDark') : t('tipThemeLight'));
 }
 
 /* ================================================================
@@ -297,15 +299,15 @@ async function syncWithBackground() {
 function typeBadge(type) {
   const icon = type === 'request' ? 'bi-arrow-up-circle' : 'bi-arrow-down-circle';
   return `<span class="badge-type badge-${type}">
-            <i class="bi ${icon}"></i>${type}
+            <i class="bi ${icon}"></i>${type === 'request' ? t('typeRequest') : t('typeResponse')}
           </span>`;
 }
 
 function actionBadge(action) {
   const map = {
-    set:    { icon: '',               label: 'Modify' },
-    append: { icon: 'bi-plus-circle', label: 'Add' },
-    remove: { icon: 'bi-dash-circle', label: 'Remove' },
+    set:    { icon: '',               label: t('badgeModify') },
+    append: { icon: 'bi-plus-circle', label: t('badgeAdd') },
+    remove: { icon: 'bi-dash-circle', label: t('badgeRemove') },
   };
   const { icon, label } = map[action] || { icon: 'bi-question', label: action };
   // 'Modify' intentionally has no icon — a pencil there looked like an
@@ -366,7 +368,7 @@ function renderRules(rules, search = '', typeFilter = '') {
     $tbody.html(`
       <tr>
         <td colspan="7" class="text-center py-4" style="color:var(--text-muted);">
-          <i class="bi bi-search me-2"></i>No rules match your search.
+          <i class="bi bi-search me-2"></i>${t('noMatch')}
         </td>
       </tr>
     `);
@@ -374,7 +376,7 @@ function renderRules(rules, search = '', typeFilter = '') {
   }
 
   filtered.forEach((rule) => {
-    const domainDisplay = rule.domain || '<span style="color:var(--text-muted);font-style:italic;">All URLs</span>';
+    const domainDisplay = rule.domain || '<span style="color:var(--text-muted);font-style:italic;">' + t('allUrls') + '</span>';
     const valueDisplay  = rule.headerValue || '<span style="color:var(--text-muted);">—</span>';
 
     const rowClass = rule.active ? 'rule-row' : 'rule-row inactive-row';
@@ -387,11 +389,11 @@ function renderRules(rules, search = '', typeFilter = '') {
               type="checkbox"
               class="form-check-input toggle-switch toggle-active"
               ${rule.active ? 'checked' : ''}
-              aria-label="Toggle rule active status"
+              aria-label="${t('ariaToggleRule')}"
             />
           </div>
         </td>
-        <td class="cell-domain-td" data-tooltip="${rule.domain || 'All URLs'}">
+        <td class="cell-domain-td" data-tooltip="${rule.domain || t('allUrls')}">
           <span class="cell-domain">${domainDisplay}</span>
         </td>
         <td class="cell-header-td" data-tooltip="${rule.headerName}">
@@ -403,10 +405,10 @@ function renderRules(rules, search = '', typeFilter = '') {
         <td>${typeBadge(rule.type)}</td>
         <td>${actionBadge(rule.action)}</td>
         <td class="text-end">
-          <button class="btn-icon btn-edit" title="Edit rule" data-id="${rule.id}">
+          <button class="btn-icon btn-edit" title="${t('tipEditRule')}" data-id="${rule.id}">
             <i class="bi bi-pencil"></i>
           </button>
-          <button class="btn-icon btn-delete" title="Delete rule" data-id="${rule.id}">
+          <button class="btn-icon btn-delete" title="${t('tipDeleteRule')}" data-id="${rule.id}">
             <i class="bi bi-trash3"></i>
           </button>
         </td>
@@ -434,16 +436,16 @@ let pendingEditId   = null;
 function setModalMode(mode) {
   if (mode === 'edit') {
     $('#modal-title-icon').attr('class', 'bi bi-pencil-square text-warning me-2');
-    $('#modal-title-text').text('Edit Rule');
-    $('#modal-subtitle').text('Update the fields below and save your changes.');
+    $('#modal-title-text').text(t('editRuleTitle'));
+    $('#modal-subtitle').text(t('editRuleSubtitle'));
     $('#save-btn-icon').attr('class', 'bi bi-floppy me-1');
-    $('#save-btn-text').text('Update Rule');
+    $('#save-btn-text').text(t('btnUpdateRule'));
   } else {
     $('#modal-title-icon').attr('class', 'bi bi-plus-circle-fill text-primary me-2');
-    $('#modal-title-text').text('Add New Rule');
-    $('#modal-subtitle').text('Define a header modification rule below.');
+    $('#modal-title-text').text(t('addRuleTitle'));
+    $('#modal-subtitle').text(t('addRuleSubtitle'));
     $('#save-btn-icon').attr('class', 'bi bi-check2 me-1');
-    $('#save-btn-text').text('Save Rule');
+    $('#save-btn-text').text(t('btnSaveRule'));
   }
 }
 
@@ -500,7 +502,7 @@ $(document).on('change', '.toggle-active', async function () {
   // Confirmation right at the row, anchored above the toggle.
   showRowToast(
     this,
-    isActive ? 'Rule activated' : 'Rule deactivated',
+    isActive ? t('rowActivated') : t('rowDeactivated'),
     isActive ? 'on' : 'off'
   );
 });
@@ -532,7 +534,7 @@ $('#btn-confirm-delete').on('click', async function () {
 
   pendingDeleteId = null;
   renderRules(updated, $('#search-input').val(), $('#filter-type').val());
-  showToast('Rule deleted and engine synced.');
+  showToast(t('toastDeleted'));
 });
 
 /* ================================================================
@@ -543,7 +545,7 @@ $('#input-active').on('change', function () {
   const isActive = $(this).is(':checked');
   const $label = $('#status-label');
   $label
-    .text(isActive ? 'Active' : 'Inactive')
+    .text(isActive ? t('statusActive') : t('statusInactive'))
     .removeClass('active inactive')
     .addClass(isActive ? 'active' : 'inactive');
 });
@@ -567,14 +569,14 @@ $('#btn-save-rule').on('click', async function () {
   // Validate: header name is required
   if (!headerName) {
     $('#input-header-name').addClass('is-invalid');
-    showFormError('Header Name is required.');
+    showFormError(t('errHeaderNameRequired'));
     return;
   }
 
   // Validate: value is required unless action = remove
   if (action !== 'remove' && !headerValue) {
     $('#input-header-value').addClass('is-invalid');
-    showFormError('Header Value is required for Add/Modify actions.');
+    showFormError(t('errHeaderValueRequired'));
     return;
   }
 
@@ -584,7 +586,7 @@ $('#btn-save-rule').on('click', async function () {
       new RegExp(domain);
     } catch {
       $('#input-domain').addClass('is-invalid');
-      showFormError('Invalid regex pattern in Domain field.');
+      showFormError(t('errInvalidRegex'));
       return;
     }
   }
@@ -615,7 +617,7 @@ $('#btn-save-rule').on('click', async function () {
 
     clearAddDraft();
     renderRules(rules, $('#search-input').val(), $('#filter-type').val());
-    showToast('Rule updated and engine synced!');
+    showToast(t('toastUpdated'));
   } else {
     // ── ADD MODE: push a brand-new rule ───────────────────────────
     const newRule = {
@@ -639,7 +641,7 @@ $('#btn-save-rule').on('click', async function () {
 
     clearAddDraft();
     renderRules(rules, $('#search-input').val(), $('#filter-type').val());
-    showToast('Rule saved and engine synced!');
+    showToast(t('toastSaved'));
   }
 });
 
@@ -653,7 +655,7 @@ function resetForm() {
   $('#form-error').addClass('d-none');
   $('#add-rule-form .is-invalid').removeClass('is-invalid');
   $('#input-active').prop('checked', true);
-  $('#status-label').text('Active').removeClass('inactive').addClass('active');
+  $('#status-label').text(t('statusActive')).removeClass('inactive').addClass('active');
   // Clear edit state and restore Add mode
   pendingEditId = null;
   setModalMode('add');
@@ -757,7 +759,7 @@ $('#btn-theme').on('click', async function () {
 
 const STORE_URL  = 'https://chromewebstore.google.com/detail/modify-header/odpbebncejmlkaamjaoojkcfffbinlko';
 const REVIEW_URL = STORE_URL + '/reviews';
-const SHARE_TEXT = 'Modify Header — a clean browser extension to manage HTTP request & response header rules. Check it out:';
+const SHARE_TEXT = t('shareText');
 
 /** Open a URL in a new browser tab. */
 function openTab(url) {
@@ -786,7 +788,7 @@ const SHARE_URLS = {
   linkedin: () => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(STORE_URL)}`,
   facebook: () => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(STORE_URL)}`,
   whatsapp: () => `https://wa.me/?text=${encodeURIComponent(SHARE_TEXT + ' ' + STORE_URL)}`,
-  reddit:   () => `https://www.reddit.com/submit?url=${encodeURIComponent(STORE_URL)}&title=${encodeURIComponent('Modify Header browser extension')}`,
+  reddit:   () => `https://www.reddit.com/submit?url=${encodeURIComponent(STORE_URL)}&title=${encodeURIComponent(t('shareRedditTitle'))}`,
   telegram: () => `https://t.me/share/url?url=${encodeURIComponent(STORE_URL)}&text=${encodeURIComponent(SHARE_TEXT)}`
 };
 
@@ -806,8 +808,8 @@ $('#btn-copy-link').on('click', async function () {
     el.select();
     document.execCommand('copy');
   }
-  $btn.html('<i class="bi bi-clipboard-check me-1"></i>Copied');
-  setTimeout(() => $btn.html('<i class="bi bi-clipboard me-1"></i>Copy'), 1600);
+  $btn.html('<i class="bi bi-clipboard-check me-1"></i>').append(document.createTextNode(t('btnCopied')));
+  setTimeout(() => $btn.html('<i class="bi bi-clipboard me-1"></i>').append(document.createTextNode(t('btnCopy'))), 1600);
 });
 
 /* ================================================================
@@ -823,7 +825,7 @@ $('#btn-power').on('click', async function () {
   await syncWithBackground();
 
   showToast(
-    newState ? 'Extension enabled — rules are active.' : 'Extension paused — all rules suspended.',
+    newState ? t('toastEnabled') : t('toastPaused'),
     newState ? 'success' : 'error'
   );
 });
@@ -884,7 +886,7 @@ function updateImportCount() {
   const n = headers.length;
 
   $chip
-    .text(`${n} header${n === 1 ? '' : 's'}`)
+    .text(n === 1 ? t('headerCountOne') : t('headerCountMany', n))
     .removeClass('d-none')
     .toggleClass('chip-empty', n === 0);
 }
@@ -898,7 +900,7 @@ $('#btn-import-pick-tab').on('click', function () {
 $('#import-active').on('change', function () {
   const isActive = $(this).is(':checked');
   $('#import-status-label')
-    .text(isActive ? 'Active' : 'Inactive')
+    .text(isActive ? t('statusActive') : t('statusInactive'))
     .removeClass('active inactive')
     .addClass(isActive ? 'active' : 'inactive');
 });
@@ -914,7 +916,7 @@ function resetImportForm() {
   $('#import-domain').removeClass('is-invalid');
   $('#import-count-chip').addClass('d-none');
   $('#import-active').prop('checked', true);
-  $('#import-status-label').text('Active').removeClass('inactive').addClass('active');
+  $('#import-status-label').text(t('statusActive')).removeClass('inactive').addClass('active');
 }
 
 document.getElementById('importModal').addEventListener('hidden.bs.modal', function () {
@@ -940,7 +942,7 @@ $('#btn-run-import').on('click', async function () {
   const active  = $('#import-active').is(':checked');
 
   if (headers.length === 0) {
-    showImportError('No valid headers found. Use one “Header-Name: value” per line.');
+    showImportError(t('errNoHeaders'));
     return;
   }
 
@@ -950,7 +952,7 @@ $('#btn-run-import').on('click', async function () {
       new RegExp(domain);
     } catch {
       $('#import-domain').addClass('is-invalid');
-      showImportError('Invalid regex pattern in Domain field.');
+      showImportError(t('errInvalidRegex'));
       return;
     }
   }
@@ -1002,9 +1004,9 @@ $('#btn-run-import').on('click', async function () {
   renderRules(rules, $('#search-input').val(), $('#filter-type').val());
 
   const parts = [];
-  if (added) parts.push(`${added} new`);
-  if (updated) parts.push(`${updated} updated`);
-  showToast(`Imported ${headers.length} request header${headers.length === 1 ? '' : 's'} (${parts.join(', ')}).`);
+  if (added) parts.push(t('importPartNew', added));
+  if (updated) parts.push(t('importPartUpdated', updated));
+  showToast(t('toastImported', headers.length, parts.join(t('listSeparator'))));
 });
 
 /* ================================================================

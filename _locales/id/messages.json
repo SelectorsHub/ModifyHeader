@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "Kelola modifikasi header HTTP request dan response dengan dasbor yang rapi."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "Impor"
+  },
+  "tipImport": {
+    "message": "Impor header request mentah sekaligus"
+  },
+  "btnAddRule": {
+    "message": "Tambah aturan"
+  },
+  "tipAddRule": {
+    "message": "Buat aturan header baru"
+  },
+  "activeBadge": {
+    "message": "aktif"
+  },
+  "ariaTogglePower": {
+    "message": "Aktifkan/nonaktifkan ekstensi"
+  },
+  "tipTogglePower": {
+    "message": "Nyalakan/matikan ekstensi"
+  },
+  "powerOn": {
+    "message": "ON"
+  },
+  "powerOff": {
+    "message": "OFF"
+  },
+  "pausedBanner": {
+    "message": "<strong>Ekstensi dijeda</strong> — Semua aturan header ditangguhkan. Ubah ke ON untuk melanjutkan."
+  },
+  "ariaClose": {
+    "message": "Tutup"
+  },
+  "emptyTitle": {
+    "message": "Belum ada aturan"
+  },
+  "emptyDesc": {
+    "message": "Klik <strong>+ Tambah aturan</strong> untuk membuat aturan header pertama Anda."
+  },
+  "btnAddFirstRule": {
+    "message": "Tambah aturan pertama"
+  },
+  "allRules": {
+    "message": "Semua aturan"
+  },
+  "searchPlaceholder": {
+    "message": "Cari aturan…"
+  },
+  "allTypes": {
+    "message": "Semua jenis"
+  },
+  "colStatus": {
+    "message": "Status"
+  },
+  "colDomain": {
+    "message": "Domain / Pola"
+  },
+  "colHeader": {
+    "message": "Header"
+  },
+  "colValue": {
+    "message": "Nilai"
+  },
+  "colType": {
+    "message": "Jenis"
+  },
+  "colAction": {
+    "message": "Aksi"
+  },
+  "colManage": {
+    "message": "Kelola"
+  },
+  "offeredBy": {
+    "message": "Ditawarkan oleh"
+  },
+  "btnSidePanel": {
+    "message": "Panel samping"
+  },
+  "tipSidePanel": {
+    "message": "Buka di panel samping — tetap terbuka saat Anda menyalin & menempel nilai"
+  },
+  "btnRate": {
+    "message": "Beri rating"
+  },
+  "tipRate": {
+    "message": "Beri kami rating; tombol ini hilang selamanya setelah Anda mengulas."
+  },
+  "shareTitle": {
+    "message": "Bagikan Modify Header"
+  },
+  "btnShare": {
+    "message": "Bagikan"
+  },
+  "ariaToggleTheme": {
+    "message": "Ganti tema warna"
+  },
+  "tipThemeDark": {
+    "message": "Beralih ke tema gelap"
+  },
+  "tipThemeLight": {
+    "message": "Beralih ke tema terang"
+  },
+  "addRuleTitle": {
+    "message": "Tambah aturan baru"
+  },
+  "addRuleSubtitle": {
+    "message": "Tentukan aturan modifikasi header di bawah."
+  },
+  "editRuleTitle": {
+    "message": "Edit aturan"
+  },
+  "editRuleSubtitle": {
+    "message": "Perbarui kolom di bawah lalu simpan perubahan."
+  },
+  "labelDomain": {
+    "message": "Domain / Pola URL"
+  },
+  "phDomain": {
+    "message": "mis. .*\\.example\\.com.* atau https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "Gunakan URL tab saat ini"
+  },
+  "btnCurrentTab": {
+    "message": "Tab saat ini"
+  },
+  "hintDomain": {
+    "message": "Mendukung regex penuh. Kosongkan untuk semua URL."
+  },
+  "errDomainRequired": {
+    "message": "Masukkan domain atau pola URL."
+  },
+  "labelHeaderName": {
+    "message": "Nama header"
+  },
+  "phHeaderName": {
+    "message": "mis. X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "Nama header wajib diisi."
+  },
+  "labelHeaderValue": {
+    "message": "Nilai header"
+  },
+  "phHeaderValue": {
+    "message": "mis. my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "Kosongkan untuk aksi <code>remove</code>."
+  },
+  "labelType": {
+    "message": "Jenis"
+  },
+  "labelAction": {
+    "message": "Aksi"
+  },
+  "labelStatus": {
+    "message": "Status"
+  },
+  "typeRequest": {
+    "message": "Request"
+  },
+  "typeResponse": {
+    "message": "Response"
+  },
+  "optSet": {
+    "message": "Ubah (set)"
+  },
+  "optAppend": {
+    "message": "Tambah (append)"
+  },
+  "optRemove": {
+    "message": "Hapus"
+  },
+  "statusActive": {
+    "message": "Aktif"
+  },
+  "statusInactive": {
+    "message": "Nonaktif"
+  },
+  "btnCancel": {
+    "message": "Batal"
+  },
+  "btnSaveRule": {
+    "message": "Simpan aturan"
+  },
+  "btnUpdateRule": {
+    "message": "Perbarui aturan"
+  },
+  "importTitle": {
+    "message": "Impor header request"
+  },
+  "importSubtitle": {
+    "message": "Tempel header request mentah — satu <code>Header-Name: value</code> per baris — untuk membuat aturan request sekaligus."
+  },
+  "labelRequestHeaders": {
+    "message": "Header request"
+  },
+  "hintImport": {
+    "message": "Pseudo-header (<code>:authority</code>), baris request, serta baris kosong atau komentar <code>#</code> otomatis diabaikan."
+  },
+  "phImportDomain": {
+    "message": "mis. .*\\.example\\.com.*  — kosongkan untuk semua URL"
+  },
+  "hintImportDomain": {
+    "message": "Diterapkan ke setiap header yang diimpor. Mendukung regex penuh."
+  },
+  "btnImportHeaders": {
+    "message": "Impor header"
+  },
+  "deleteTitle": {
+    "message": "Hapus aturan?"
+  },
+  "deleteDesc": {
+    "message": "Aturan akan dihapus permanen dan engine disinkronkan ulang."
+  },
+  "btnDelete": {
+    "message": "Hapus"
+  },
+  "shareSubtitle": {
+    "message": "Bantu developer lain menemukannya."
+  },
+  "btnCopy": {
+    "message": "Salin"
+  },
+  "btnCopied": {
+    "message": "Tersalin"
+  },
+  "shareText": {
+    "message": "Modify Header — ekstensi browser yang rapi untuk mengelola aturan header HTTP request & response. Cek di sini:"
+  },
+  "shareRedditTitle": {
+    "message": "Ekstensi browser Modify Header"
+  },
+  "badgeModify": {
+    "message": "Ubah"
+  },
+  "badgeAdd": {
+    "message": "Tambah"
+  },
+  "badgeRemove": {
+    "message": "Hapus"
+  },
+  "noMatch": {
+    "message": "Tidak ada aturan yang cocok dengan pencarian."
+  },
+  "allUrls": {
+    "message": "Semua URL"
+  },
+  "ariaToggleRule": {
+    "message": "Ubah status aktif aturan"
+  },
+  "tipEditRule": {
+    "message": "Edit aturan"
+  },
+  "tipDeleteRule": {
+    "message": "Hapus aturan"
+  },
+  "rowActivated": {
+    "message": "Aturan diaktifkan"
+  },
+  "rowDeactivated": {
+    "message": "Aturan dinonaktifkan"
+  },
+  "toastDeleted": {
+    "message": "Aturan dihapus dan engine disinkronkan."
+  },
+  "errHeaderValueRequired": {
+    "message": "Nilai header wajib untuk aksi Tambah/Ubah."
+  },
+  "errInvalidRegex": {
+    "message": "Pola regex di kolom Domain tidak valid."
+  },
+  "toastUpdated": {
+    "message": "Aturan diperbarui dan engine disinkronkan!"
+  },
+  "toastSaved": {
+    "message": "Aturan disimpan dan engine disinkronkan!"
+  },
+  "toastEnabled": {
+    "message": "Ekstensi aktif — aturan berjalan."
+  },
+  "toastPaused": {
+    "message": "Ekstensi dijeda — semua aturan ditangguhkan."
+  },
+  "headerCountOne": {
+    "message": "1 header"
+  },
+  "headerCountMany": {
+    "message": "$1 header"
+  },
+  "errNoHeaders": {
+    "message": "Tidak ada header valid. Gunakan satu “Header-Name: value” per baris."
+  },
+  "importPartNew": {
+    "message": "$1 baru"
+  },
+  "importPartUpdated": {
+    "message": "$1 diperbarui"
+  },
+  "toastImported": {
+    "message": "$1 header request diimpor ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

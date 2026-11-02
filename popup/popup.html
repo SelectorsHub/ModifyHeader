@@ -45,25 +45,25 @@
       </div>
     </div>
     <div class="d-flex align-items-center gap-2">
-      <button id="btn-import" class="btn btn-import" data-tooltip="Import raw request headers in bulk"
+      <button id="btn-import" class="btn btn-import" data-tooltip="Import raw request headers in bulk" data-i18n-tooltip="tipImport"
         data-bs-toggle="modal" data-bs-target="#importModal">
-        <i class="bi bi-box-arrow-in-down me-1"></i>Import
+        <i class="bi bi-box-arrow-in-down me-1"></i><span data-i18n="btnImport">Import</span>
       </button>
 
-        <button id="btn-add-rule" class="btn btn-primary btn-add" data-tooltip="Create a new header rule"
+        <button id="btn-add-rule" class="btn btn-primary btn-add" data-tooltip="Create a new header rule" data-i18n-tooltip="tipAddRule"
         data-bs-toggle="modal" data-bs-target="#addRuleModal">
-        <i class="bi bi-plus-lg me-1"></i>Add Rule
+        <i class="bi bi-plus-lg me-1"></i><span data-i18n="btnAddRule">Add Rule</span>
       </button>
 
       <span id="active-count-badge" class="rule-count-badge">
         <i class="bi bi-check2-circle me-1"></i>
-        <span id="active-count">0</span> Active
+        <span id="active-count">0</span> <span data-i18n="activeBadge">Active</span>
       </span>
 
       <!-- ── Global Power Toggle ── -->
       <div class="power-wrap">
         <button id="btn-power" class="btn-power" role="switch" aria-checked="true"
-          aria-label="Toggle extension" data-tooltip="Toggle extension on/off">
+          aria-label="Toggle extension" data-i18n-aria-label="ariaTogglePower" data-tooltip="Toggle extension on/off" data-i18n-tooltip="tipTogglePower">
           <span class="power-track">
             <span class="power-knob"><i class="bi bi-power"></i></span>
           </span>
@@ -78,7 +78,7 @@
   <!-- ─── Disabled Banner ──────────────────────────────────────── -->
   <div id="disabled-banner" class="disabled-banner d-none">
     <i class="bi bi-pause-circle-fill me-2"></i>
-    <strong>Extension Paused</strong> — All header rules are suspended. Toggle ON to resume.
+    <span data-i18n-html="pausedBanner"><strong>Extension Paused</strong> — All header rules are suspended. Toggle ON to resume.</span>
   </div>
 
   <!-- ─── Main Content ─────────────────────────────────────────── -->
@@ -90,10 +90,9 @@
         aria-atomic="true">
         <div class="d-flex">
           <div class="toast-body" id="toast-message">
-            Rule saved successfully.
           </div>
           <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-            aria-label="Close"></button>
+            aria-label="Close" data-i18n-aria-label="ariaClose"></button>
         </div>
       </div>
     </div>
@@ -103,10 +102,10 @@
       <div class="empty-icon mb-3">
         <i class="bi bi-funnel"></i>
       </div>
-      <h3 class="empty-title">No Rules Yet</h3>
-      <p class="empty-desc">Click <strong>+ Add Rule</strong> to create your first header rule.</p>
+      <h3 class="empty-title" data-i18n="emptyTitle">No Rules Yet</h3>
+      <p class="empty-desc" data-i18n-html="emptyDesc">Click <strong>+ Add Rule</strong> to create your first header rule.</p>
       <button class="btn btn-primary btn-add" data-bs-toggle="modal" data-bs-target="#addRuleModal">
-        <i class="bi bi-plus-lg me-1"></i>Add Your First Rule
+        <i class="bi bi-plus-lg me-1"></i><span data-i18n="btnAddFirstRule">Add Your First Rule</span>
       </button>
     </div>
 
@@ -115,19 +114,19 @@
       <div class="table-card">
         <div class="table-toolbar d-flex align-items-center justify-content-between px-3 py-2">
           <span class="toolbar-label">
-            <i class="bi bi-list-ul me-1"></i>All Rules
+            <i class="bi bi-list-ul me-1"></i><span data-i18n="allRules">All Rules</span>
             (<span id="total-count">0</span>)
           </span>
           <div class="d-flex gap-2">
             <div class="search-wrap">
               <i class="bi bi-search search-icon"></i>
               <input type="text" id="search-input" class="form-control form-control-sm search-input"
-                placeholder="Search rules…" />
+                placeholder="Search rules…" data-i18n-placeholder="searchPlaceholder" />
             </div>
             <select id="filter-type" class="form-select form-select-sm filter-select">
-              <option value="">All Types</option>
-              <option value="request">Request</option>
-              <option value="response">Response</option>
+              <option value="" data-i18n="allTypes">All Types</option>
+              <option value="request" data-i18n="typeRequest">Request</option>
+              <option value="response" data-i18n="typeResponse">Response</option>
             </select>
           </div>
         </div>
@@ -136,13 +135,13 @@
           <table class="table rules-table mb-0">
             <thead>
               <tr>
-                <th>Status</th>
-                <th>Domain / Pattern</th>
-                <th>Header</th>
-                <th>Value</th>
-                <th>Type</th>
-                <th>Action</th>
-                <th class="text-end">Manage</th>
+                <th data-i18n="colStatus">Status</th>
+                <th data-i18n="colDomain">Domain / Pattern</th>
+                <th data-i18n="colHeader">Header</th>
+                <th data-i18n="colValue">Value</th>
+                <th data-i18n="colType">Type</th>
+                <th data-i18n="colAction">Action</th>
+                <th class="text-end" data-i18n="colManage">Manage</th>
               </tr>
             </thead>
             <tbody id="rules-tbody">
@@ -157,24 +156,24 @@
   <!-- ─── Footer ───────────────────────────────────────────────── -->
   <footer class="app-footer d-flex align-items-center justify-content-between px-3">
     <span class="footer-credit">
-      Offered by
+      <span data-i18n="offeredBy">Offered by</span>
       <a href="https://selectorshub.com" target="_blank" rel="noopener" class="footer-link">SelectorsHub</a>
     </span>
     <div class="footer-actions d-flex align-items-center gap-2">
-      <button id="btn-sidepanel" class="footer-btn footer-sidepanel" aria-label="Open in side panel"
-        data-tooltip="Open in side panel — stays open while you copy &amp; paste values">
-        <i class="bi bi-layout-sidebar-inset-reverse me-1"></i>Side panel
+      <button id="btn-sidepanel" class="footer-btn footer-sidepanel" aria-label="Open in side panel" data-i18n-aria-label="btnSidePanel"
+        data-tooltip="Open in side panel — stays open while you copy &amp; paste values" data-i18n-tooltip="tipSidePanel">
+        <i class="bi bi-layout-sidebar-inset-reverse me-1"></i><span data-i18n="btnSidePanel">Side panel</span>
       </button>
-      <button id="btn-rate" class="footer-btn footer-rate" aria-label="Rate us"
-        data-tooltip="Pls Rate us &amp; this button disappears forever after you review.">
-        <i class="bi bi-star-fill me-1"></i>Rate us
+      <button id="btn-rate" class="footer-btn footer-rate" aria-label="Rate us" data-i18n-aria-label="btnRate"
+        data-tooltip="Pls Rate us &amp; this button disappears forever after you review." data-i18n-tooltip="tipRate">
+        <i class="bi bi-star-fill me-1"></i><span data-i18n="btnRate">Rate us</span>
       </button>
-      <button id="btn-share" class="footer-btn" aria-label="Share Modify Header"
-        data-tooltip="Share Modify Header"
+      <button id="btn-share" class="footer-btn" aria-label="Share Modify Header" data-i18n-aria-label="shareTitle"
+        data-tooltip="Share Modify Header" data-i18n-tooltip="shareTitle"
         data-bs-toggle="modal" data-bs-target="#shareModal">
-        <i class="bi bi-share-fill me-1"></i>Share
+        <i class="bi bi-share-fill me-1"></i><span data-i18n="btnShare">Share</span>
       </button>
-      <button id="btn-theme" class="footer-btn footer-theme" aria-label="Toggle color theme"
+      <button id="btn-theme" class="footer-btn footer-theme" aria-label="Toggle color theme" data-i18n-aria-label="ariaToggleTheme"
         data-tooltip="Switch to dark theme">
         <i class="bi bi-sun-fill"></i>
       </button>
@@ -190,11 +189,11 @@
           <div class="modal-title-wrap">
             <h2 class="modal-title" id="addRuleModalLabel">
               <i id="modal-title-icon" class="bi bi-plus-circle-fill text-primary me-2"></i>
-              <span id="modal-title-text">Add New Rule</span>
+              <span id="modal-title-text" data-i18n="addRuleTitle">Add New Rule</span>
             </h2>
-            <p class="modal-subtitle" id="modal-subtitle">Define a header modification rule below.</p>
+            <p class="modal-subtitle" id="modal-subtitle" data-i18n="addRuleSubtitle">Define a header modification rule below.</p>
           </div>
-          <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria-label="ariaClose"></button>
         </div>
 
         <div class="modal-body pt-2">
@@ -203,41 +202,41 @@
             <!-- Domain -->
             <div class="mb-3">
               <label for="input-domain" class="form-label field-label">
-                <i class="bi bi-globe me-1"></i>Domain / URL Pattern
+                <i class="bi bi-globe me-1"></i><span data-i18n="labelDomain">Domain / URL Pattern</span>
               </label>
               <div class="input-group domain-input-group">
                 <input type="text" id="input-domain" class="form-control field-input"
-                  placeholder="e.g. .*\.example\.com.* or https://api\.site\.com/.*" required />
-                <button type="button" id="btn-pick-tab" class="btn btn-pick-tab" title="Use current tab's URL">
+                  placeholder="e.g. .*\.example\.com.* or https://api\.site\.com/.*" data-i18n-placeholder="phDomain" required />
+                <button type="button" id="btn-pick-tab" class="btn btn-pick-tab" title="Use current tab's URL" data-i18n-title="tipCurrentTab">
                   <i class="bi bi-browser-chrome"></i>
-                  <span>Current Tab</span>
+                  <span data-i18n="btnCurrentTab">Current Tab</span>
                 </button>
               </div>
               <div class="form-text hint-text">
-                Supports full regex. Leave blank to match all URLs.
+                <span data-i18n="hintDomain">Supports full regex. Leave blank to match all URLs.</span>
               </div>
-              <div class="invalid-feedback">Please enter a domain or URL pattern.</div>
+              <div class="invalid-feedback" data-i18n="errDomainRequired">Please enter a domain or URL pattern.</div>
             </div>
 
             <div class="row g-3">
               <!-- Header Name -->
               <div class="col-md-6">
                 <label for="input-header-name" class="form-label field-label">
-                  <i class="bi bi-tag me-1"></i>Header Name
+                  <i class="bi bi-tag me-1"></i><span data-i18n="labelHeaderName">Header Name</span>
                 </label>
                 <input type="text" id="input-header-name" class="form-control field-input"
-                  placeholder="e.g. X-Custom-Header" required />
-                <div class="invalid-feedback">Header name is required.</div>
+                  placeholder="e.g. X-Custom-Header" data-i18n-placeholder="phHeaderName" required />
+                <div class="invalid-feedback" data-i18n="errHeaderNameRequired">Header name is required.</div>
               </div>
 
               <!-- Header Value -->
               <div class="col-md-6">
                 <label for="input-header-value" class="form-label field-label">
-                  <i class="bi bi-card-text me-1"></i>Header Value
+                  <i class="bi bi-card-text me-1"></i><span data-i18n="labelHeaderValue">Header Value</span>
                 </label>
                 <input type="text" id="input-header-value" class="form-control field-input"
-                  placeholder="e.g. my-value-123" />
-                <div class="form-text hint-text">Leave blank for <code>remove</code> action.</div>
+                  placeholder="e.g. my-value-123" data-i18n-placeholder="phHeaderValue" />
+                <div class="form-text hint-text" data-i18n-html="hintHeaderValue">Leave blank for <code>remove</code> action.</div>
               </div>
             </div>
 
@@ -245,36 +244,36 @@
               <!-- Type -->
               <div class="col-md-4">
                 <label for="input-type" class="form-label field-label">
-                  <i class="bi bi-arrow-left-right me-1"></i>Type
+                  <i class="bi bi-arrow-left-right me-1"></i><span data-i18n="labelType">Type</span>
                 </label>
                 <select id="input-type" class="form-select field-input" required>
-                  <option value="request">Request</option>
-                  <option value="response">Response</option>
+                  <option value="request" data-i18n="typeRequest">Request</option>
+                  <option value="response" data-i18n="typeResponse">Response</option>
                 </select>
               </div>
 
               <!-- Action -->
               <div class="col-md-4">
                 <label for="input-action" class="form-label field-label">
-                  <i class="bi bi-lightning me-1"></i>Action
+                  <i class="bi bi-lightning me-1"></i><span data-i18n="labelAction">Action</span>
                 </label>
                 <select id="input-action" class="form-select field-input" required>
-                  <option value="set">Modify (set)</option>
-                  <option value="append">Add (append)</option>
-                  <option value="remove">Remove</option>
+                  <option value="set" data-i18n="optSet">Modify (set)</option>
+                  <option value="append" data-i18n="optAppend">Add (append)</option>
+                  <option value="remove" data-i18n="optRemove">Remove</option>
                 </select>
               </div>
 
               <!-- Status -->
               <div class="col-md-4 d-flex flex-column justify-content-center">
                 <label class="form-label field-label mb-2">
-                  <i class="bi bi-toggle-on me-1"></i>Status
+                  <i class="bi bi-toggle-on me-1"></i><span data-i18n="labelStatus">Status</span>
                 </label>
                 <div class="d-flex align-items-center gap-2">
                   <div class="form-check form-switch mb-0">
                     <input class="form-check-input toggle-switch" type="checkbox" id="input-active" checked />
                   </div>
-                  <span id="status-label" class="status-text active">Active</span>
+                  <span id="status-label" class="status-text active" data-i18n="statusActive">Active</span>
                 </div>
               </div>
             </div>
@@ -289,12 +288,12 @@
         </div>
 
         <div class="modal-footer border-0 pt-0">
-          <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">
+          <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal" data-i18n="btnCancel">
             Cancel
           </button>
           <button type="button" id="btn-save-rule" class="btn btn-primary btn-save">
             <i id="save-btn-icon" class="bi bi-check2 me-1"></i>
-            <span id="save-btn-text">Save Rule</span>
+            <span id="save-btn-text" data-i18n="btnSaveRule">Save Rule</span>
           </button>
         </div>
       </div>
@@ -310,14 +309,14 @@
           <div class="modal-title-wrap">
             <h2 class="modal-title" id="importModalLabel">
               <i class="bi bi-box-arrow-in-down text-primary me-2"></i>
-              <span>Import Request Headers</span>
+              <span data-i18n="importTitle">Import Request Headers</span>
             </h2>
-            <p class="modal-subtitle">
+            <p class="modal-subtitle" data-i18n-html="importSubtitle">
               Paste raw request headers — one <code>Header-Name: value</code> per line — to create
               request-type rules in bulk.
             </p>
           </div>
-          <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria-label="ariaClose"></button>
         </div>
 
         <div class="modal-body pt-2">
@@ -326,12 +325,12 @@
             <!-- Raw headers -->
             <div class="mb-3">
               <label for="import-textarea" class="form-label field-label">
-                <i class="bi bi-body-text me-1"></i>Request Headers
+                <i class="bi bi-body-text me-1"></i><span data-i18n="labelRequestHeaders">Request Headers</span>
                 <span id="import-count-chip" class="import-count-chip d-none">0 headers</span>
               </label>
               <textarea id="import-textarea" class="form-control field-input import-textarea" rows="7"
                 placeholder="Authorization: Bearer eyJhbGci...&#10;X-Api-Key: 1234-abcd&#10;X-Env: staging&#10;Content-Type: application/json"></textarea>
-              <div class="form-text hint-text">
+              <div class="form-text hint-text" data-i18n-html="hintImport">
                 Pseudo-headers (<code>:authority</code>), the request line, and blank or
                 <code>#</code> comment lines are ignored automatically.
               </div>
@@ -340,18 +339,18 @@
             <!-- Domain -->
             <div class="mb-3">
               <label for="import-domain" class="form-label field-label">
-                <i class="bi bi-globe me-1"></i>Domain / URL Pattern
+                <i class="bi bi-globe me-1"></i><span data-i18n="labelDomain">Domain / URL Pattern</span>
               </label>
               <div class="input-group domain-input-group">
                 <input type="text" id="import-domain" class="form-control field-input"
-                  placeholder="e.g. .*\.example\.com.*  — leave blank to match all URLs" />
-                <button type="button" id="btn-import-pick-tab" class="btn btn-pick-tab" title="Use current tab's URL">
+                  placeholder="e.g. .*\.example\.com.*  — leave blank to match all URLs" data-i18n-placeholder="phImportDomain" />
+                <button type="button" id="btn-import-pick-tab" class="btn btn-pick-tab" title="Use current tab's URL" data-i18n-title="tipCurrentTab">
                   <i class="bi bi-browser-chrome"></i>
-                  <span>Current Tab</span>
+                  <span data-i18n="btnCurrentTab">Current Tab</span>
                 </button>
               </div>
               <div class="form-text hint-text">
-                Applied to every imported header. Supports full regex.
+                <span data-i18n="hintImportDomain">Applied to every imported header. Supports full regex.</span>
               </div>
             </div>
 
@@ -359,24 +358,24 @@
               <!-- Action -->
               <div class="col-md-6">
                 <label for="import-action" class="form-label field-label">
-                  <i class="bi bi-lightning me-1"></i>Action
+                  <i class="bi bi-lightning me-1"></i><span data-i18n="labelAction">Action</span>
                 </label>
                 <select id="import-action" class="form-select field-input">
-                  <option value="set">Modify (set)</option>
-                  <option value="append">Add (append)</option>
+                  <option value="set" data-i18n="optSet">Modify (set)</option>
+                  <option value="append" data-i18n="optAppend">Add (append)</option>
                 </select>
               </div>
 
               <!-- Status -->
               <div class="col-md-6 d-flex flex-column justify-content-center">
                 <label class="form-label field-label mb-2">
-                  <i class="bi bi-toggle-on me-1"></i>Status
+                  <i class="bi bi-toggle-on me-1"></i><span data-i18n="labelStatus">Status</span>
                 </label>
                 <div class="d-flex align-items-center gap-2">
                   <div class="form-check form-switch mb-0">
                     <input class="form-check-input toggle-switch" type="checkbox" id="import-active" checked />
                   </div>
-                  <span id="import-status-label" class="status-text active">Active</span>
+                  <span id="import-status-label" class="status-text active" data-i18n="statusActive">Active</span>
                 </div>
               </div>
             </div>
@@ -391,12 +390,12 @@
         </div>
 
         <div class="modal-footer border-0 pt-0">
-          <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">
+          <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal" data-i18n="btnCancel">
             Cancel
           </button>
           <button type="button" id="btn-run-import" class="btn btn-primary btn-save">
             <i class="bi bi-box-arrow-in-down me-1"></i>
-            <span id="import-btn-text">Import Headers</span>
+            <span id="import-btn-text" data-i18n="btnImportHeaders">Import Headers</span>
           </button>
         </div>
       </div>
@@ -412,12 +411,12 @@
           <div class="delete-icon mb-3">
             <i class="bi bi-trash3-fill"></i>
           </div>
-          <h3 class="delete-title" id="deleteModalLabel">Delete Rule?</h3>
-          <p class="delete-desc">This will permanently remove the rule and re-sync the engine.</p>
+          <h3 class="delete-title" id="deleteModalLabel" data-i18n="deleteTitle">Delete Rule?</h3>
+          <p class="delete-desc" data-i18n="deleteDesc">This will permanently remove the rule and re-sync the engine.</p>
           <div class="d-flex gap-2 justify-content-center mt-3">
-            <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-secondary btn-cancel" data-bs-dismiss="modal" data-i18n="btnCancel">Cancel</button>
             <button type="button" id="btn-confirm-delete" class="btn btn-danger btn-delete-confirm">
-              <i class="bi bi-trash3 me-1"></i>Delete
+              <i class="bi bi-trash3 me-1"></i><span data-i18n="btnDelete">Delete</span>
             </button>
           </div>
         </div>
@@ -432,12 +431,12 @@
       <div class="modal-content modal-glass">
         <div class="modal-body py-4">
           <div class="d-flex justify-content-between align-items-start mb-2">
-            <h3 class="modal-title" id="shareModalLabel">Share Modify Header</h3>
-            <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Close">
+            <h3 class="modal-title" id="shareModalLabel" data-i18n="shareTitle">Share Modify Header</h3>
+            <button type="button" class="btn-close-modal" data-bs-dismiss="modal" aria-label="Close" data-i18n-aria-label="ariaClose">
               <i class="bi bi-x-lg"></i>
             </button>
           </div>
-          <p class="modal-subtitle mb-3">Help other developers find it.</p>
+          <p class="modal-subtitle mb-3" data-i18n="shareSubtitle">Help other developers find it.</p>
           <div class="share-grid">
             <button class="share-btn" data-share="twitter"><i class="bi bi-twitter-x"></i><span>X</span></button>
             <button class="share-btn" data-share="linkedin"><i class="bi bi-linkedin"></i><span>LinkedIn</span></button>
@@ -449,7 +448,7 @@
           <div class="share-copy mt-3">
             <input type="text" id="share-link" class="form-control form-control-sm" readonly
               value="https://chromewebstore.google.com/detail/modify-header/odpbebncejmlkaamjaoojkcfffbinlko" />
-            <button id="btn-copy-link" class="btn btn-add btn-copy-link"><i class="bi bi-clipboard me-1"></i>Copy</button>
+            <button id="btn-copy-link" class="btn btn-add btn-copy-link"><i class="bi bi-clipboard me-1"></i><span data-i18n="btnCopy">Copy</span></button>
           </div>
         </div>
       </div>
@@ -461,6 +460,8 @@
   <script src="../lib/jquery.min.js"></script>
   <!-- Bootstrap 5 JS Bundle (local) -->
   <script src="../lib/bootstrap.bundle.min.js"></script>
+  <!-- Localisation (picks the browser UI language) -->
+  <script src="i18n.js"></script>
   <!-- Extension Logic -->
   <script src="popup.js"></script>
 </body>

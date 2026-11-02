@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "Manage HTTP request and response header modifications with a clean dashboard UI."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "Import"
+  },
+  "tipImport": {
+    "message": "Import raw request headers in bulk"
+  },
+  "btnAddRule": {
+    "message": "Add Rule"
+  },
+  "tipAddRule": {
+    "message": "Create a new header rule"
+  },
+  "activeBadge": {
+    "message": "Active"
+  },
+  "ariaTogglePower": {
+    "message": "Toggle extension"
+  },
+  "tipTogglePower": {
+    "message": "Toggle extension on/off"
+  },
+  "powerOn": {
+    "message": "ON"
+  },
+  "powerOff": {
+    "message": "OFF"
+  },
+  "pausedBanner": {
+    "message": "<strong>Extension Paused</strong> — All header rules are suspended. Toggle ON to resume."
+  },
+  "ariaClose": {
+    "message": "Close"
+  },
+  "emptyTitle": {
+    "message": "No Rules Yet"
+  },
+  "emptyDesc": {
+    "message": "Click <strong>+ Add Rule</strong> to create your first header rule."
+  },
+  "btnAddFirstRule": {
+    "message": "Add Your First Rule"
+  },
+  "allRules": {
+    "message": "All Rules"
+  },
+  "searchPlaceholder": {
+    "message": "Search rules…"
+  },
+  "allTypes": {
+    "message": "All Types"
+  },
+  "colStatus": {
+    "message": "Status"
+  },
+  "colDomain": {
+    "message": "Domain / Pattern"
+  },
+  "colHeader": {
+    "message": "Header"
+  },
+  "colValue": {
+    "message": "Value"
+  },
+  "colType": {
+    "message": "Type"
+  },
+  "colAction": {
+    "message": "Action"
+  },
+  "colManage": {
+    "message": "Manage"
+  },
+  "offeredBy": {
+    "message": "Offered by"
+  },
+  "btnSidePanel": {
+    "message": "Side panel"
+  },
+  "tipSidePanel": {
+    "message": "Open in side panel — stays open while you copy & paste values"
+  },
+  "btnRate": {
+    "message": "Rate us"
+  },
+  "tipRate": {
+    "message": "Pls Rate us & this button disappears forever after you review."
+  },
+  "shareTitle": {
+    "message": "Share Modify Header"
+  },
+  "btnShare": {
+    "message": "Share"
+  },
+  "ariaToggleTheme": {
+    "message": "Toggle color theme"
+  },
+  "tipThemeDark": {
+    "message": "Switch to dark theme"
+  },
+  "tipThemeLight": {
+    "message": "Switch to light theme"
+  },
+  "addRuleTitle": {
+    "message": "Add New Rule"
+  },
+  "addRuleSubtitle": {
+    "message": "Define a header modification rule below."
+  },
+  "editRuleTitle": {
+    "message": "Edit Rule"
+  },
+  "editRuleSubtitle": {
+    "message": "Update the fields below and save your changes."
+  },
+  "labelDomain": {
+    "message": "Domain / URL Pattern"
+  },
+  "phDomain": {
+    "message": "e.g. .*\\.example\\.com.* or https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "Use current tab's URL"
+  },
+  "btnCurrentTab": {
+    "message": "Current Tab"
+  },
+  "hintDomain": {
+    "message": "Supports full regex. Leave blank to match all URLs."
+  },
+  "errDomainRequired": {
+    "message": "Please enter a domain or URL pattern."
+  },
+  "labelHeaderName": {
+    "message": "Header Name"
+  },
+  "phHeaderName": {
+    "message": "e.g. X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "Header Name is required."
+  },
+  "labelHeaderValue": {
+    "message": "Header Value"
+  },
+  "phHeaderValue": {
+    "message": "e.g. my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "Leave blank for <code>remove</code> action."
+  },
+  "labelType": {
+    "message": "Type"
+  },
+  "labelAction": {
+    "message": "Action"
+  },
+  "labelStatus": {
+    "message": "Status"
+  },
+  "typeRequest": {
+    "message": "Request"
+  },
+  "typeResponse": {
+    "message": "Response"
+  },
+  "optSet": {
+    "message": "Modify (set)"
+  },
+  "optAppend": {
+    "message": "Add (append)"
+  },
+  "optRemove": {
+    "message": "Remove"
+  },
+  "statusActive": {
+    "message": "Active"
+  },
+  "statusInactive": {
+    "message": "Inactive"
+  },
+  "btnCancel": {
+    "message": "Cancel"
+  },
+  "btnSaveRule": {
+    "message": "Save Rule"
+  },
+  "btnUpdateRule": {
+    "message": "Update Rule"
+  },
+  "importTitle": {
+    "message": "Import Request Headers"
+  },
+  "importSubtitle": {
+    "message": "Paste raw request headers — one <code>Header-Name: value</code> per line — to create request-type rules in bulk."
+  },
+  "labelRequestHeaders": {
+    "message": "Request Headers"
+  },
+  "hintImport": {
+    "message": "Pseudo-headers (<code>:authority</code>), the request line, and blank or <code>#</code> comment lines are ignored automatically."
+  },
+  "phImportDomain": {
+    "message": "e.g. .*\\.example\\.com.*  — leave blank to match all URLs"
+  },
+  "hintImportDomain": {
+    "message": "Applied to every imported header. Supports full regex."
+  },
+  "btnImportHeaders": {
+    "message": "Import Headers"
+  },
+  "deleteTitle": {
+    "message": "Delete Rule?"
+  },
+  "deleteDesc": {
+    "message": "This will permanently remove the rule and re-sync the engine."
+  },
+  "btnDelete": {
+    "message": "Delete"
+  },
+  "shareSubtitle": {
+    "message": "Help other developers find it."
+  },
+  "btnCopy": {
+    "message": "Copy"
+  },
+  "btnCopied": {
+    "message": "Copied"
+  },
+  "shareText": {
+    "message": "Modify Header — a clean browser extension to manage HTTP request & response header rules. Check it out:"
+  },
+  "shareRedditTitle": {
+    "message": "Modify Header browser extension"
+  },
+  "badgeModify": {
+    "message": "Modify"
+  },
+  "badgeAdd": {
+    "message": "Add"
+  },
+  "badgeRemove": {
+    "message": "Remove"
+  },
+  "noMatch": {
+    "message": "No rules match your search."
+  },
+  "allUrls": {
+    "message": "All URLs"
+  },
+  "ariaToggleRule": {
+    "message": "Toggle rule active status"
+  },
+  "tipEditRule": {
+    "message": "Edit rule"
+  },
+  "tipDeleteRule": {
+    "message": "Delete rule"
+  },
+  "rowActivated": {
+    "message": "Rule activated"
+  },
+  "rowDeactivated": {
+    "message": "Rule deactivated"
+  },
+  "toastDeleted": {
+    "message": "Rule deleted and engine synced."
+  },
+  "errHeaderValueRequired": {
+    "message": "Header Value is required for Add/Modify actions."
+  },
+  "errInvalidRegex": {
+    "message": "Invalid regex pattern in Domain field."
+  },
+  "toastUpdated": {
+    "message": "Rule updated and engine synced!"
+  },
+  "toastSaved": {
+    "message": "Rule saved and engine synced!"
+  },
+  "toastEnabled": {
+    "message": "Extension enabled — rules are active."
+  },
+  "toastPaused": {
+    "message": "Extension paused — all rules suspended."
+  },
+  "headerCountOne": {
+    "message": "1 header"
+  },
+  "headerCountMany": {
+    "message": "$1 headers"
+  },
+  "errNoHeaders": {
+    "message": "No valid headers found. Use one “Header-Name: value” per line."
+  },
+  "importPartNew": {
+    "message": "$1 new"
+  },
+  "importPartUpdated": {
+    "message": "$1 updated"
+  },
+  "toastImported": {
+    "message": "Imported $1 request header(s) ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

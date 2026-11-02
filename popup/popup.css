@@ -1799,6 +1799,17 @@ html.side-panel .btn-import[data-tooltip]::before {
   text-align: center;
 }
 
+/* ── Localisation: room for translated Type/Action badges ─────────
+   Type/Action were 76/72px — tight even in English (badges touched)
+   and overlapping in longer languages (es/pt/it). Borrow from Value. */
+.rules-table thead th:nth-child(4) { width: 120px; }
+.rules-table thead th:nth-child(5) { width: 92px; }
+.rules-table thead th:nth-child(6) { width: 88px; }
+.cell-value,
+.cell-value-td { max-width: 112px; }
+.badge-type,
+.badge-action { white-space: nowrap; max-width: 100%; }
+
 /* ── Import feature ───────────────────────────────────────────── */
 .btn-import {
   background: var(--bg-hover) !important;

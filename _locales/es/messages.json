@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "Gestiona modificaciones de cabeceras HTTP de solicitud y respuesta con un panel limpio."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "Importar"
+  },
+  "tipImport": {
+    "message": "Importar cabeceras de solicitud en bloque"
+  },
+  "btnAddRule": {
+    "message": "Añadir regla"
+  },
+  "tipAddRule": {
+    "message": "Crear una nueva regla de cabecera"
+  },
+  "activeBadge": {
+    "message": "activas"
+  },
+  "ariaTogglePower": {
+    "message": "Activar/desactivar extensión"
+  },
+  "tipTogglePower": {
+    "message": "Activar/desactivar la extensión"
+  },
+  "powerOn": {
+    "message": "ON"
+  },
+  "powerOff": {
+    "message": "OFF"
+  },
+  "pausedBanner": {
+    "message": "<strong>Extensión en pausa</strong> — Todas las reglas están suspendidas. Cambia a ON para reanudar."
+  },
+  "ariaClose": {
+    "message": "Cerrar"
+  },
+  "emptyTitle": {
+    "message": "Aún no hay reglas"
+  },
+  "emptyDesc": {
+    "message": "Haz clic en <strong>+ Añadir regla</strong> para crear tu primera regla de cabecera."
+  },
+  "btnAddFirstRule": {
+    "message": "Añade tu primera regla"
+  },
+  "allRules": {
+    "message": "Todas las reglas"
+  },
+  "searchPlaceholder": {
+    "message": "Buscar reglas…"
+  },
+  "allTypes": {
+    "message": "Todos los tipos"
+  },
+  "colStatus": {
+    "message": "Estado"
+  },
+  "colDomain": {
+    "message": "Dominio / Patrón"
+  },
+  "colHeader": {
+    "message": "Cabecera"
+  },
+  "colValue": {
+    "message": "Valor"
+  },
+  "colType": {
+    "message": "Tipo"
+  },
+  "colAction": {
+    "message": "Acción"
+  },
+  "colManage": {
+    "message": "Gestionar"
+  },
+  "offeredBy": {
+    "message": "Ofrecido por"
+  },
+  "btnSidePanel": {
+    "message": "Panel lateral"
+  },
+  "tipSidePanel": {
+    "message": "Abrir en el panel lateral — sigue abierto mientras copias y pegas valores"
+  },
+  "btnRate": {
+    "message": "Valóranos"
+  },
+  "tipRate": {
+    "message": "Valóranos y este botón desaparecerá para siempre tras tu reseña."
+  },
+  "shareTitle": {
+    "message": "Compartir Modify Header"
+  },
+  "btnShare": {
+    "message": "Compartir"
+  },
+  "ariaToggleTheme": {
+    "message": "Cambiar tema de color"
+  },
+  "tipThemeDark": {
+    "message": "Cambiar a tema oscuro"
+  },
+  "tipThemeLight": {
+    "message": "Cambiar a tema claro"
+  },
+  "addRuleTitle": {
+    "message": "Añadir nueva regla"
+  },
+  "addRuleSubtitle": {
+    "message": "Define abajo una regla de modificación de cabecera."
+  },
+  "editRuleTitle": {
+    "message": "Editar regla"
+  },
+  "editRuleSubtitle": {
+    "message": "Actualiza los campos y guarda los cambios."
+  },
+  "labelDomain": {
+    "message": "Dominio / Patrón de URL"
+  },
+  "phDomain": {
+    "message": "p. ej. .*\\.example\\.com.* o https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "Usar la URL de la pestaña actual"
+  },
+  "btnCurrentTab": {
+    "message": "Pestaña actual"
+  },
+  "hintDomain": {
+    "message": "Admite regex completas. Déjalo vacío para todas las URL."
+  },
+  "errDomainRequired": {
+    "message": "Introduce un dominio o patrón de URL."
+  },
+  "labelHeaderName": {
+    "message": "Nombre de cabecera"
+  },
+  "phHeaderName": {
+    "message": "p. ej. X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "El nombre de cabecera es obligatorio."
+  },
+  "labelHeaderValue": {
+    "message": "Valor de cabecera"
+  },
+  "phHeaderValue": {
+    "message": "p. ej. my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "Déjalo vacío para la acción <code>remove</code>."
+  },
+  "labelType": {
+    "message": "Tipo"
+  },
+  "labelAction": {
+    "message": "Acción"
+  },
+  "labelStatus": {
+    "message": "Estado"
+  },
+  "typeRequest": {
+    "message": "Solicitud"
+  },
+  "typeResponse": {
+    "message": "Respuesta"
+  },
+  "optSet": {
+    "message": "Modificar (set)"
+  },
+  "optAppend": {
+    "message": "Añadir (append)"
+  },
+  "optRemove": {
+    "message": "Eliminar"
+  },
+  "statusActive": {
+    "message": "Activa"
+  },
+  "statusInactive": {
+    "message": "Inactiva"
+  },
+  "btnCancel": {
+    "message": "Cancelar"
+  },
+  "btnSaveRule": {
+    "message": "Guardar regla"
+  },
+  "btnUpdateRule": {
+    "message": "Actualizar regla"
+  },
+  "importTitle": {
+    "message": "Importar cabeceras de solicitud"
+  },
+  "importSubtitle": {
+    "message": "Pega cabeceras de solicitud — una <code>Header-Name: value</code> por línea — para crear reglas de solicitud en bloque."
+  },
+  "labelRequestHeaders": {
+    "message": "Cabeceras de solicitud"
+  },
+  "hintImport": {
+    "message": "Las pseudocabeceras (<code>:authority</code>), la línea de solicitud y las líneas vacías o de comentario <code>#</code> se ignoran automáticamente."
+  },
+  "phImportDomain": {
+    "message": "p. ej. .*\\.example\\.com.*  — vacío para todas las URL"
+  },
+  "hintImportDomain": {
+    "message": "Se aplica a cada cabecera importada. Admite regex completas."
+  },
+  "btnImportHeaders": {
+    "message": "Importar cabeceras"
+  },
+  "deleteTitle": {
+    "message": "¿Eliminar regla?"
+  },
+  "deleteDesc": {
+    "message": "Se eliminará la regla de forma permanente y se resincronizará el motor."
+  },
+  "btnDelete": {
+    "message": "Eliminar"
+  },
+  "shareSubtitle": {
+    "message": "Ayuda a otros desarrolladores a encontrarla."
+  },
+  "btnCopy": {
+    "message": "Copiar"
+  },
+  "btnCopied": {
+    "message": "Copiado"
+  },
+  "shareText": {
+    "message": "Modify Header — una extensión sencilla para gestionar reglas de cabeceras HTTP de solicitud y respuesta. Échale un vistazo:"
+  },
+  "shareRedditTitle": {
+    "message": "Extensión de navegador Modify Header"
+  },
+  "badgeModify": {
+    "message": "Modificar"
+  },
+  "badgeAdd": {
+    "message": "Añadir"
+  },
+  "badgeRemove": {
+    "message": "Eliminar"
+  },
+  "noMatch": {
+    "message": "Ninguna regla coincide con tu búsqueda."
+  },
+  "allUrls": {
+    "message": "Todas las URL"
+  },
+  "ariaToggleRule": {
+    "message": "Activar/desactivar regla"
+  },
+  "tipEditRule": {
+    "message": "Editar regla"
+  },
+  "tipDeleteRule": {
+    "message": "Eliminar regla"
+  },
+  "rowActivated": {
+    "message": "Regla activada"
+  },
+  "rowDeactivated": {
+    "message": "Regla desactivada"
+  },
+  "toastDeleted": {
+    "message": "Regla eliminada y motor sincronizado."
+  },
+  "errHeaderValueRequired": {
+    "message": "El valor de cabecera es obligatorio para Añadir/Modificar."
+  },
+  "errInvalidRegex": {
+    "message": "Patrón regex no válido en el campo Dominio."
+  },
+  "toastUpdated": {
+    "message": "¡Regla actualizada y motor sincronizado!"
+  },
+  "toastSaved": {
+    "message": "¡Regla guardada y motor sincronizado!"
+  },
+  "toastEnabled": {
+    "message": "Extensión activada — las reglas están activas."
+  },
+  "toastPaused": {
+    "message": "Extensión en pausa — todas las reglas suspendidas."
+  },
+  "headerCountOne": {
+    "message": "1 cabecera"
+  },
+  "headerCountMany": {
+    "message": "$1 cabeceras"
+  },
+  "errNoHeaders": {
+    "message": "No se encontraron cabeceras válidas. Usa una “Header-Name: value” por línea."
+  },
+  "importPartNew": {
+    "message": "$1 nuevas"
+  },
+  "importPartUpdated": {
+    "message": "$1 actualizadas"
+  },
+  "toastImported": {
+    "message": "Se importaron $1 cabecera(s) de solicitud ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

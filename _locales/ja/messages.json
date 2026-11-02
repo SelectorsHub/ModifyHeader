@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "HTTP リクエスト/レスポンスヘッダーの変更を、すっきりしたダッシュボードで管理できます。"
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "インポート"
+  },
+  "tipImport": {
+    "message": "生のリクエストヘッダーを一括インポート"
+  },
+  "btnAddRule": {
+    "message": "ルール追加"
+  },
+  "tipAddRule": {
+    "message": "新しいヘッダールールを作成"
+  },
+  "activeBadge": {
+    "message": "有効"
+  },
+  "ariaTogglePower": {
+    "message": "拡張機能の切り替え"
+  },
+  "tipTogglePower": {
+    "message": "拡張機能のオン/オフ"
+  },
+  "powerOn": {
+    "message": "ON"
+  },
+  "powerOff": {
+    "message": "OFF"
+  },
+  "pausedBanner": {
+    "message": "<strong>拡張機能は一時停止中</strong> — すべてのヘッダールールが停止しています。ON にすると再開します。"
+  },
+  "ariaClose": {
+    "message": "閉じる"
+  },
+  "emptyTitle": {
+    "message": "ルールはまだありません"
+  },
+  "emptyDesc": {
+    "message": "<strong>+ ルール追加</strong> をクリックして最初のヘッダールールを作成しましょう。"
+  },
+  "btnAddFirstRule": {
+    "message": "最初のルールを追加"
+  },
+  "allRules": {
+    "message": "すべてのルール"
+  },
+  "searchPlaceholder": {
+    "message": "ルールを検索…"
+  },
+  "allTypes": {
+    "message": "すべての種類"
+  },
+  "colStatus": {
+    "message": "状態"
+  },
+  "colDomain": {
+    "message": "ドメイン / パターン"
+  },
+  "colHeader": {
+    "message": "ヘッダー"
+  },
+  "colValue": {
+    "message": "値"
+  },
+  "colType": {
+    "message": "種類"
+  },
+  "colAction": {
+    "message": "操作"
+  },
+  "colManage": {
+    "message": "管理"
+  },
+  "offeredBy": {
+    "message": "提供元"
+  },
+  "btnSidePanel": {
+    "message": "サイドパネル"
+  },
+  "tipSidePanel": {
+    "message": "サイドパネルで開く — 値をコピー＆ペーストしている間も開いたまま"
+  },
+  "btnRate": {
+    "message": "評価する"
+  },
+  "tipRate": {
+    "message": "ぜひ評価してください。レビュー後、このボタンは表示されなくなります。"
+  },
+  "shareTitle": {
+    "message": "Modify Header を共有"
+  },
+  "btnShare": {
+    "message": "共有"
+  },
+  "ariaToggleTheme": {
+    "message": "カラーテーマの切り替え"
+  },
+  "tipThemeDark": {
+    "message": "ダークテーマに切り替え"
+  },
+  "tipThemeLight": {
+    "message": "ライトテーマに切り替え"
+  },
+  "addRuleTitle": {
+    "message": "新しいルールを追加"
+  },
+  "addRuleSubtitle": {
+    "message": "ヘッダー変更ルールを以下で定義します。"
+  },
+  "editRuleTitle": {
+    "message": "ルールを編集"
+  },
+  "editRuleSubtitle": {
+    "message": "以下の項目を更新して変更を保存します。"
+  },
+  "labelDomain": {
+    "message": "ドメイン / URL パターン"
+  },
+  "phDomain": {
+    "message": "例: .*\\.example\\.com.* または https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "現在のタブの URL を使用"
+  },
+  "btnCurrentTab": {
+    "message": "現在のタブ"
+  },
+  "hintDomain": {
+    "message": "正規表現に対応。空欄の場合はすべての URL に一致します。"
+  },
+  "errDomainRequired": {
+    "message": "ドメインまたは URL パターンを入力してください。"
+  },
+  "labelHeaderName": {
+    "message": "ヘッダー名"
+  },
+  "phHeaderName": {
+    "message": "例: X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "ヘッダー名は必須です。"
+  },
+  "labelHeaderValue": {
+    "message": "ヘッダー値"
+  },
+  "phHeaderValue": {
+    "message": "例: my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "<code>remove</code> 操作の場合は空欄にします。"
+  },
+  "labelType": {
+    "message": "種類"
+  },
+  "labelAction": {
+    "message": "操作"
+  },
+  "labelStatus": {
+    "message": "状態"
+  },
+  "typeRequest": {
+    "message": "リクエスト"
+  },
+  "typeResponse": {
+    "message": "レスポンス"
+  },
+  "optSet": {
+    "message": "変更 (set)"
+  },
+  "optAppend": {
+    "message": "追加 (append)"
+  },
+  "optRemove": {
+    "message": "削除"
+  },
+  "statusActive": {
+    "message": "有効"
+  },
+  "statusInactive": {
+    "message": "無効"
+  },
+  "btnCancel": {
+    "message": "キャンセル"
+  },
+  "btnSaveRule": {
+    "message": "ルールを保存"
+  },
+  "btnUpdateRule": {
+    "message": "ルールを更新"
+  },
+  "importTitle": {
+    "message": "リクエストヘッダーのインポート"
+  },
+  "importSubtitle": {
+    "message": "生のリクエストヘッダーを 1 行に 1 つ（<code>Header-Name: value</code>）貼り付けると、リクエスト用ルールを一括作成します。"
+  },
+  "labelRequestHeaders": {
+    "message": "リクエストヘッダー"
+  },
+  "hintImport": {
+    "message": "疑似ヘッダー（<code>:authority</code>）、リクエスト行、空行や <code>#</code> コメント行は自動的に無視されます。"
+  },
+  "phImportDomain": {
+    "message": "例: .*\\.example\\.com.*  — 空欄ですべての URL に一致"
+  },
+  "hintImportDomain": {
+    "message": "インポートしたすべてのヘッダーに適用されます。正規表現に対応。"
+  },
+  "btnImportHeaders": {
+    "message": "ヘッダーをインポート"
+  },
+  "deleteTitle": {
+    "message": "ルールを削除しますか？"
+  },
+  "deleteDesc": {
+    "message": "ルールを完全に削除し、エンジンを再同期します。"
+  },
+  "btnDelete": {
+    "message": "削除"
+  },
+  "shareSubtitle": {
+    "message": "他の開発者にも広めてください。"
+  },
+  "btnCopy": {
+    "message": "コピー"
+  },
+  "btnCopied": {
+    "message": "コピー済み"
+  },
+  "shareText": {
+    "message": "Modify Header — HTTP リクエスト/レスポンスヘッダーのルールを管理できるシンプルなブラウザ拡張機能。ぜひチェック："
+  },
+  "shareRedditTitle": {
+    "message": "Modify Header ブラウザ拡張機能"
+  },
+  "badgeModify": {
+    "message": "変更"
+  },
+  "badgeAdd": {
+    "message": "追加"
+  },
+  "badgeRemove": {
+    "message": "削除"
+  },
+  "noMatch": {
+    "message": "検索に一致するルールはありません。"
+  },
+  "allUrls": {
+    "message": "すべての URL"
+  },
+  "ariaToggleRule": {
+    "message": "ルールの有効/無効を切り替え"
+  },
+  "tipEditRule": {
+    "message": "ルールを編集"
+  },
+  "tipDeleteRule": {
+    "message": "ルールを削除"
+  },
+  "rowActivated": {
+    "message": "ルールを有効化しました"
+  },
+  "rowDeactivated": {
+    "message": "ルールを無効化しました"
+  },
+  "toastDeleted": {
+    "message": "ルールを削除し、エンジンを同期しました。"
+  },
+  "errHeaderValueRequired": {
+    "message": "追加/変更の操作にはヘッダー値が必要です。"
+  },
+  "errInvalidRegex": {
+    "message": "ドメイン欄の正規表現が無効です。"
+  },
+  "toastUpdated": {
+    "message": "ルールを更新し、エンジンを同期しました！"
+  },
+  "toastSaved": {
+    "message": "ルールを保存し、エンジンを同期しました！"
+  },
+  "toastEnabled": {
+    "message": "拡張機能を有効にしました — ルールが適用されています。"
+  },
+  "toastPaused": {
+    "message": "拡張機能を一時停止しました — すべてのルールが停止中です。"
+  },
+  "headerCountOne": {
+    "message": "1 件のヘッダー"
+  },
+  "headerCountMany": {
+    "message": "$1 件のヘッダー"
+  },
+  "errNoHeaders": {
+    "message": "有効なヘッダーが見つかりません。1 行に 1 つ「Header-Name: value」の形式で入力してください。"
+  },
+  "importPartNew": {
+    "message": "新規 $1 件"
+  },
+  "importPartUpdated": {
+    "message": "更新 $1 件"
+  },
+  "toastImported": {
+    "message": "$1 件のリクエストヘッダーをインポートしました（$2）。"
+  },
+  "listSeparator": {
+    "message": "、"
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "Управляйте изменением HTTP-заголовков запросов и ответов через удобную панель."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "Импорт"
+  },
+  "tipImport": {
+    "message": "Массовый импорт заголовков запроса"
+  },
+  "btnAddRule": {
+    "message": "Добавить"
+  },
+  "tipAddRule": {
+    "message": "Создать новое правило заголовка"
+  },
+  "activeBadge": {
+    "message": "активно"
+  },
+  "ariaTogglePower": {
+    "message": "Вкл/выкл расширение"
+  },
+  "tipTogglePower": {
+    "message": "Включить/выключить расширение"
+  },
+  "powerOn": {
+    "message": "ВКЛ"
+  },
+  "powerOff": {
+    "message": "ВЫКЛ"
+  },
+  "pausedBanner": {
+    "message": "<strong>Расширение приостановлено</strong> — все правила заголовков отключены. Переключите на ВКЛ, чтобы продолжить."
+  },
+  "ariaClose": {
+    "message": "Закрыть"
+  },
+  "emptyTitle": {
+    "message": "Правил пока нет"
+  },
+  "emptyDesc": {
+    "message": "Нажмите <strong>+ Добавить</strong>, чтобы создать первое правило заголовка."
+  },
+  "btnAddFirstRule": {
+    "message": "Добавить первое правило"
+  },
+  "allRules": {
+    "message": "Все правила"
+  },
+  "searchPlaceholder": {
+    "message": "Поиск правил…"
+  },
+  "allTypes": {
+    "message": "Все типы"
+  },
+  "colStatus": {
+    "message": "Статус"
+  },
+  "colDomain": {
+    "message": "Домен / Шаблон"
+  },
+  "colHeader": {
+    "message": "Заголовок"
+  },
+  "colValue": {
+    "message": "Значение"
+  },
+  "colType": {
+    "message": "Тип"
+  },
+  "colAction": {
+    "message": "Действие"
+  },
+  "colManage": {
+    "message": "Правка"
+  },
+  "offeredBy": {
+    "message": "Разработчик"
+  },
+  "btnSidePanel": {
+    "message": "Боковая панель"
+  },
+  "tipSidePanel": {
+    "message": "Открыть в боковой панели — она не закрывается, пока вы копируете значения"
+  },
+  "btnRate": {
+    "message": "Оценить"
+  },
+  "tipRate": {
+    "message": "Пожалуйста, оцените нас — после отзыва эта кнопка исчезнет навсегда."
+  },
+  "shareTitle": {
+    "message": "Поделиться Modify Header"
+  },
+  "btnShare": {
+    "message": "Поделиться"
+  },
+  "ariaToggleTheme": {
+    "message": "Сменить цветовую тему"
+  },
+  "tipThemeDark": {
+    "message": "Тёмная тема"
+  },
+  "tipThemeLight": {
+    "message": "Светлая тема"
+  },
+  "addRuleTitle": {
+    "message": "Новое правило"
+  },
+  "addRuleSubtitle": {
+    "message": "Задайте правило изменения заголовка ниже."
+  },
+  "editRuleTitle": {
+    "message": "Изменить правило"
+  },
+  "editRuleSubtitle": {
+    "message": "Обновите поля и сохраните изменения."
+  },
+  "labelDomain": {
+    "message": "Домен / Шаблон URL"
+  },
+  "phDomain": {
+    "message": "напр. .*\\.example\\.com.* или https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "Взять URL текущей вкладки"
+  },
+  "btnCurrentTab": {
+    "message": "Текущая вкладка"
+  },
+  "hintDomain": {
+    "message": "Поддерживаются регулярные выражения. Оставьте пустым для всех URL."
+  },
+  "errDomainRequired": {
+    "message": "Введите домен или шаблон URL."
+  },
+  "labelHeaderName": {
+    "message": "Имя заголовка"
+  },
+  "phHeaderName": {
+    "message": "напр. X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "Имя заголовка обязательно."
+  },
+  "labelHeaderValue": {
+    "message": "Значение заголовка"
+  },
+  "phHeaderValue": {
+    "message": "напр. my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "Оставьте пустым для действия <code>remove</code>."
+  },
+  "labelType": {
+    "message": "Тип"
+  },
+  "labelAction": {
+    "message": "Действие"
+  },
+  "labelStatus": {
+    "message": "Статус"
+  },
+  "typeRequest": {
+    "message": "Запрос"
+  },
+  "typeResponse": {
+    "message": "Ответ"
+  },
+  "optSet": {
+    "message": "Изменить (set)"
+  },
+  "optAppend": {
+    "message": "Добавить (append)"
+  },
+  "optRemove": {
+    "message": "Удалить"
+  },
+  "statusActive": {
+    "message": "Активно"
+  },
+  "statusInactive": {
+    "message": "Неактивно"
+  },
+  "btnCancel": {
+    "message": "Отмена"
+  },
+  "btnSaveRule": {
+    "message": "Сохранить"
+  },
+  "btnUpdateRule": {
+    "message": "Обновить"
+  },
+  "importTitle": {
+    "message": "Импорт заголовков запроса"
+  },
+  "importSubtitle": {
+    "message": "Вставьте заголовки запроса — по одному <code>Header-Name: value</code> в строке — чтобы массово создать правила для запросов."
+  },
+  "labelRequestHeaders": {
+    "message": "Заголовки запроса"
+  },
+  "hintImport": {
+    "message": "Псевдозаголовки (<code>:authority</code>), строка запроса, пустые строки и комментарии <code>#</code> пропускаются автоматически."
+  },
+  "phImportDomain": {
+    "message": "напр. .*\\.example\\.com.*  — пусто для всех URL"
+  },
+  "hintImportDomain": {
+    "message": "Применяется к каждому импортированному заголовку. Поддерживаются регулярные выражения."
+  },
+  "btnImportHeaders": {
+    "message": "Импортировать"
+  },
+  "deleteTitle": {
+    "message": "Удалить правило?"
+  },
+  "deleteDesc": {
+    "message": "Правило будет удалено навсегда, а движок пересинхронизирован."
+  },
+  "btnDelete": {
+    "message": "Удалить"
+  },
+  "shareSubtitle": {
+    "message": "Помогите другим разработчикам найти его."
+  },
+  "btnCopy": {
+    "message": "Копировать"
+  },
+  "btnCopied": {
+    "message": "Скопировано"
+  },
+  "shareText": {
+    "message": "Modify Header — удобное расширение для управления правилами HTTP-заголовков запросов и ответов. Посмотрите:"
+  },
+  "shareRedditTitle": {
+    "message": "Расширение Modify Header для браузера"
+  },
+  "badgeModify": {
+    "message": "Изменить"
+  },
+  "badgeAdd": {
+    "message": "Добавить"
+  },
+  "badgeRemove": {
+    "message": "Удалить"
+  },
+  "noMatch": {
+    "message": "Нет правил, соответствующих поиску."
+  },
+  "allUrls": {
+    "message": "Все URL"
+  },
+  "ariaToggleRule": {
+    "message": "Переключить активность правила"
+  },
+  "tipEditRule": {
+    "message": "Изменить правило"
+  },
+  "tipDeleteRule": {
+    "message": "Удалить правило"
+  },
+  "rowActivated": {
+    "message": "Правило включено"
+  },
+  "rowDeactivated": {
+    "message": "Правило выключено"
+  },
+  "toastDeleted": {
+    "message": "Правило удалено, движок синхронизирован."
+  },
+  "errHeaderValueRequired": {
+    "message": "Для добавления/изменения нужно значение заголовка."
+  },
+  "errInvalidRegex": {
+    "message": "Недопустимое регулярное выражение в поле «Домен»."
+  },
+  "toastUpdated": {
+    "message": "Правило обновлено, движок синхронизирован!"
+  },
+  "toastSaved": {
+    "message": "Правило сохранено, движок синхронизирован!"
+  },
+  "toastEnabled": {
+    "message": "Расширение включено — правила активны."
+  },
+  "toastPaused": {
+    "message": "Расширение приостановлено — все правила отключены."
+  },
+  "headerCountOne": {
+    "message": "1 заголовок"
+  },
+  "headerCountMany": {
+    "message": "Заголовков: $1"
+  },
+  "errNoHeaders": {
+    "message": "Допустимые заголовки не найдены. Используйте по одному «Header-Name: value» в строке."
+  },
+  "importPartNew": {
+    "message": "новых: $1"
+  },
+  "importPartUpdated": {
+    "message": "обновлено: $1"
+  },
+  "toastImported": {
+    "message": "Импортировано заголовков запроса: $1 ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

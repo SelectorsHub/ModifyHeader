@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "HTTP istek ve yanıt başlığı değişikliklerini sade bir panelden yönetin."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "İçe aktar"
+  },
+  "tipImport": {
+    "message": "Ham istek başlıklarını toplu içe aktar"
+  },
+  "btnAddRule": {
+    "message": "Kural ekle"
+  },
+  "tipAddRule": {
+    "message": "Yeni bir başlık kuralı oluştur"
+  },
+  "activeBadge": {
+    "message": "aktif"
+  },
+  "ariaTogglePower": {
+    "message": "Uzantıyı aç/kapat"
+  },
+  "tipTogglePower": {
+    "message": "Uzantıyı aç/kapat"
+  },
+  "powerOn": {
+    "message": "AÇIK"
+  },
+  "powerOff": {
+    "message": "KAPALI"
+  },
+  "pausedBanner": {
+    "message": "<strong>Uzantı duraklatıldı</strong> — Tüm başlık kuralları askıda. Devam etmek için AÇIK konumuna getirin."
+  },
+  "ariaClose": {
+    "message": "Kapat"
+  },
+  "emptyTitle": {
+    "message": "Henüz kural yok"
+  },
+  "emptyDesc": {
+    "message": "İlk başlık kuralınızı oluşturmak için <strong>+ Kural ekle</strong>'ye tıklayın."
+  },
+  "btnAddFirstRule": {
+    "message": "İlk kuralınızı ekleyin"
+  },
+  "allRules": {
+    "message": "Tüm kurallar"
+  },
+  "searchPlaceholder": {
+    "message": "Kural ara…"
+  },
+  "allTypes": {
+    "message": "Tüm türler"
+  },
+  "colStatus": {
+    "message": "Durum"
+  },
+  "colDomain": {
+    "message": "Alan adı / Desen"
+  },
+  "colHeader": {
+    "message": "Başlık"
+  },
+  "colValue": {
+    "message": "Değer"
+  },
+  "colType": {
+    "message": "Tür"
+  },
+  "colAction": {
+    "message": "İşlem"
+  },
+  "colManage": {
+    "message": "Yönet"
+  },
+  "offeredBy": {
+    "message": "Sunan"
+  },
+  "btnSidePanel": {
+    "message": "Yan panel"
+  },
+  "tipSidePanel": {
+    "message": "Yan panelde aç — değerleri kopyalayıp yapıştırırken açık kalır"
+  },
+  "btnRate": {
+    "message": "Puan ver"
+  },
+  "tipRate": {
+    "message": "Lütfen puan verin; yorumunuzdan sonra bu düğme kalıcı olarak kaybolur."
+  },
+  "shareTitle": {
+    "message": "Modify Header'ı paylaş"
+  },
+  "btnShare": {
+    "message": "Paylaş"
+  },
+  "ariaToggleTheme": {
+    "message": "Renk temasını değiştir"
+  },
+  "tipThemeDark": {
+    "message": "Koyu temaya geç"
+  },
+  "tipThemeLight": {
+    "message": "Açık temaya geç"
+  },
+  "addRuleTitle": {
+    "message": "Yeni kural ekle"
+  },
+  "addRuleSubtitle": {
+    "message": "Aşağıda bir başlık değiştirme kuralı tanımlayın."
+  },
+  "editRuleTitle": {
+    "message": "Kuralı düzenle"
+  },
+  "editRuleSubtitle": {
+    "message": "Alanları güncelleyin ve değişiklikleri kaydedin."
+  },
+  "labelDomain": {
+    "message": "Alan adı / URL deseni"
+  },
+  "phDomain": {
+    "message": "örn. .*\\.example\\.com.* veya https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "Geçerli sekmenin URL'sini kullan"
+  },
+  "btnCurrentTab": {
+    "message": "Geçerli sekme"
+  },
+  "hintDomain": {
+    "message": "Tam regex desteği. Tüm URL'ler için boş bırakın."
+  },
+  "errDomainRequired": {
+    "message": "Lütfen bir alan adı veya URL deseni girin."
+  },
+  "labelHeaderName": {
+    "message": "Başlık adı"
+  },
+  "phHeaderName": {
+    "message": "örn. X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "Başlık adı zorunludur."
+  },
+  "labelHeaderValue": {
+    "message": "Başlık değeri"
+  },
+  "phHeaderValue": {
+    "message": "örn. my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "<code>remove</code> işlemi için boş bırakın."
+  },
+  "labelType": {
+    "message": "Tür"
+  },
+  "labelAction": {
+    "message": "İşlem"
+  },
+  "labelStatus": {
+    "message": "Durum"
+  },
+  "typeRequest": {
+    "message": "İstek"
+  },
+  "typeResponse": {
+    "message": "Yanıt"
+  },
+  "optSet": {
+    "message": "Değiştir (set)"
+  },
+  "optAppend": {
+    "message": "Ekle (append)"
+  },
+  "optRemove": {
+    "message": "Kaldır"
+  },
+  "statusActive": {
+    "message": "Aktif"
+  },
+  "statusInactive": {
+    "message": "Pasif"
+  },
+  "btnCancel": {
+    "message": "İptal"
+  },
+  "btnSaveRule": {
+    "message": "Kuralı kaydet"
+  },
+  "btnUpdateRule": {
+    "message": "Kuralı güncelle"
+  },
+  "importTitle": {
+    "message": "İstek başlıklarını içe aktar"
+  },
+  "importSubtitle": {
+    "message": "Ham istek başlıklarını yapıştırın — her satıra bir <code>Header-Name: value</code> — ve istek kurallarını toplu oluşturun."
+  },
+  "labelRequestHeaders": {
+    "message": "İstek başlıkları"
+  },
+  "hintImport": {
+    "message": "Sözde başlıklar (<code>:authority</code>), istek satırı ve boş ya da <code>#</code> yorum satırları otomatik olarak yok sayılır."
+  },
+  "phImportDomain": {
+    "message": "örn. .*\\.example\\.com.*  — tüm URL'ler için boş bırakın"
+  },
+  "hintImportDomain": {
+    "message": "İçe aktarılan her başlığa uygulanır. Tam regex desteği."
+  },
+  "btnImportHeaders": {
+    "message": "Başlıkları içe aktar"
+  },
+  "deleteTitle": {
+    "message": "Kural silinsin mi?"
+  },
+  "deleteDesc": {
+    "message": "Kural kalıcı olarak silinecek ve motor yeniden eşitlenecek."
+  },
+  "btnDelete": {
+    "message": "Sil"
+  },
+  "shareSubtitle": {
+    "message": "Diğer geliştiricilerin bulmasına yardım edin."
+  },
+  "btnCopy": {
+    "message": "Kopyala"
+  },
+  "btnCopied": {
+    "message": "Kopyalandı"
+  },
+  "shareText": {
+    "message": "Modify Header — HTTP istek ve yanıt başlığı kurallarını yönetmek için sade bir tarayıcı uzantısı. Göz atın:"
+  },
+  "shareRedditTitle": {
+    "message": "Modify Header tarayıcı uzantısı"
+  },
+  "badgeModify": {
+    "message": "Değiştir"
+  },
+  "badgeAdd": {
+    "message": "Ekle"
+  },
+  "badgeRemove": {
+    "message": "Kaldır"
+  },
+  "noMatch": {
+    "message": "Aramanızla eşleşen kural yok."
+  },
+  "allUrls": {
+    "message": "Tüm URL'ler"
+  },
+  "ariaToggleRule": {
+    "message": "Kural durumunu değiştir"
+  },
+  "tipEditRule": {
+    "message": "Kuralı düzenle"
+  },
+  "tipDeleteRule": {
+    "message": "Kuralı sil"
+  },
+  "rowActivated": {
+    "message": "Kural etkinleştirildi"
+  },
+  "rowDeactivated": {
+    "message": "Kural devre dışı bırakıldı"
+  },
+  "toastDeleted": {
+    "message": "Kural silindi ve motor eşitlendi."
+  },
+  "errHeaderValueRequired": {
+    "message": "Ekle/Değiştir işlemleri için başlık değeri gereklidir."
+  },
+  "errInvalidRegex": {
+    "message": "Alan adı alanında geçersiz regex deseni."
+  },
+  "toastUpdated": {
+    "message": "Kural güncellendi ve motor eşitlendi!"
+  },
+  "toastSaved": {
+    "message": "Kural kaydedildi ve motor eşitlendi!"
+  },
+  "toastEnabled": {
+    "message": "Uzantı etkin — kurallar aktif."
+  },
+  "toastPaused": {
+    "message": "Uzantı duraklatıldı — tüm kurallar askıda."
+  },
+  "headerCountOne": {
+    "message": "1 başlık"
+  },
+  "headerCountMany": {
+    "message": "$1 başlık"
+  },
+  "errNoHeaders": {
+    "message": "Geçerli başlık bulunamadı. Her satıra bir “Header-Name: value” yazın."
+  },
+  "importPartNew": {
+    "message": "$1 yeni"
+  },
+  "importPartUpdated": {
+    "message": "$1 güncellendi"
+  },
+  "toastImported": {
+    "message": "$1 istek başlığı içe aktarıldı ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

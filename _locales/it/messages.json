@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "Gestisci le modifiche agli header HTTP di richiesta e risposta con una dashboard pulita."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "Importa"
+  },
+  "tipImport": {
+    "message": "Importa header di richiesta in blocco"
+  },
+  "btnAddRule": {
+    "message": "Aggiungi regola"
+  },
+  "tipAddRule": {
+    "message": "Crea una nuova regola header"
+  },
+  "activeBadge": {
+    "message": "attive"
+  },
+  "ariaTogglePower": {
+    "message": "Attiva/disattiva estensione"
+  },
+  "tipTogglePower": {
+    "message": "Attiva/disattiva l'estensione"
+  },
+  "powerOn": {
+    "message": "ON"
+  },
+  "powerOff": {
+    "message": "OFF"
+  },
+  "pausedBanner": {
+    "message": "<strong>Estensione in pausa</strong> — Tutte le regole sono sospese. Passa a ON per riprendere."
+  },
+  "ariaClose": {
+    "message": "Chiudi"
+  },
+  "emptyTitle": {
+    "message": "Nessuna regola"
+  },
+  "emptyDesc": {
+    "message": "Fai clic su <strong>+ Aggiungi regola</strong> per creare la tua prima regola header."
+  },
+  "btnAddFirstRule": {
+    "message": "Aggiungi la prima regola"
+  },
+  "allRules": {
+    "message": "Tutte le regole"
+  },
+  "searchPlaceholder": {
+    "message": "Cerca regole…"
+  },
+  "allTypes": {
+    "message": "Tutti i tipi"
+  },
+  "colStatus": {
+    "message": "Stato"
+  },
+  "colDomain": {
+    "message": "Dominio / Pattern"
+  },
+  "colHeader": {
+    "message": "Header"
+  },
+  "colValue": {
+    "message": "Valore"
+  },
+  "colType": {
+    "message": "Tipo"
+  },
+  "colAction": {
+    "message": "Azione"
+  },
+  "colManage": {
+    "message": "Gestisci"
+  },
+  "offeredBy": {
+    "message": "Offerto da"
+  },
+  "btnSidePanel": {
+    "message": "Pannello laterale"
+  },
+  "tipSidePanel": {
+    "message": "Apri nel pannello laterale — resta aperto mentre copi e incolli i valori"
+  },
+  "btnRate": {
+    "message": "Valutaci"
+  },
+  "tipRate": {
+    "message": "Valutaci: dopo la recensione questo pulsante sparirà per sempre."
+  },
+  "shareTitle": {
+    "message": "Condividi Modify Header"
+  },
+  "btnShare": {
+    "message": "Condividi"
+  },
+  "ariaToggleTheme": {
+    "message": "Cambia tema colore"
+  },
+  "tipThemeDark": {
+    "message": "Passa al tema scuro"
+  },
+  "tipThemeLight": {
+    "message": "Passa al tema chiaro"
+  },
+  "addRuleTitle": {
+    "message": "Aggiungi nuova regola"
+  },
+  "addRuleSubtitle": {
+    "message": "Definisci qui sotto una regola di modifica header."
+  },
+  "editRuleTitle": {
+    "message": "Modifica regola"
+  },
+  "editRuleSubtitle": {
+    "message": "Aggiorna i campi e salva le modifiche."
+  },
+  "labelDomain": {
+    "message": "Dominio / Pattern URL"
+  },
+  "phDomain": {
+    "message": "es. .*\\.example\\.com.* o https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "Usa l'URL della scheda corrente"
+  },
+  "btnCurrentTab": {
+    "message": "Scheda corrente"
+  },
+  "hintDomain": {
+    "message": "Supporta regex complete. Lascia vuoto per tutti gli URL."
+  },
+  "errDomainRequired": {
+    "message": "Inserisci un dominio o un pattern URL."
+  },
+  "labelHeaderName": {
+    "message": "Nome header"
+  },
+  "phHeaderName": {
+    "message": "es. X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "Il nome header è obbligatorio."
+  },
+  "labelHeaderValue": {
+    "message": "Valore header"
+  },
+  "phHeaderValue": {
+    "message": "es. my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "Lascia vuoto per l'azione <code>remove</code>."
+  },
+  "labelType": {
+    "message": "Tipo"
+  },
+  "labelAction": {
+    "message": "Azione"
+  },
+  "labelStatus": {
+    "message": "Stato"
+  },
+  "typeRequest": {
+    "message": "Richiesta"
+  },
+  "typeResponse": {
+    "message": "Risposta"
+  },
+  "optSet": {
+    "message": "Modifica (set)"
+  },
+  "optAppend": {
+    "message": "Aggiungi (append)"
+  },
+  "optRemove": {
+    "message": "Rimuovi"
+  },
+  "statusActive": {
+    "message": "Attiva"
+  },
+  "statusInactive": {
+    "message": "Inattiva"
+  },
+  "btnCancel": {
+    "message": "Annulla"
+  },
+  "btnSaveRule": {
+    "message": "Salva regola"
+  },
+  "btnUpdateRule": {
+    "message": "Aggiorna regola"
+  },
+  "importTitle": {
+    "message": "Importa header di richiesta"
+  },
+  "importSubtitle": {
+    "message": "Incolla gli header di richiesta — un <code>Header-Name: value</code> per riga — per creare regole di richiesta in blocco."
+  },
+  "labelRequestHeaders": {
+    "message": "Header di richiesta"
+  },
+  "hintImport": {
+    "message": "Gli pseudo-header (<code>:authority</code>), la riga di richiesta e le righe vuote o di commento <code>#</code> vengono ignorati automaticamente."
+  },
+  "phImportDomain": {
+    "message": "es. .*\\.example\\.com.*  — vuoto per tutti gli URL"
+  },
+  "hintImportDomain": {
+    "message": "Applicato a ogni header importato. Supporta regex complete."
+  },
+  "btnImportHeaders": {
+    "message": "Importa header"
+  },
+  "deleteTitle": {
+    "message": "Eliminare la regola?"
+  },
+  "deleteDesc": {
+    "message": "La regola verrà rimossa definitivamente e il motore risincronizzato."
+  },
+  "btnDelete": {
+    "message": "Elimina"
+  },
+  "shareSubtitle": {
+    "message": "Aiuta altri sviluppatori a trovarla."
+  },
+  "btnCopy": {
+    "message": "Copia"
+  },
+  "btnCopied": {
+    "message": "Copiato"
+  },
+  "shareText": {
+    "message": "Modify Header — un'estensione pulita per gestire le regole degli header HTTP di richiesta e risposta. Dai un'occhiata:"
+  },
+  "shareRedditTitle": {
+    "message": "Estensione browser Modify Header"
+  },
+  "badgeModify": {
+    "message": "Modifica"
+  },
+  "badgeAdd": {
+    "message": "Aggiungi"
+  },
+  "badgeRemove": {
+    "message": "Rimuovi"
+  },
+  "noMatch": {
+    "message": "Nessuna regola corrisponde alla ricerca."
+  },
+  "allUrls": {
+    "message": "Tutti gli URL"
+  },
+  "ariaToggleRule": {
+    "message": "Attiva/disattiva regola"
+  },
+  "tipEditRule": {
+    "message": "Modifica regola"
+  },
+  "tipDeleteRule": {
+    "message": "Elimina regola"
+  },
+  "rowActivated": {
+    "message": "Regola attivata"
+  },
+  "rowDeactivated": {
+    "message": "Regola disattivata"
+  },
+  "toastDeleted": {
+    "message": "Regola eliminata e motore sincronizzato."
+  },
+  "errHeaderValueRequired": {
+    "message": "Il valore header è obbligatorio per Aggiungi/Modifica."
+  },
+  "errInvalidRegex": {
+    "message": "Pattern regex non valido nel campo Dominio."
+  },
+  "toastUpdated": {
+    "message": "Regola aggiornata e motore sincronizzato!"
+  },
+  "toastSaved": {
+    "message": "Regola salvata e motore sincronizzato!"
+  },
+  "toastEnabled": {
+    "message": "Estensione attivata — le regole sono attive."
+  },
+  "toastPaused": {
+    "message": "Estensione in pausa — tutte le regole sospese."
+  },
+  "headerCountOne": {
+    "message": "1 header"
+  },
+  "headerCountMany": {
+    "message": "$1 header"
+  },
+  "errNoHeaders": {
+    "message": "Nessun header valido trovato. Usa un “Header-Name: value” per riga."
+  },
+  "importPartNew": {
+    "message": "$1 nuovi"
+  },
+  "importPartUpdated": {
+    "message": "$1 aggiornati"
+  },
+  "toastImported": {
+    "message": "Importati $1 header di richiesta ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

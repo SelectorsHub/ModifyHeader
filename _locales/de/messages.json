@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "HTTP-Request- und Response-Header-Änderungen über ein übersichtliches Dashboard verwalten."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "Import"
+  },
+  "tipImport": {
+    "message": "Rohe Request-Header gesammelt importieren"
+  },
+  "btnAddRule": {
+    "message": "Regel hinzufügen"
+  },
+  "tipAddRule": {
+    "message": "Neue Header-Regel erstellen"
+  },
+  "activeBadge": {
+    "message": "aktiv"
+  },
+  "ariaTogglePower": {
+    "message": "Erweiterung umschalten"
+  },
+  "tipTogglePower": {
+    "message": "Erweiterung ein-/ausschalten"
+  },
+  "powerOn": {
+    "message": "AN"
+  },
+  "powerOff": {
+    "message": "AUS"
+  },
+  "pausedBanner": {
+    "message": "<strong>Erweiterung pausiert</strong> — Alle Header-Regeln sind ausgesetzt. Zum Fortsetzen auf AN stellen."
+  },
+  "ariaClose": {
+    "message": "Schließen"
+  },
+  "emptyTitle": {
+    "message": "Noch keine Regeln"
+  },
+  "emptyDesc": {
+    "message": "Klicke auf <strong>+ Regel hinzufügen</strong>, um deine erste Header-Regel zu erstellen."
+  },
+  "btnAddFirstRule": {
+    "message": "Erste Regel hinzufügen"
+  },
+  "allRules": {
+    "message": "Alle Regeln"
+  },
+  "searchPlaceholder": {
+    "message": "Regeln suchen…"
+  },
+  "allTypes": {
+    "message": "Alle Typen"
+  },
+  "colStatus": {
+    "message": "Status"
+  },
+  "colDomain": {
+    "message": "Domain / Muster"
+  },
+  "colHeader": {
+    "message": "Header"
+  },
+  "colValue": {
+    "message": "Wert"
+  },
+  "colType": {
+    "message": "Typ"
+  },
+  "colAction": {
+    "message": "Aktion"
+  },
+  "colManage": {
+    "message": "Verwalten"
+  },
+  "offeredBy": {
+    "message": "Angeboten von"
+  },
+  "btnSidePanel": {
+    "message": "Seitenleiste"
+  },
+  "tipSidePanel": {
+    "message": "In der Seitenleiste öffnen — bleibt offen, während du Werte kopierst"
+  },
+  "btnRate": {
+    "message": "Bewerten"
+  },
+  "tipRate": {
+    "message": "Bitte bewerte uns – nach deiner Bewertung verschwindet dieser Button für immer."
+  },
+  "shareTitle": {
+    "message": "Modify Header teilen"
+  },
+  "btnShare": {
+    "message": "Teilen"
+  },
+  "ariaToggleTheme": {
+    "message": "Farbschema wechseln"
+  },
+  "tipThemeDark": {
+    "message": "Zum dunklen Design wechseln"
+  },
+  "tipThemeLight": {
+    "message": "Zum hellen Design wechseln"
+  },
+  "addRuleTitle": {
+    "message": "Neue Regel hinzufügen"
+  },
+  "addRuleSubtitle": {
+    "message": "Definiere unten eine Regel zur Header-Änderung."
+  },
+  "editRuleTitle": {
+    "message": "Regel bearbeiten"
+  },
+  "editRuleSubtitle": {
+    "message": "Felder aktualisieren und Änderungen speichern."
+  },
+  "labelDomain": {
+    "message": "Domain / URL-Muster"
+  },
+  "phDomain": {
+    "message": "z. B. .*\\.example\\.com.* oder https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "URL des aktuellen Tabs verwenden"
+  },
+  "btnCurrentTab": {
+    "message": "Aktueller Tab"
+  },
+  "hintDomain": {
+    "message": "Unterstützt reguläre Ausdrücke. Leer lassen für alle URLs."
+  },
+  "errDomainRequired": {
+    "message": "Bitte eine Domain oder ein URL-Muster eingeben."
+  },
+  "labelHeaderName": {
+    "message": "Header-Name"
+  },
+  "phHeaderName": {
+    "message": "z. B. X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "Header-Name ist erforderlich."
+  },
+  "labelHeaderValue": {
+    "message": "Header-Wert"
+  },
+  "phHeaderValue": {
+    "message": "z. B. my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "Für die Aktion <code>remove</code> leer lassen."
+  },
+  "labelType": {
+    "message": "Typ"
+  },
+  "labelAction": {
+    "message": "Aktion"
+  },
+  "labelStatus": {
+    "message": "Status"
+  },
+  "typeRequest": {
+    "message": "Request"
+  },
+  "typeResponse": {
+    "message": "Response"
+  },
+  "optSet": {
+    "message": "Ändern (set)"
+  },
+  "optAppend": {
+    "message": "Hinzufügen (append)"
+  },
+  "optRemove": {
+    "message": "Entfernen"
+  },
+  "statusActive": {
+    "message": "Aktiv"
+  },
+  "statusInactive": {
+    "message": "Inaktiv"
+  },
+  "btnCancel": {
+    "message": "Abbrechen"
+  },
+  "btnSaveRule": {
+    "message": "Regel speichern"
+  },
+  "btnUpdateRule": {
+    "message": "Regel aktualisieren"
+  },
+  "importTitle": {
+    "message": "Request-Header importieren"
+  },
+  "importSubtitle": {
+    "message": "Rohe Request-Header einfügen — ein <code>Header-Name: value</code> pro Zeile —, um Request-Regeln gesammelt zu erstellen."
+  },
+  "labelRequestHeaders": {
+    "message": "Request-Header"
+  },
+  "hintImport": {
+    "message": "Pseudo-Header (<code>:authority</code>), die Request-Zeile sowie leere oder <code>#</code>-Kommentarzeilen werden automatisch ignoriert."
+  },
+  "phImportDomain": {
+    "message": "z. B. .*\\.example\\.com.*  — leer für alle URLs"
+  },
+  "hintImportDomain": {
+    "message": "Gilt für jeden importierten Header. Unterstützt reguläre Ausdrücke."
+  },
+  "btnImportHeaders": {
+    "message": "Header importieren"
+  },
+  "deleteTitle": {
+    "message": "Regel löschen?"
+  },
+  "deleteDesc": {
+    "message": "Die Regel wird dauerhaft entfernt und die Engine neu synchronisiert."
+  },
+  "btnDelete": {
+    "message": "Löschen"
+  },
+  "shareSubtitle": {
+    "message": "Hilf anderen Entwicklern, sie zu finden."
+  },
+  "btnCopy": {
+    "message": "Kopieren"
+  },
+  "btnCopied": {
+    "message": "Kopiert"
+  },
+  "shareText": {
+    "message": "Modify Header — eine schlanke Browser-Erweiterung zum Verwalten von HTTP-Request- und Response-Header-Regeln. Schau sie dir an:"
+  },
+  "shareRedditTitle": {
+    "message": "Modify Header Browser-Erweiterung"
+  },
+  "badgeModify": {
+    "message": "Ändern"
+  },
+  "badgeAdd": {
+    "message": "Hinzuf."
+  },
+  "badgeRemove": {
+    "message": "Löschen"
+  },
+  "noMatch": {
+    "message": "Keine Regeln entsprechen deiner Suche."
+  },
+  "allUrls": {
+    "message": "Alle URLs"
+  },
+  "ariaToggleRule": {
+    "message": "Regelstatus umschalten"
+  },
+  "tipEditRule": {
+    "message": "Regel bearbeiten"
+  },
+  "tipDeleteRule": {
+    "message": "Regel löschen"
+  },
+  "rowActivated": {
+    "message": "Regel aktiviert"
+  },
+  "rowDeactivated": {
+    "message": "Regel deaktiviert"
+  },
+  "toastDeleted": {
+    "message": "Regel gelöscht und Engine synchronisiert."
+  },
+  "errHeaderValueRequired": {
+    "message": "Für Hinzufügen/Ändern ist ein Header-Wert erforderlich."
+  },
+  "errInvalidRegex": {
+    "message": "Ungültiger regulärer Ausdruck im Feld Domain."
+  },
+  "toastUpdated": {
+    "message": "Regel aktualisiert und Engine synchronisiert!"
+  },
+  "toastSaved": {
+    "message": "Regel gespeichert und Engine synchronisiert!"
+  },
+  "toastEnabled": {
+    "message": "Erweiterung aktiviert — Regeln sind aktiv."
+  },
+  "toastPaused": {
+    "message": "Erweiterung pausiert — alle Regeln ausgesetzt."
+  },
+  "headerCountOne": {
+    "message": "1 Header"
+  },
+  "headerCountMany": {
+    "message": "$1 Header"
+  },
+  "errNoHeaders": {
+    "message": "Keine gültigen Header gefunden. Einen „Header-Name: value“ pro Zeile verwenden."
+  },
+  "importPartNew": {
+    "message": "$1 neu"
+  },
+  "importPartUpdated": {
+    "message": "$1 aktualisiert"
+  },
+  "toastImported": {
+    "message": "$1 Request-Header importiert ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}

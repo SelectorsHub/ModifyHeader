@@ -1,0 +1,317 @@
+{
+  "appName": {
+    "message": "Modify Header"
+  },
+  "appDesc": {
+    "message": "Quản lý việc sửa đổi header HTTP của request và response với giao diện bảng điều khiển gọn gàng."
+  },
+  "actionTitle": {
+    "message": "Modify Header"
+  },
+  "btnImport": {
+    "message": "Nhập"
+  },
+  "tipImport": {
+    "message": "Nhập hàng loạt header request thô"
+  },
+  "btnAddRule": {
+    "message": "Thêm quy tắc"
+  },
+  "tipAddRule": {
+    "message": "Tạo quy tắc header mới"
+  },
+  "activeBadge": {
+    "message": "đang bật"
+  },
+  "ariaTogglePower": {
+    "message": "Bật/tắt tiện ích"
+  },
+  "tipTogglePower": {
+    "message": "Bật/tắt tiện ích"
+  },
+  "powerOn": {
+    "message": "BẬT"
+  },
+  "powerOff": {
+    "message": "TẮT"
+  },
+  "pausedBanner": {
+    "message": "<strong>Tiện ích đã tạm dừng</strong> — Tất cả quy tắc header đang bị tạm ngưng. Chuyển sang BẬT để tiếp tục."
+  },
+  "ariaClose": {
+    "message": "Đóng"
+  },
+  "emptyTitle": {
+    "message": "Chưa có quy tắc"
+  },
+  "emptyDesc": {
+    "message": "Nhấn <strong>+ Thêm quy tắc</strong> để tạo quy tắc header đầu tiên."
+  },
+  "btnAddFirstRule": {
+    "message": "Thêm quy tắc đầu tiên"
+  },
+  "allRules": {
+    "message": "Tất cả quy tắc"
+  },
+  "searchPlaceholder": {
+    "message": "Tìm quy tắc…"
+  },
+  "allTypes": {
+    "message": "Tất cả loại"
+  },
+  "colStatus": {
+    "message": "Bật"
+  },
+  "colDomain": {
+    "message": "Tên miền / Mẫu"
+  },
+  "colHeader": {
+    "message": "Header"
+  },
+  "colValue": {
+    "message": "Giá trị"
+  },
+  "colType": {
+    "message": "Loại"
+  },
+  "colAction": {
+    "message": "Thao tác"
+  },
+  "colManage": {
+    "message": "Quản lý"
+  },
+  "offeredBy": {
+    "message": "Cung cấp bởi"
+  },
+  "btnSidePanel": {
+    "message": "Bảng bên"
+  },
+  "tipSidePanel": {
+    "message": "Mở trong bảng bên — vẫn mở khi bạn sao chép và dán giá trị"
+  },
+  "btnRate": {
+    "message": "Đánh giá"
+  },
+  "tipRate": {
+    "message": "Hãy đánh giá chúng tôi — nút này sẽ biến mất vĩnh viễn sau khi bạn đánh giá."
+  },
+  "shareTitle": {
+    "message": "Chia sẻ Modify Header"
+  },
+  "btnShare": {
+    "message": "Chia sẻ"
+  },
+  "ariaToggleTheme": {
+    "message": "Đổi giao diện màu"
+  },
+  "tipThemeDark": {
+    "message": "Chuyển sang giao diện tối"
+  },
+  "tipThemeLight": {
+    "message": "Chuyển sang giao diện sáng"
+  },
+  "addRuleTitle": {
+    "message": "Thêm quy tắc mới"
+  },
+  "addRuleSubtitle": {
+    "message": "Định nghĩa quy tắc sửa đổi header bên dưới."
+  },
+  "editRuleTitle": {
+    "message": "Sửa quy tắc"
+  },
+  "editRuleSubtitle": {
+    "message": "Cập nhật các trường bên dưới và lưu thay đổi."
+  },
+  "labelDomain": {
+    "message": "Tên miền / Mẫu URL"
+  },
+  "phDomain": {
+    "message": "vd. .*\\.example\\.com.* hoặc https://api\\.site\\.com/.*"
+  },
+  "tipCurrentTab": {
+    "message": "Dùng URL của tab hiện tại"
+  },
+  "btnCurrentTab": {
+    "message": "Tab hiện tại"
+  },
+  "hintDomain": {
+    "message": "Hỗ trợ đầy đủ regex. Để trống để khớp mọi URL."
+  },
+  "errDomainRequired": {
+    "message": "Vui lòng nhập tên miền hoặc mẫu URL."
+  },
+  "labelHeaderName": {
+    "message": "Tên header"
+  },
+  "phHeaderName": {
+    "message": "vd. X-Custom-Header"
+  },
+  "errHeaderNameRequired": {
+    "message": "Tên header là bắt buộc."
+  },
+  "labelHeaderValue": {
+    "message": "Giá trị header"
+  },
+  "phHeaderValue": {
+    "message": "vd. my-value-123"
+  },
+  "hintHeaderValue": {
+    "message": "Để trống cho hành động <code>remove</code>."
+  },
+  "labelType": {
+    "message": "Loại"
+  },
+  "labelAction": {
+    "message": "Hành động"
+  },
+  "labelStatus": {
+    "message": "Trạng thái"
+  },
+  "typeRequest": {
+    "message": "Request"
+  },
+  "typeResponse": {
+    "message": "Response"
+  },
+  "optSet": {
+    "message": "Sửa (set)"
+  },
+  "optAppend": {
+    "message": "Thêm (append)"
+  },
+  "optRemove": {
+    "message": "Xóa"
+  },
+  "statusActive": {
+    "message": "Đang bật"
+  },
+  "statusInactive": {
+    "message": "Đang tắt"
+  },
+  "btnCancel": {
+    "message": "Hủy"
+  },
+  "btnSaveRule": {
+    "message": "Lưu quy tắc"
+  },
+  "btnUpdateRule": {
+    "message": "Cập nhật quy tắc"
+  },
+  "importTitle": {
+    "message": "Nhập header request"
+  },
+  "importSubtitle": {
+    "message": "Dán header request thô — mỗi dòng một <code>Header-Name: value</code> — để tạo hàng loạt quy tắc request."
+  },
+  "labelRequestHeaders": {
+    "message": "Header request"
+  },
+  "hintImport": {
+    "message": "Pseudo-header (<code>:authority</code>), dòng request và các dòng trống hoặc chú thích <code>#</code> sẽ tự động bị bỏ qua."
+  },
+  "phImportDomain": {
+    "message": "vd. .*\\.example\\.com.*  — để trống để khớp mọi URL"
+  },
+  "hintImportDomain": {
+    "message": "Áp dụng cho mọi header được nhập. Hỗ trợ đầy đủ regex."
+  },
+  "btnImportHeaders": {
+    "message": "Nhập header"
+  },
+  "deleteTitle": {
+    "message": "Xóa quy tắc?"
+  },
+  "deleteDesc": {
+    "message": "Quy tắc sẽ bị xóa vĩnh viễn và engine sẽ được đồng bộ lại."
+  },
+  "btnDelete": {
+    "message": "Xóa"
+  },
+  "shareSubtitle": {
+    "message": "Giúp các lập trình viên khác tìm thấy nó."
+  },
+  "btnCopy": {
+    "message": "Sao chép"
+  },
+  "btnCopied": {
+    "message": "Đã sao chép"
+  },
+  "shareText": {
+    "message": "Modify Header — tiện ích trình duyệt gọn gàng để quản lý quy tắc header HTTP request và response. Xem ngay:"
+  },
+  "shareRedditTitle": {
+    "message": "Tiện ích trình duyệt Modify Header"
+  },
+  "badgeModify": {
+    "message": "Sửa"
+  },
+  "badgeAdd": {
+    "message": "Thêm"
+  },
+  "badgeRemove": {
+    "message": "Xóa"
+  },
+  "noMatch": {
+    "message": "Không có quy tắc nào khớp với tìm kiếm."
+  },
+  "allUrls": {
+    "message": "Mọi URL"
+  },
+  "ariaToggleRule": {
+    "message": "Bật/tắt quy tắc"
+  },
+  "tipEditRule": {
+    "message": "Sửa quy tắc"
+  },
+  "tipDeleteRule": {
+    "message": "Xóa quy tắc"
+  },
+  "rowActivated": {
+    "message": "Đã bật quy tắc"
+  },
+  "rowDeactivated": {
+    "message": "Đã tắt quy tắc"
+  },
+  "toastDeleted": {
+    "message": "Đã xóa quy tắc và đồng bộ engine."
+  },
+  "errHeaderValueRequired": {
+    "message": "Hành động Thêm/Sửa cần có giá trị header."
+  },
+  "errInvalidRegex": {
+    "message": "Mẫu regex trong trường Tên miền không hợp lệ."
+  },
+  "toastUpdated": {
+    "message": "Đã cập nhật quy tắc và đồng bộ engine!"
+  },
+  "toastSaved": {
+    "message": "Đã lưu quy tắc và đồng bộ engine!"
+  },
+  "toastEnabled": {
+    "message": "Đã bật tiện ích — các quy tắc đang hoạt động."
+  },
+  "toastPaused": {
+    "message": "Đã tạm dừng tiện ích — mọi quy tắc bị tạm ngưng."
+  },
+  "headerCountOne": {
+    "message": "1 header"
+  },
+  "headerCountMany": {
+    "message": "$1 header"
+  },
+  "errNoHeaders": {
+    "message": "Không tìm thấy header hợp lệ. Mỗi dòng một “Header-Name: value”."
+  },
+  "importPartNew": {
+    "message": "$1 mới"
+  },
+  "importPartUpdated": {
+    "message": "$1 đã cập nhật"
+  },
+  "toastImported": {
+    "message": "Đã nhập $1 header request ($2)."
+  },
+  "listSeparator": {
+    "message": ", "
+  }
+}
